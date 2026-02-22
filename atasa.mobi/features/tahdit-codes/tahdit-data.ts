@@ -1,0 +1,117 @@
+export interface TahditCode {
+  code: string;
+  category: string;
+  description: string;
+  entryInfo: string;
+  details?: string;
+  prefix: 'Ç' | 'G' | 'N' | 'O' | 'V';
+}
+
+export const TAHDIT_CODES: TahditCode[] = [
+  // N SERİSİ - Para Cezaları ve Bilgilendirme (Girişe engel değil)
+  { prefix: 'N', code: '95', category: 'Para Cezası', description: "Giriş yasağı ihlalinin idari para cezası ödemem var diye.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '96', category: 'Para Cezası', description: "Tanınan sürede ülkemizden çıkış yapmamanın idari ceza parası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '97', category: 'Para Cezası', description: "Adres beyanına ilişkin idari para cezası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '119', category: 'Para Cezası', description: "6735 Sayılı kanuna göre İzinsiz çalışmanın idari Para cezası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '120', category: 'Para Cezası', description: "Vize muafiyeti, çalışma izni veya ikamet izni ihlali sebebiyle idari para cezası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '135', category: 'Para Cezası', description: "Yasadışı Giriş-Çıkış Yapmanın veya Teşebbüs Etmenin İdari Ceza Parası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '136', category: 'Masraf', description: "Sınır dışı seyahat masrafı.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '168', category: 'Para Cezası', description: "102. maddenin bendine muhalefetten kaynaklı idari para cezası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '169', category: 'Para Cezası', description: "Bakanlıkça belirlenen idari yükümlülüklere uymamaya ilişkin idari ceza parası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '170', category: 'Para Cezası', description: "Kabahatler Kanunu ve diğer ilgili kanunların ihlalinden kaynaklı idari para cezası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '171', category: 'Para Cezası', description: "Belirlenen yükümlülükleri yerine getirmemeden kaynaklanan idari ceza parası.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+  { prefix: 'N', code: '172', category: 'Masraf', description: "Gönüllü geri dönüşüme ilişkin seyahat masrafı.", entryInfo: "Türkiye'ye girişinize engel değildir." },
+
+  // N SERİSİ - Yasaklar (Bakanlık İzni Gerekli)
+  { prefix: 'N', code: '26', category: 'Yasadışı', description: "Yasadışı örgüt faaliyetleri.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '34', category: 'Sahtecilik', description: "Sahtecilik.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '42', category: 'Suç', description: "Uyuşturucu ve madde suçu.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '43', category: 'Suç', description: "Kaçakçılık suçları.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '48', category: 'Suç', description: "Fuhuş'a aracılık etme ve yer temini.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '58', category: 'Suç', description: "Öldürme suçları.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '64', category: 'Suç', description: "Tehdit.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '65', category: 'Suç', description: "Hırsızlık.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '66', category: 'Suç', description: "Gasp ve yağma.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '67', category: 'Suç', description: "Dolandırıcılık.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '78', category: 'Sağlık', description: "Bulaşıcı hastalık taşıma.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '82', category: 'Güvenlik', description: "Milli Güvenliğimiz aleyhine faaliyet.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '87', category: 'Güvenlik', description: "Genel Güvenlik.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '98', category: 'Suç', description: "İnsan ticareti mağduru olarak tespit edilen yabancı.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'N', code: '99', category: 'Diğer', description: "Diğer.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+
+  // O SERİSİ - Uluslararası Koruma
+  { prefix: 'O', code: '100', category: 'Koruma', description: "Uluslararası Koruma Talebi Olumsuz Değerlendirilen Yabancılar.", entryInfo: "1 yıl Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'O', code: '176', category: 'Koruma', description: "Uluslararası Koruma Talebi Olumsuz Değerlendirilen Yabancılar.", entryInfo: "3 yıl Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'O', code: '177', category: 'Koruma', description: "Uluslararası Koruma Talebi Olumsuz Değerlendirilen Yabancılar.", entryInfo: "5 yıl Türkiye'ye giriş yapamazsınız." },
+
+  // Ç SERİSİ - Giriş Yasağı Kodları
+  { prefix: 'Ç', code: '101', category: 'İhlal', description: "Vize/İkamet/Çalışma İzni İhlali.", entryInfo: "3 ay süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '102', category: 'İhlal', description: "Vize/İkamet/Çalışma İzni İhlali.", entryInfo: "6 ay süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '103', category: 'İhlal', description: "Vize/İkamet/Çalışma İzni İhlali.", entryInfo: "1 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '104', category: 'İhlal', description: "Vize/İkamet/Çalışma İzni İhlali.", entryInfo: "2 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '105', category: 'İhlal', description: "Vize/İkamet/Çalışma İzni İhlali.", entryInfo: "5 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '113', category: 'Yasadışı', description: "Yasadışı Giriş-çıkış Yapan veya Teşebbüs Eden Yabancılar.", entryInfo: "2 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '114', category: 'Adli', description: "Hakkında Adli İşlem Yapılan Yabancılar.", entryInfo: "2 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '115', category: 'Adli', description: "Cezaevinden Tahliye Olan Yabancılar.", entryInfo: "2 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '116', category: 'Suç', description: "Geçimini Meşru Olmayan Yollardan Sağlayan Yabancılar.", entryInfo: "5 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '117', category: 'Çalışma', description: "Çalışma İzni Olmadan Çalıştığı Tespit edilen Yabancılar.", entryInfo: "1 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '118', category: 'Sağlık', description: "Kamu Sağlığını Tehdit Eden Yabancılar.", entryInfo: "5 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '141', category: 'Güvenlik', description: "Uluslararası Güvenlik Açısından Sakıncalı Görülen.", entryInfo: "5 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '149', category: 'Güvenlik', description: "Kamu Güvenliği Açısından Sakıncalı Görülen.", entryInfo: "5 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '150', category: 'Sahtecilik', description: "Sahte Belge ile Giriş-çıkış Yapmak İsteyen Yabancılar.", entryInfo: "5 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '151', category: 'Suç', description: "Göçmen Kaçakçısı / İnsan Taciri.", entryInfo: "5 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '152', category: 'Güvenlik', description: "Ülkeye Girişi İhtiyaten Engellenen Yabancılar.", entryInfo: "1 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '166', category: 'Mali', description: "Girişini Haklı Nedene Dayandırmayan / Maddi imkânı Bulunmayan.", entryInfo: "1 yıl süreyle Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'Ç', code: '167', category: 'İhlal', description: "3 Ay ile 6 Ay Arası Vize, Muafiyet, Çalışma veya İkamet İhlali.", entryInfo: "1 ay süreyle Türkiye'ye giriş yapamazsınız." },
+
+  // G SERİSİ - Suç Kodları
+  { prefix: 'G', code: '26', category: 'Suç', description: "Yasadışı Örgüt Faaliyetleri.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '34', category: 'Suç', description: "Sahtecilik.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '42', category: 'Suç', description: "Uyuşturucu Madde Suçu.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '43', category: 'Suç', description: "Kaçakçılık Suçları.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '48', category: 'Suç', description: "Fuhuşa Aracılık Etme ve Yer Temini.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '58', category: 'Suç', description: "Öldürme Suçları.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '64', category: 'Suç', description: "Tehdit.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '65', category: 'Suç', description: "Hırsızlık.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '66', category: 'Suç', description: "Gasp ve Yağma.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '67', category: 'Suç', description: "Dolandırıcılık.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '78', category: 'Suç', description: "Bulaşıcı Hastalık Taşıma.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '82', category: 'Güvenlik', description: "Milli Güvenliğimiz Aleyhine Faaliyet.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '87', category: 'Güvenlik', description: "Genel Güvenlik.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+  { prefix: 'G', code: '99', category: 'Diğer', description: "Diğer.", entryInfo: "Bakanlık izni olmadan Türkiye'ye giriş yapamazsınız." },
+
+  // V SERİSİ - Bilgilendirme Kodları (Girişe engel değil)
+  { prefix: 'V', code: '68', category: 'Takip', description: "İkamet İzni Verilmesi Bakanlık İznine Tabi.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '69', category: 'İptal', description: "İkamet İzni İptal Edilen Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '70', category: 'Evlilik', description: "Formalite Evlilik.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '71', category: 'Adres', description: "Adres Değişikliğini Bildirmeyen / Gerçeğe Aykırı Beyan Eden Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '74', category: 'Takip', description: "Çıkışı Bakanlık/Valiliklere Bildirilecek Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '84', category: 'Vize', description: "180/90 İkamet Şartlı Vize.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '87', category: 'Koruma', description: "Gönüllü Geri Dönüş Yapan Geçici Koruma Sahibi.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '88', category: 'Çalışma', description: "Çalışma İzni Geçersiz Kılınan Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '89', category: 'Takip', description: "Geri Kabulü Sağlanan Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '91', category: 'Koruma', description: "Ülkeden Çıkışı İzne Tabi Olan Geçici Koruma Kapsamındaki Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '92', category: 'Koruma', description: "Mükerrer Kaydı Olan Geçici Koruma Sahibi Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '137', category: 'Terk', description: "Türkiye'yi Terke Davet Edilen Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '144', category: 'Takip', description: "57-A Kapsamında Serbest Bırakılan Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '145', category: 'Takip', description: "Gönüllü Geri Dönüş.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '146', category: 'Takip', description: "Türk Pasaportu Şerhli.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '147', category: 'Takip', description: "Pasaportu Şerhli Türk Vatandaşı Eşi.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '148', category: 'Takip', description: "Geçici Barınma Merkezinde Barınan Kişi.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '153', category: 'Tedbir', description: "AYM Üçüncü Ülkeye İlişkin Tedbir Kararı.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '154', category: 'Takip', description: "Sınır Dışı Etme Kararına Karşı İdare Mahkemesine Başvuru.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '155', category: 'Tedbir', description: "Avrupa İnsan Hakları Mahkemesi Tedbir Kararı.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '156', category: 'Masraf', description: "Avukatlık Vekâlet Ücreti.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '157', category: 'İptal', description: "İkamet İzni Talepleri Reddedilen Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '158', category: 'İptal', description: "Yabancı Temsilcilik Personel/Aile Bireyi Kimlik Kartı İptal.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '159', category: 'Takip', description: "Üçüncü Ülkeye Geçiş İşlemleri İçin Ülkemize Gelenler.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '160', category: 'Takip', description: "Semti Meçhule Giden Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '161', category: 'Tedbir', description: "AYM Kendi Ülkesine Tedbir Kararı.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '162', category: 'Takip', description: "Mahkemece İdari Gözetimi Sonlandırılan Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '163', category: 'Takip', description: "Detaylı İncelemeye Tabi Tutulacak Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '164', category: 'Takip', description: "Sınır Dışı Etme İşlemi Gerçekleştirilen Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '165', category: 'Sahtecilik', description: "Kayıt İşleminde Sahtecilik / Yalan Beyanda Bulunan Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '173', category: 'Takip', description: "Geçici Giriş İzni Verilen Suriyeli Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '174', category: 'Takip', description: "Tedavi Amaçlı Giriş İzni Verilen Suriyeli Yabancılar.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+  { prefix: 'V', code: '175', category: 'Takip', description: "Geçici Koruma Sonlandırılmaksızın Suriye'ye Giriş-Çıkış.", entryInfo: "Bilgilendirme amaçlı bir koddur. Türkiye'ye girişinize engel değildir." },
+];

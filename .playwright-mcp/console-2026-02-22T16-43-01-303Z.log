@@ -1,0 +1,23 @@
+[    1431ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    1489ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    1489ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   16027ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-campus.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  272465ms] [ERROR] ./Applications/atasaedu.com/src/features/services/components/ServiceList.tsx:285:39
+Parsing ecmascript source code failed
+  283 |                                         </div>
+  284 |                                     </div>
+> 285 |                                 </div>
+      |                                       ^
+> 286 |                             </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  287 |                             </motion.div>
+  288 |                         ))}
+  289 |             </AnimatePresence>
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./Applications/atasaedu.com/src/features/services/components/ServiceList.tsx
+    ./Applications/atasaedu.com/src/app/hizmetlerimiz/page.tsx @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:3127

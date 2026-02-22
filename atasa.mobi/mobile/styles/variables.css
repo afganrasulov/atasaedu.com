@@ -1,0 +1,36 @@
+:root {
+  /* Atasa Premium Blue Palette - Güven ve Netlik */
+  --m-primary-blue: #0055D4; /* Canlı, güvenilir mavi */
+  --m-primary-dark: #003380; /* Koyu lacivert */
+  --m-accent-blue: #E6F0FF; /* Çok açık mavi zemin */
+  --m-card-bg: #FFFFFF;
+  
+  --m-gradient-atasa: linear-gradient(180deg, #0055D4 0%, #003380 100%);
+  --m-bg: #F0F4F8; /* Göz yormayan gri-mavi zemin */
+  
+  --m-safe-top: env(safe-area-inset-top);
+  --m-safe-bottom: env(safe-area-inset-bottom);
+  
+  /* Gölgeler - Daha yumuşak ve modern */
+  --m-shadow-card: 0 4px 20px rgba(0, 85, 212, 0.08);
+  --m-shadow-active: 0 2px 10px rgba(0, 85, 212, 0.15);
+}
+
+.mobile-view {
+  background-color: var(--m-bg);
+  color: #1e293b;
+  font-family: 'Inter', -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Mavi Vurgulu Metinler */
+.text-primary-blue { color: var(--m-primary-blue); }
+.bg-primary-blue { background-color: var(--m-primary-blue); }
+.bg-accent-blue { background-color: var(--m-accent-blue); }
+
+.m-touch:active {
+  opacity: 0.9;
+  transform: scale(0.98);
+  transition: all 0.1s ease-out;
+}

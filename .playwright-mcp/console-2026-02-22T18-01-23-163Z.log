@@ -1,0 +1,145 @@
+[    2646ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2811ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2830ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2850ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/bau.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2869ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/altinbas.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2870ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/ankara-bilim.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2871ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/medipol.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2898ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/antalya-bilim.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2899ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/atlas.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    3647ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo-white.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  119621ms] [ERROR] ./Applications/atasaedu.com/src/shared/components/layout/Footer.tsx:12:5
+Parsing ecmascript source code failed
+  10 |     const { openModal } = useCookieConsent();
+  11 |
+> 12 |     export function Footer() {
+     |     ^^^^^^
+  13 |         const { openModal } = useCookieConsent();
+  14 |
+  15 |         return (
+
+'import', and 'export' cannot be used outside of module code
+
+Import trace:
+  Server Component:
+    ./Applications/atasaedu.com/src/shared/components/layout/Footer.tsx
+    ./Applications/atasaedu.com/src/app/layout.tsx @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:3127
+[  121828ms] [ERROR] ./Applications/atasaedu.com/src/shared/components/layout/Footer.tsx:12:5
+Parsing ecmascript source code failed
+  10 |     const { openModal } = useCookieConsent();
+  11 |
+> 12 |     export function Footer() {
+     |     ^^^^^^
+  13 |         const { openModal } = useCookieConsent();
+  14 |
+  15 |         return (
+
+'import', and 'export' cannot be used outside of module code
+
+Import trace:
+  Server Component:
+    ./Applications/atasaedu.com/src/shared/components/layout/Footer.tsx
+    ./Applications/atasaedu.com/src/app/layout.tsx @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:3127
+[  160420ms] [ERROR] ./Applications/atasaedu.com/src/shared/components/layout/Footer.tsx:12:5
+Parsing ecmascript source code failed
+  10 |     const { openModal } = useCookieConsent();
+  11 |
+> 12 |     export function Footer() {
+     |     ^^^^^^
+  13 |         const { openModal } = useCookieConsent();
+  14 |
+  15 |         return (
+
+'import', and 'export' cannot be used outside of module code
+
+Import trace:
+  Server Component:
+    ./Applications/atasaedu.com/src/shared/components/layout/Footer.tsx
+    ./Applications/atasaedu.com/src/app/layout.tsx @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:3127
+[  175944ms] [WARNING] The resource http://localhost:6001/_next/static/media/81cef6a21128489e-s.p.6cf41120.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[  334224ms] [WARNING] The resource http://localhost:6001/_next/static/media/81cef6a21128489e-s.p.6cf41120.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[  349879ms] [WARNING] The resource http://localhost:6001/_next/static/media/81cef6a21128489e-s.p.6cf41120.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[  750841ms] ReferenceError: HeroTitle is not defined
+    at HeroSection (http://localhost:6001/_next/static/chunks/Applications_atasaedu_com_src_30a60fcb._.js?id=%255Bproject%255D%252FApplications%252Fatasaedu.com%252Fsrc%252Ffeatures%252Fhomepage%252Fcomponents%252FHeroSection.tsx+%255Bapp-client%255D+%2528ecmascript%2529:148:271)
+    at Object.react_stack_bottom_frame (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:14826:24)
+    at renderWithHooks (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:4651:24)
+    at updateFunctionComponent (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:6112:21)
+    at beginWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:6708:24)
+    at runWithFiberInDEV (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:965:74)
+    at performUnitOfWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9562:97)
+    at workLoopSync (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9456:40)
+    at renderRootSync (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9440:13)
+    at performWorkOnRoot (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9105:47)
+    at performSyncWorkOnRoot (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:10238:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:10154:316)
+    at flushSyncWork$1 (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9237:86)
+    at Object.scheduleRefresh (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:299:13)
+    at http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:384:38)
+    at applyUpdate (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:878:31)
+    at http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:886:13
+[  760312ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  760318ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  762388ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6001/:0
+[  764045ms] ReferenceError: HeroTitle is not defined
+    at HeroSection (http://localhost:6001/_next/static/chunks/Applications_atasaedu_com_src_30a60fcb._.js:201:271)
+    at Object.react_stack_bottom_frame (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:14826:24)
+    at renderWithHooks (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:4651:24)
+    at updateFunctionComponent (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:6112:21)
+    at beginWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:6687:639)
+    at runWithFiberInDEV (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:965:74)
+    at performUnitOfWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9562:97)
+    at workLoopSync (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9456:40)
+    at renderRootSync (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9440:13)
+    at performWorkOnRoot (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9105:47)
+    at performWorkOnRootViaSchedulerTask (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:2647:64)
+[  767065ms] [WARNING] The resource http://localhost:6001/_next/static/chunks/%5Broot-of-the-server%5D__b111776b._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[  769466ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  769781ms] Error: No link element found for chunk /_next/static/chunks/%5Broot-of-the-server%5D__b111776b._.css
+    at http://localhost:6001/_next/static/chunks/turbopack-Applications_atasaedu_com_07e43ce3._.js:1801:28
+    at new Promise (<anonymous>)
+    at Object.reloadChunk (http://localhost:6001/_next/static/chunks/turbopack-Applications_atasaedu_com_07e43ce3._.js:1793:20)
+    at applyChunkListUpdate (http://localhost:6001/_next/static/chunks/turbopack-Applications_atasaedu_com_07e43ce3._.js:1174:46)
+    at applyUpdate (http://localhost:6001/_next/static/chunks/turbopack-Applications_atasaedu_com_07e43ce3._.js:1148:13)
+    at handleApply (http://localhost:6001/_next/static/chunks/turbopack-Applications_atasaedu_com_07e43ce3._.js:1368:17)
+    at triggerUpdate (http://localhost:6001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js:452:9)
+    at applyAggregatedUpdates (http://localhost:6001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js:98:9)
+    at http://localhost:6001/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_c8c997ce._.js:32:21
+    at processTurbopackMessage (http://localhost:6001/_next/static/chunks/8233f_next_dist_client_8c6fadb1._.js:10950:13)
+    at processMessage (http://localhost:6001/_next/static/chunks/8233f_next_dist_client_8c6fadb1._.js:11591:17)
+    at WebSocket.handleMessage (http://localhost:6001/_next/static/chunks/8233f_next_dist_client_8c6fadb1._.js:10914:52)
+[  771868ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  772035ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  772045ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  808494ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  809171ms] [WARNING] [Fast Refresh] performing full reload
+
+Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.
+You might have a file which exports a React component but also exports a value that is imported by a non-React component file.
+Consider migrating the non-React component export to a separate file and importing it into both files.
+
+It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.
+Fast Refresh requires at least one parent function component in your React tree. @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  811569ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  811850ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  811858ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297

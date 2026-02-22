@@ -1,0 +1,51 @@
+[    2994ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    3187ms] Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ScrollAndFocusHandler segmentPath={[...]}>
+      <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+        <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+          <LoadingBoundary name="/" loading={null}>
+            <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+              <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="/Applicati...">
+                        <SegmentTrieNode>
+                        <Home>
+                          <PageTransition>
+                            <motion.div initial={{opacity:0, ...}} animate={{opacity:1,scale:1, ...}} ...>
++                             <div
++                               style={{opacity:0,filter:"blur(8px)",transform:"scale(0.98)"}}
++                               ref={function useMotionRef.useCallback}
++                             >
+-                             <section
+-                               className="relative min-h-[85vh] flex items-center bg-white overflow-hidden py-20 lg:p..."
+-                             >
+                      ...
+                    ...
+        ...
+
+    at throwOnHydrationMismatch (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:3348:56)
+    at beginWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:6775:918)
+    at replayBeginWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9585:156)
+    at runWithFiberInDEV (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:965:74)
+    at replaySuspendedUnitOfWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9567:20)
+    at renderRootConcurrent (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9500:141)
+    at performWorkOnRoot (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9068:150)
+    at performWorkOnRootViaSchedulerTask (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:10230:9)
+    at MessagePort.performWorkUntilDeadline (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:2647:64)
+[    3159ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    3164ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297

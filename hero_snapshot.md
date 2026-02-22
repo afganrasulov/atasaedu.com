@@ -1,0 +1,414 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: "Pzt - Cmt: 9:00 - 17:00"
+        - generic [ref=e8]: "|"
+        - generic [ref=e9]:
+          - img [ref=e10]
+          - text: info@atasaedu.com
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - img [ref=e15]
+          - text: +90 (850) 308 69 98
+        - generic [ref=e17] [cursor=pointer]:
+          - img [ref=e18]
+          - text: TR
+    - banner [ref=e21]:
+      - generic [ref=e23]:
+        - link "Atasa Education" [ref=e24] [cursor=pointer]:
+          - /url: /
+          - img "Atasa Education" [ref=e26]
+        - navigation [ref=e27]:
+          - link "Ana Sayfa" [ref=e28] [cursor=pointer]:
+            - /url: /
+          - link "Hizmetlerimiz" [ref=e29] [cursor=pointer]:
+            - /url: /hizmetlerimiz
+          - link "Biz Kimiz" [ref=e30] [cursor=pointer]:
+            - /url: /hakkimizda
+          - link "Üniversiteler" [ref=e31] [cursor=pointer]:
+            - /url: /universiteler
+          - link "İletişim" [ref=e32] [cursor=pointer]:
+            - /url: /iletisim
+        - link "Randevu Al" [ref=e34] [cursor=pointer]:
+          - /url: /basvuru
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - img [ref=e41]
+          - generic [ref=e44]: Sizin İçin En İyisi
+        - generic [ref=e45]:
+          - heading "Türkiye'de Geleceğini Sınavsız Üniversite Kaydı" [level=1] [ref=e46]:
+            - text: Türkiye'de
+            - generic [ref=e47]: Geleceğini
+            - generic [ref=e50]: Sınavsız Üniversite Kaydı
+          - generic:
+            - heading "Türkiye'de Geleceğini Sınavsız Üniversite Kaydı" [level=1]:
+              - text: Türkiye'de Geleceğini
+              - generic: Sınavsız Üniversite Kaydı
+        - paragraph [ref=e51]: Yabancı öğrencilere yönelik profesyonel danışmanlık. Hayalinizdeki üniversite eğitimine uzman kadromuzla sınavsız ulaşın.
+        - generic [ref=e52]:
+          - link "Hemen Başvur" [ref=e53] [cursor=pointer]:
+            - /url: /basvuru
+            - generic [ref=e55]:
+              - text: Hemen Başvur
+              - img [ref=e56]
+          - link "Hizmetlerimiz" [ref=e58] [cursor=pointer]:
+            - /url: /hizmetlerimiz
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - img [ref=e61]
+            - generic [ref=e64]: 100+ Üniversite
+          - generic [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e69]: Yasal Güvence
+          - generic [ref=e70]:
+            - img [ref=e71]
+            - generic [ref=e74]: Global Destek
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e82]: BÖLÜMLER
+          - heading "En Çok Tercih Edilen Bölümleri Keşfedin!" [level=2] [ref=e83]
+          - paragraph [ref=e84]: Geleceğinizi şekillendirecek, global geçerliliği olan ve en çok tercih edilen akademik programları detaylıca inceleyin.
+          - link "TÜM BÖLÜMLERİ GÖR" [ref=e85] [cursor=pointer]:
+            - /url: /universiteler
+            - button "TÜM BÖLÜMLERİ GÖR" [ref=e86]:
+              - text: TÜM BÖLÜMLERİ GÖR
+              - img [ref=e87]
+        - generic [ref=e90]:
+          - link "İşletme Sosyal Bilimler İşletme 35 Üniversite Detaylar" [ref=e91] [cursor=pointer]:
+            - /url: /universiteler?search=%C4%B0%C5%9Fletme
+            - generic [ref=e92]:
+              - img "İşletme" [ref=e93]
+              - generic [ref=e95]: Sosyal Bilimler
+            - generic [ref=e96]:
+              - heading "İşletme" [level=3] [ref=e97]
+              - generic [ref=e99]:
+                - img [ref=e100]
+                - text: 35 Üniversite
+              - generic [ref=e104]:
+                - text: Detaylar
+                - img [ref=e105]
+          - link "Mimarlık Mühendislik Mimarlık 27 Üniversite Detaylar" [ref=e108] [cursor=pointer]:
+            - /url: /universiteler?search=Mimarl%C4%B1k
+            - generic [ref=e109]:
+              - img "Mimarlık" [ref=e110]
+              - generic [ref=e112]: Mühendislik
+            - generic [ref=e113]:
+              - heading "Mimarlık" [level=3] [ref=e114]
+              - generic [ref=e116]:
+                - img [ref=e117]
+                - text: 27 Üniversite
+              - generic [ref=e121]:
+                - text: Detaylar
+                - img [ref=e122]
+          - link "Bilgisayar Mühendisliği Mühendislik Bilgisayar Mühendisliği 27 Üniversite Detaylar" [ref=e125] [cursor=pointer]:
+            - /url: /universiteler?search=Bilgisayar%20M%C3%BChendisli%C4%9Fi
+            - generic [ref=e126]:
+              - img "Bilgisayar Mühendisliği" [ref=e127]
+              - generic [ref=e129]: Mühendislik
+            - generic [ref=e130]:
+              - heading "Bilgisayar Mühendisliği" [level=3] [ref=e131]
+              - generic [ref=e133]:
+                - img [ref=e134]
+                - text: 27 Üniversite
+              - generic [ref=e138]:
+                - text: Detaylar
+                - img [ref=e139]
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - generic [ref=e147]: Başvuru Yap
+          - heading "Arzu ettiğiniz bölümü bulun!" [level=2] [ref=e148]
+        - generic [ref=e149]:
+          - combobox [ref=e151]:
+            - option "Derece" [selected]
+            - option "Lisans"
+            - option "Yüksek Lisans"
+            - option "Doktora"
+            - option "Önlisans"
+          - combobox [ref=e153]:
+            - option "Dil" [selected]
+            - option "30% Arabic"
+            - option "30% English"
+            - option "30% Germany"
+            - option "Arabic"
+            - option "English"
+            - option "French"
+            - option "Germany"
+            - option "Turkish"
+            - option "Turkish - Russian"
+          - generic [ref=e154]:
+            - textbox "Bölüm Ara..." [ref=e155]
+            - img
+          - button "ARA" [ref=e157]:
+            - text: ARA
+            - img [ref=e158]
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - img "About Atasa Education" [ref=e166]
+          - generic [ref=e170]:
+            - img [ref=e172]
+            - generic [ref=e177]:
+              - paragraph [ref=e178]: 5k+
+              - paragraph [ref=e179]: Aktif Öğrenci
+        - generic [ref=e180]:
+          - generic [ref=e183]: ATASA HAKKINDA
+          - heading "Atasa Education'a Hoşgeldiniz" [level=2] [ref=e184]
+          - paragraph [ref=e185]: Atasa Education olarak, gençlerin hayallerindeki eğitimi alabilmeleri için profesyonel danışmanlık hizmeti sunuyoruz. Modern ve yenilikçi yaklaşımımızla, her öğrencinin potansiyelini en üst düzeye çıkaracak doğru üniversite ve bölüm seçiminde rehberlik ediyoruz.
+          - generic [ref=e186]:
+            - generic [ref=e187]:
+              - img [ref=e189]
+              - generic [ref=e192]: Uluslararası standartlarda eğitim danışmanlığı
+            - generic [ref=e193]:
+              - img [ref=e195]
+              - generic [ref=e198]: Dünya çapında 500+ anlaşmalı üniversite
+            - generic [ref=e199]:
+              - img [ref=e201]
+              - generic [ref=e204]: Kişiye özel kariyer ve eğitim planlama
+            - generic [ref=e205]:
+              - img [ref=e207]
+              - generic [ref=e210]: Vize ve başvuru süreçlerinde tam destek
+          - button "DAHA FAZLA BİLGİ EDİN" [ref=e211]
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - img [ref=e219]
+          - generic [ref=e221]:
+            - heading "Çevrimiçi Bilgi Alın" [level=2] [ref=e222]
+            - paragraph [ref=e223]: Profesyonel Danışmanlarından Destek Alın!
+        - generic [ref=e224]:
+          - button "BİLGİ AL" [ref=e225]:
+            - text: BİLGİ AL
+            - img [ref=e226]
+          - link "WhatsApp" [ref=e228] [cursor=pointer]:
+            - /url: https://wa.me/905551234567
+            - img [ref=e229]
+            - text: WhatsApp
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - generic [ref=e237]: Neden Bizi Seçmelisiniz?
+          - 'heading "Yabancı Öğrencilere Türkiye''de Sınavsız Üniversite İmkanı: Geniş Eğitim Yelpazesi" [level=2] [ref=e238]'
+          - img "Students in Turkey" [ref=e241]
+          - button "BAŞVURU YAP" [ref=e243]
+        - generic [ref=e245]:
+          - generic [ref=e246]:
+            - img [ref=e249]
+            - heading "Kültürel Zenginlik" [level=3] [ref=e252]
+            - paragraph [ref=e253]: Türkiye'nin eşsiz kültürel mozaiğinde eğitim alma fırsatı.
+          - generic [ref=e254]:
+            - img [ref=e257]
+            - heading "Kaliteli Eğitim" [level=3] [ref=e260]
+            - paragraph [ref=e261]: Uluslararası standartlarda üniversitelerde lisansüstü eğitim.
+          - generic [ref=e262]:
+            - img [ref=e265]
+            - heading "Ekonomik Fırsatlar" [level=3] [ref=e267]
+            - paragraph [ref=e268]: Bütçe dostu öğrenim ücretleri ve düşük yaşam maliyetleri.
+          - generic [ref=e269]:
+            - img [ref=e272]
+            - heading "Kolay Erişim" [level=3] [ref=e275]
+            - paragraph [ref=e276]: Avrupa ve Asya'nın kesişim noktasında merkezi lokasyon.
+      - generic [ref=e282]:
+        - generic [ref=e283]:
+          - img [ref=e285]
+          - generic [ref=e290]: 5k+
+          - generic [ref=e291]: Öğrenci
+        - generic [ref=e292]:
+          - img [ref=e294]
+          - generic [ref=e297]: 99.5%
+          - generic [ref=e298]: Başarı Oranı
+        - generic [ref=e299]:
+          - img [ref=e301]
+          - generic [ref=e304]: 100.2k+
+          - generic [ref=e305]: Danışmanlık Saati
+      - generic [ref=e306]:
+        - img "Campus Background" [ref=e308]
+        - generic [ref=e311]:
+          - generic [ref=e314]: Hazır mısınız?
+          - heading "Türkiye'de eğitimin kapılarını aralayan cazip burs olanaklarıyla hayalinizdeki üniversite eğitimine adım atın!" [level=2] [ref=e315]
+      - generic [ref=e318]:
+        - generic [ref=e319]:
+          - generic [ref=e322]: DANIŞMANLARIMIZ
+          - heading "Uzman Eğitim Danışmanlarımızla Tanışın" [level=2] [ref=e323]
+          - paragraph [ref=e324]: Eğitim danışmanlarımız, Türkiye'deki üniversite seçimi ve başvuru evraklarının hazırlanmasında yabancı öğrencilere özel destek sunar. Akademik hedeflerine en uygun üniversiteyi bulmaları ve başvuru sürecini sorunsuz geçirmeleri için yanlarında oluyoruz.
+          - generic [ref=e325]:
+            - button "BİZE ULAŞIN" [ref=e326]:
+              - text: BİZE ULAŞIN
+              - img [ref=e327]
+            - link "TÜM EKİBİ GÖR" [ref=e329] [cursor=pointer]:
+              - /url: /atasa-ekip
+              - button "TÜM EKİBİ GÖR" [ref=e330]
+        - generic [ref=e332]:
+          - generic [ref=e333]:
+            - img "Emre Altundaş" [ref=e336]
+            - heading "Emre Altundaş" [level=3] [ref=e337]
+            - paragraph [ref=e338]: Avukat
+          - generic [ref=e339]:
+            - img "Pusat Habib" [ref=e342]
+            - heading "Pusat Habib" [level=3] [ref=e343]
+            - paragraph [ref=e344]: Eğitim Danışmanı
+          - generic [ref=e345]:
+            - img "Buse Yıldız" [ref=e348]
+            - heading "Buse Yıldız" [level=3] [ref=e349]
+            - paragraph [ref=e350]: Çalışma İzni Danışmanı
+          - generic [ref=e351]:
+            - img "Ömer Habib" [ref=e354]
+            - heading "Ömer Habib" [level=3] [ref=e355]
+            - paragraph [ref=e356]: Yönetici ve Kurucu Ortağı
+      - generic [ref=e358]:
+        - generic [ref=e359]:
+          - generic [ref=e361]: Ortaklarımız
+          - heading "374+ Ortağımız Var" [level=2] [ref=e362]
+        - generic [ref=e363]:
+          - img "Partner Logo 0" [ref=e365]
+          - img "Partner Logo 1" [ref=e367]
+          - img "Partner Logo 2" [ref=e369]
+          - img "Partner Logo 3" [ref=e371]
+          - img "Partner Logo 4" [ref=e373]
+          - img "Partner Logo 5" [ref=e375]
+          - img "Partner Logo 6" [ref=e377]
+          - img "Partner Logo 7" [ref=e379]
+          - img "Partner Logo 8" [ref=e381]
+          - img "Partner Logo 9" [ref=e383]
+          - img "Partner Logo 10" [ref=e385]
+          - img "Partner Logo 11" [ref=e387]
+      - generic [ref=e390]:
+        - generic [ref=e393]:
+          - img [ref=e395]
+          - heading "Öğrenci Çalışma İzni" [level=3] [ref=e398]
+          - button "BİLGİ AL" [ref=e400]:
+            - text: BİLGİ AL
+            - img [ref=e401]
+        - generic [ref=e405]:
+          - img [ref=e407]
+          - heading "Öğrenci İkamet İzni" [level=3] [ref=e410]
+          - button "BİLGİ AL" [ref=e412]:
+            - text: BİLGİ AL
+            - img [ref=e413]
+      - generic [ref=e416]:
+        - generic [ref=e417]:
+          - generic [ref=e420]: ÖĞRENCİ YORUMLARI
+          - heading "Öğrenciler Üniversitemiz Hakkında Ne Diyor?" [level=2] [ref=e421]
+        - generic [ref=e422]:
+          - generic [ref=e423]:
+            - img [ref=e424]
+            - img [ref=e428]
+            - paragraph [ref=e431]: “Atasa Education, Türkiye'deki üniversite hayatıma geçişimi kolaylaştırdı. Buradaki öğrenci topluluğu çok cana yakın ve destekleyici. Eğitim sisteminden çok memnunum.”
+            - generic [ref=e432]:
+              - generic [ref=e433]:
+                - heading "B***** Ü*******" [level=3] [ref=e434]
+                - paragraph [ref=e435]: Malzeme Bilimi ve Nanoteknoloji Mühendisliği
+              - generic [ref=e436]:
+                - generic [ref=e437]:
+                  - img [ref=e438]
+                  - img [ref=e440]
+                  - img [ref=e442]
+                  - img [ref=e444]
+                  - img [ref=e446]
+                - generic [ref=e448]: 4.7 / 5.0
+          - generic [ref=e449]:
+            - img [ref=e450]
+            - img [ref=e454]
+            - paragraph [ref=e457]: “Türkiye'deki üniversite deneyimim hayatımı değiştirdi. Burada kazandığım bilgi ve tecrübeler sayesinde kariyerimde büyük bir adım attım. Atasa Education ekibi her adımda yanımda oldu.”
+            - generic [ref=e458]:
+              - generic [ref=e459]:
+                - heading "M***** K*******" [level=3] [ref=e460]
+                - paragraph [ref=e461]: Bilgisayar Mühendisliği
+              - generic [ref=e462]:
+                - generic [ref=e463]:
+                  - img [ref=e464]
+                  - img [ref=e466]
+                  - img [ref=e468]
+                  - img [ref=e470]
+                  - img [ref=e472]
+                - generic [ref=e474]: 5 / 5.0
+  - contentinfo [ref=e475]:
+    - generic [ref=e476]:
+      - generic [ref=e477]:
+        - generic [ref=e478]:
+          - img "Atasa Education" [ref=e480]
+          - paragraph [ref=e481]: Yurtdışında eğitim hayallerinize giden yolda güvenilir rehberiniz. Modern ve yenilikçi danışmanlık hizmetlerimizle yanınızdayız.
+          - generic [ref=e482]:
+            - link [ref=e483] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e484]
+            - link [ref=e486] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e487]
+            - link [ref=e490] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e491]
+        - generic [ref=e494]:
+          - heading "Hızlı Bağlantılar" [level=4] [ref=e495]
+          - list [ref=e496]:
+            - listitem [ref=e497]:
+              - link "Hakkımızda" [ref=e498] [cursor=pointer]:
+                - /url: /hakkimizda
+            - listitem [ref=e499]:
+              - link "Hizmetlerimiz" [ref=e500] [cursor=pointer]:
+                - /url: /hizmetlerimiz
+            - listitem [ref=e501]:
+              - link "Üniversiteler" [ref=e502] [cursor=pointer]:
+                - /url: /universiteler
+            - listitem [ref=e503]:
+              - link "Başvuru" [ref=e504] [cursor=pointer]:
+                - /url: /basvuru
+        - generic [ref=e505]:
+          - heading "Destek" [level=4] [ref=e506]
+          - list [ref=e507]:
+            - listitem [ref=e508]:
+              - link "İletişim" [ref=e509] [cursor=pointer]:
+                - /url: /iletisim
+            - listitem [ref=e510]:
+              - link "Sıkça Sorulan Sorular" [ref=e511] [cursor=pointer]:
+                - /url: /sss
+            - listitem [ref=e512]:
+              - link "KVKK Aydınlatma Metni" [ref=e513] [cursor=pointer]:
+                - /url: /kvkk
+            - listitem [ref=e514]:
+              - link "Çerez Politikası" [ref=e515] [cursor=pointer]:
+                - /url: /cookie-policy
+        - generic [ref=e516]:
+          - heading "İletişim Bilgileri" [level=4] [ref=e517]
+          - list [ref=e518]:
+            - listitem [ref=e519]:
+              - img [ref=e520]
+              - generic [ref=e523]: Ataköy 7-8-10. Kısım Mah. Çobançeşme E-5, İstanbul
+            - listitem [ref=e524]:
+              - img [ref=e525]
+              - generic [ref=e527]: +90 (850) 308 69 98
+            - listitem [ref=e528]:
+              - img [ref=e529]
+              - generic [ref=e532]: info@atasaedu.com
+      - generic [ref=e533]:
+        - paragraph [ref=e534]: © 2026 Atasa Education. Tüm hakları saklıdır.
+        - generic [ref=e535]:
+          - link "Kullanım Koşulları & KVKK" [ref=e536] [cursor=pointer]:
+            - /url: /kvkk
+          - link "Çerez Politikası" [ref=e537] [cursor=pointer]:
+            - /url: /cookie-policy
+          - button "Çerez Tercihleri" [ref=e538]
+  - button "Open Next.js Dev Tools" [ref=e544] [cursor=pointer]:
+    - img [ref=e545]
+  - alert [ref=e548]
+  - generic [ref=e550]:
+    - generic [ref=e551]:
+      - generic [ref=e552]:
+        - img [ref=e554]
+        - generic [ref=e556]:
+          - generic [ref=e557]: Çerez Tercihleri
+          - text: Atasa Education
+      - button [ref=e558]:
+        - img [ref=e559]
+    - generic [ref=e563]:
+      - paragraph [ref=e564]:
+        - text: Size daha iyi bir eğitim danışmanlığı deneyimi sunabilmek için sitemizde çerezler kullanıyoruz. Detaylı bilgi için
+        - link "Çerez Aydınlatma Metni" [ref=e565] [cursor=pointer]:
+          - /url: /cookie-policy
+        - text: "'ni inceleyebilirsiniz."
+      - generic [ref=e566]:
+        - button "Tümünü Kabul Et" [ref=e567]:
+          - img [ref=e568]
+          - text: Tümünü Kabul Et
+        - button "Tercihleri Yönet" [ref=e570]:
+          - img [ref=e571]
+          - text: Tercihleri Yönet

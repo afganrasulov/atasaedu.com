@@ -1,0 +1,8 @@
+[     514ms] [WARNING] jQuery.Deferred exception: $(...).translate is not a function TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/services:1:495), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340) undefined @ https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:1
+[     515ms] TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/services:1:495), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340)

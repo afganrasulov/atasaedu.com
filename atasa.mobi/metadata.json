@@ -1,0 +1,17 @@
+{
+  "name": "Atasa Danışmanlık Mobile App",
+  "description": "Profesyonel ikamet ve çalışma izni danışmanlık hizmetleri. Yabancılar için güvenli ve hızlı çözüm ortağınız.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera",
+    "geolocation"
+  ],
+  "nativeUsageDescriptions": {
+    "NSCameraUsageDescription": "İkamet ve çalışma izni başvurularınız için gerekli evrakların fotoğrafını çekip sisteme yükleyebilmeniz için kamera erişimi gereklidir.",
+    "NSMicrophoneUsageDescription": "Atasa Sesli Asistan özelliği ile sesli komut vererek danışmanlık alabilmeniz için mikrofon erişimi gereklidir.",
+    "NSLocationWhenInUseUsageDescription": "Size en yakın Atasa Danışmanlık şubesini harita üzerinde görebilmeniz ve yol tarifi alabilmeniz için konum izni gereklidir.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "Size en yakın ofisimiz hakkında bildirim alabilmeniz ve yol tarifi alabilmeniz için konum izni gereklidir.",
+    "NSPhotoLibraryUsageDescription": "Galerinizdeki kayıtlı evrak ve pasaport fotoğraflarını başvuru formuna ekleyebilmeniz için fotoğraf kütüphanenize erişim gereklidir.",
+    "NSPhotoLibraryAddUsageDescription": "Uygulama üzerinden oluşturulan başvuru belgelerini galerinize kaydedebilmeniz için izin gereklidir."
+  }
+}

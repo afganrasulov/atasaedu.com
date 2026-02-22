@@ -1,0 +1,24 @@
+{
+  "short_name": "Atasa",
+  "name": "Atasa Danışmanlık",
+  "description": "Profesyonel İkamet ve Çalışma İzni Danışmanlığı",
+  "icons": [
+    {
+      "src": "https://upload-service-production-dd42.up.railway.app/files/1767121728276-43346585.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://upload-service-production-dd42.up.railway.app/files/1767121728276-43346585.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0047BB",
+  "background_color": "#F8FAFC"
+}

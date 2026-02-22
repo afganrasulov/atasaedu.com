@@ -1,0 +1,45 @@
+[   11382ms] [ERROR] CoreLocationProvider: CoreLocation framework reported a kCLErrorLocationUnknown failure. @ https://www.google.com/search?q=atasaedu&oq=atasaedu&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMgkIAhAAGA0YgAQyCQgDEAAYDRiABDIJCAQQABgNGIAEMgkIBRAAGA0YgAQyCQgGEAAYDRiABDIJCAcQABgNGIAEMggICBAAGA0YHjIICAkQABgNGB7SAQgzMTcyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&sei=QwmbaYWUOpmTxc8PoZqkyAg&zx=1771768133717&no_sw_cr=1:0
+[   11384ms] [ERROR] CoreLocationProvider: CoreLocation framework reported a kCLErrorLocationUnknown failure. @ https://www.google.com/search?q=atasaedu&oq=atasaedu&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQABgNGIAEMgkIAhAAGA0YgAQyCQgDEAAYDRiABDIJCAQQABgNGIAEMgkIBRAAGA0YgAQyCQgGEAAYDRiABDIJCAcQABgNGIAEMggICBAAGA0YHjIICAkQABgNGB7SAQgzMTcyajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&sei=QwmbaYWUOpmTxc8PoZqkyAg&zx=1771768133717&no_sw_cr=1:0
+[   23827ms] [ERROR] CoreLocationProvider: CoreLocation framework reported a kCLErrorLocationUnknown failure. @ https://www.google.com/search?q=atasaedu.com&sca_esv=9a738b84887eecfa&ei=RAmbac_kDdaTxc8PuZPzqAs&biw=1147&bih=646&ved=0ahUKEwjPlpXRnu2SAxXWSfEDHbnJHLUQ4dUDCBI&uact=5&oq=atasaedu.com&gs_lp=Egxnd3Mtd2l6LXNlcnAiDGF0YXNhZWR1LmNvbUibDlCXCliEDXABeAGQAQCYAaIBoAGMBKoBAzAuNLgBA8gBAPgBAZgCAqAChQHCAgoQABiwAxjWBBhHwgINEAAYgAQYsAMYQxiKBcICGRAuGIAEGLADGNEDGEMYxwEYyAMYigXYAQHCAgYQABgNGB7CAggQABgIGA0YHpgDAOIDBRIBMSBAiAYBkAYLugYECAEYCJIHAzEuMaAHygiyBwMwLjG4B4MBwgcDMC4yyAcDgAgA&sclient=gws-wiz-serp:0
+[   26494ms] [WARNING] jQuery.Deferred exception: $(...).translate is not a function TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/:1:495), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340) undefined @ https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:1
+[   26501ms] TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/:1:495), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340)
+[  666010ms] TypeError: Cannot read properties of undefined (reading 'x')
+    at HTMLImageElement.h (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:1783)
+    at HTMLImageElement.g (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:2132)
+[  694385ms] TypeError: Cannot read properties of undefined (reading 'x')
+    at HTMLImageElement.h (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:1783)
+    at HTMLImageElement.g (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:2132)
+[ 2448347ms] [WARNING] jQuery.Deferred exception: $(...).translate is not a function TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/universities:1:479), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340) undefined @ https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:1
+[ 2448348ms] TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/universities:1:479), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340)
+[ 2451733ms] [WARNING] jQuery.Deferred exception: $(...).translate is not a function TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/:1:495), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340) undefined @ https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:1
+[ 2451740ms] TypeError: $(...).translate is not a function
+    at HTMLDocument.eval (eval at <anonymous> (https://atasaedu.com/:1:495), <anonymous>:1:46)
+    at e (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30038)
+    at t (https://atasaedu.com/assetsLan/js/vendor/jquery-3.6.0.min.js:2:30340)
+[ 2455360ms] TypeError: Cannot read properties of undefined (reading 'x')
+    at HTMLImageElement.h (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:1783)
+    at HTMLImageElement.g (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:2132)
+[ 2477779ms] TypeError: Cannot read properties of undefined (reading 'x')
+    at HTMLImageElement.h (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:1783)
+    at HTMLImageElement.g (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:2132)
+[ 2477819ms] TypeError: Cannot read properties of undefined (reading 'x')
+    at HTMLImageElement.h (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:1783)
+    at HTMLImageElement.g (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:2132)
+[ 2489500ms] TypeError: Cannot read properties of undefined (reading 'x')
+    at HTMLImageElement.h (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:1783)
+    at HTMLImageElement.g (https://atasaedu.com/assetsLan/js/tilt.jquery.min.js:1:2132)
