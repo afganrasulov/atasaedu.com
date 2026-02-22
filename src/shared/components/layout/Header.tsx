@@ -1,21 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Container } from "../ui/Container";
-import { Phone, Mail, Menu, X, Clock, Instagram, Youtube } from "lucide-react";
+import { Phone, Mail, Menu, X, Clock, Instagram, Youtube, Globe } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
 const NAV_LINKS = [
-    { label: "ANA SAYFA", href: "/" },
-    { label: "HAKKIMIZDA", href: "/hakkimizda" },
-    { label: "HİZMETLERİMİZ", href: "/hizmetlerimiz" },
-    { label: "BAŞVURU SÜRECİ", href: "/basvuru-sureci" },
-    { label: "YORUMLAR", href: "/google-yorumlari" },
-    { href: "/universiteler", label: "ÜNİVERSİTELERİMİZ" },
-    { href: "/blog", label: "BLOG" },
-    { href: "/iletisim", label: "İLETİŞİM" },
+    { label: "Ana Sayfa", href: "/" },
+    { label: "Hakkımızda", href: "/hakkimizda" },
+    { label: "Hizmetlerimiz", href: "/hizmetlerimiz" },
+    { label: "Başvuru Süreci", href: "/basvuru-sureci" },
+    { label: "Yorumlar", href: "/google-yorumlari" },
+    { href: "/universiteler", label: "Üniversitelerimiz" },
+    { href: "/blog", label: "Blog" },
+    { href: "/iletisim", label: "İletişim" },
 ];
 
 const TikTokIcon = () => (
@@ -26,50 +26,57 @@ const TikTokIcon = () => (
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     return (
         <div className="w-full font-sans bg-white">
             {/* Top Bar */}
-            <div className="hidden md:block relative h-12 bg-white">
-                <div className="relative h-full flex items-center rounded-tl-[120px] bg-gradient-to-r from-[#0056D2] to-[#0040D1] transition-all overflow-visible shadow-sm">
-                    {/* Info Section */}
-                    <div className="flex-1 flex items-center">
-                        <Container className="flex items-center text-white text-[13px] py-0 w-full ml-12">
-                            <div className="flex items-center gap-8 font-medium tracking-wide">
-                                <a href="tel:+908503086998" className="flex items-center gap-2 hover:text-blue-100 transition-all hover:scale-105 active:scale-95">
-                                    <Phone size={14} className="fill-white" />
-                                    <span>+90 (850) 308 69 98</span>
-                                </a>
-                                <span className="text-white/20 h-4 w-[1px] bg-white/20" />
-                                <a href="mailto:tr@atasaedu.com" className="flex items-center gap-2 hover:text-blue-100 transition-all hover:scale-105 active:scale-95">
-                                    <Mail size={14} className="fill-white" />
-                                    <span>tr@atasaedu.com</span>
-                                </a>
-                                <span className="text-white/20 h-4 w-[1px] bg-white/20" />
-                                <div className="flex items-center gap-2 text-white/90">
-                                    <Clock size={14} className="text-white/70" />
-                                    <span className="whitespace-nowrap uppercase text-[11px] font-bold tracking-[0.1em]">Pzt - Cmt: 09:00 - 17:00</span>
-                                </div>
-
-                                <span className="text-white/20 h-4 w-[1px] bg-white/20 hidden xl:block" />
-
-                                <div className="hidden xl:flex items-center gap-6 ml-auto pr-10">
-                                    <span className="text-white/60 text-[11px] font-bold uppercase tracking-[0.2em]">Sosyal Medya</span>
-                                    <div className="flex items-center gap-5">
-                                        <a href="#" className="hover:scale-125 transition-all text-white/90 hover:text-white"><span className="text-base font-bold leading-none">f</span></a>
-                                        <a href="#" className="hover:scale-125 transition-all text-white/90 hover:text-white"><TikTokIcon /></a>
-                                        <a href="#" className="hover:scale-125 transition-all text-white/90 hover:text-white"><Instagram size={18} /></a>
-                                        <a href="#" className="hover:scale-125 transition-all text-white/90 hover:text-white"><Youtube size={18} /></a>
-                                    </div>
+            <div className="hidden md:block bg-[#0056D2] text-white">
+                <Container className="py-2.5">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-6 text-[12px] font-medium tracking-wide">
+                            <a href="tel:+908503086998" className="flex items-center gap-2 hover:text-blue-100 transition-all">
+                                <Phone size={14} className="fill-white" />
+                                <span>+90 (850) 308 69 98</span>
+                            </a>
+                            <span className="text-white/30">|</span>
+                            <a href="mailto:tr@atasaedu.com" className="flex items-center gap-2 hover:text-blue-100 transition-all">
+                                <Mail size={14} className="fill-white" />
+                                <span>tr@atasaedu.com</span>
+                            </a>
+                            <span className="text-white/30">|</span>
+                            <div className="flex items-center gap-2 text-white/90">
+                                <Clock size={14} className="text-white/70" />
+                                <span className="uppercase text-[11px] font-bold tracking-wider">Pzt - Cmt: 09:00 - 17:00</span>
+                            </div>
+                            <span className="text-white/30 hidden xl:block">|</span>
+                            <div className="hidden xl:flex items-center gap-4">
+                                <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.2em]">Sosyal Medya</span>
+                                <div className="flex items-center gap-4">
+                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><span className="text-base font-bold leading-none">f</span></a>
+                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><TikTokIcon /></a>
+                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><Instagram size={16} /></a>
+                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><Youtube size={16} /></a>
                                 </div>
                             </div>
-                        </Container>
+                        </div>
                     </div>
-                </div>
+                </Container>
             </div>
 
             {/* Main Nav */}
-            <header className="bg-white sticky top-0 z-50 border-b border-gray-100">
+            <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
+                ? "bg-white/80 backdrop-blur-xl border-b border-gray-100/50 shadow-sm"
+                : "bg-white border-b border-gray-100"
+                }`}>
                 <Container>
                     <div className="flex justify-between items-center py-4">
                         {/* Logo */}
@@ -97,22 +104,31 @@ export function Header() {
                         </Link>
 
                         {/* Desktop Menu */}
-                        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
+                        <div className="hidden lg:flex items-center gap-6 text-slate-600 font-medium">
                             {NAV_LINKS.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="text-slate-900 text-[12px] xl:text-[13px] font-extrabold hover:text-[#0056D2] transition-colors tracking-tight xl:tracking-wide whitespace-nowrap"
+                                    className="hover:text-blue-600 transition-colors"
                                 >
                                     {link.label}
                                 </Link>
                             ))}
-                        </nav>
+                        </div>
+
+                        {/* CTA Button */}
+                        <div className="hidden lg:block">
+                            <Link href="/iletisim">
+                                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors shadow-lg shadow-blue-600/20">
+                                    Bilgi Al
+                                </button>
+                            </Link>
+                        </div>
 
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="lg:hidden text-slate-800 p-2 hover:bg-slate-50 rounded-lg transition-colors"
+                            className="lg:hidden text-slate-800"
                         >
                             {isOpen ? <X size={28} /> : <Menu size={28} />}
                         </button>
@@ -121,13 +137,13 @@ export function Header() {
 
                 {/* Mobile Dropdown */}
                 {isOpen && (
-                    <div className="lg:hidden bg-white border-t p-4 flex flex-col gap-1 shadow-2xl absolute w-full left-0 animate-in slide-in-from-top duration-300">
+                    <div className="lg:hidden bg-white border-t p-4 flex flex-col gap-4 shadow-lg absolute w-full left-0">
                         {NAV_LINKS.map((link) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block py-4 px-4 text-slate-800 font-bold border-b border-gray-50 hover:bg-slate-50 hover:text-[#0056D2] transition-all rounded-lg"
+                                className="block py-2 text-slate-600 font-medium border-b"
                             >
                                 {link.label}
                             </Link>
@@ -138,3 +154,4 @@ export function Header() {
         </div>
     );
 }
+

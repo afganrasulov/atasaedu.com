@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Atasa Education - Yurtdışı Eğitim Danışmanlığı",
   description: "Modern ve yenilikçi yurtdışı eğitim danışmanlık hizmetleri.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/favicon.png",
+  }
 };
 
 export const viewport: Viewport = {

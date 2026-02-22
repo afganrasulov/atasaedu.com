@@ -9,19 +9,14 @@ const SUPABASE_CDN = "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object
 
 const teamMembers = [
     {
-        name: "Emre Altundaş",
-        role: "Avukat",
-        image: `${SUPABASE_CDN}/team/2.png`
-    },
-    {
         name: "Pusat Habib",
         role: "Eğitim Danışmanı",
-        image: `${SUPABASE_CDN}/team/3.jpg`
+        image: `${SUPABASE_CDN}/team/5.jpg`
     },
     {
         name: "Buse Yıldız",
         role: "Çalışma İzni Danışmanı",
-        image: `${SUPABASE_CDN}/team/5.jpg`
+        image: `${SUPABASE_CDN}/team/3.jpg`
     },
     {
         name: "Ömer Habib",
