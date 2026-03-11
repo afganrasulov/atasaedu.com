@@ -10,7 +10,7 @@ import { glob } from "glob";
 const SRC_DIR = path.join(__dirname, "../src");
 const MESSAGES_DIR = path.join(__dirname, "../src/messages");
 const TR_FILE = path.join(MESSAGES_DIR, "tr.json");
-const MODEL = "gpt-4.1-mini";
+const MODEL = "gpt-5-mini";
 
 // Türkçe karakterler — hardcoded metin tespiti için
 const TURKISH_CHARS = /[ÇçŞşĞğÜüÖöİı]/;

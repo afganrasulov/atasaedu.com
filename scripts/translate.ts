@@ -11,7 +11,7 @@ const MESSAGES_DIR = path.join(__dirname, "../src/messages");
 const SOURCE_LOCALE = "tr";
 const TARGET_LOCALES = ["en", "ar", "fa", "fr"];
 const META_FILE = path.join(MESSAGES_DIR, "_meta.json");
-const MODEL = "gpt-4.1-mini";
+const MODEL = "gpt-5-mini";
 
 const LOCALE_NAMES: Record<string, string> = {
   en: "English",
