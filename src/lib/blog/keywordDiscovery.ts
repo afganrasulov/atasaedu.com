@@ -122,28 +122,35 @@ SADECE JSON dizisi döndür:
 
 /**
  * Aktif keyword'ler için AI destekli topic keşfi yapar.
+ * Her çalışmada max 2 keyword işler (API timeout önlemi).
  */
 export async function discoverTopicsFromKeywords(): Promise<{
     keywordsProcessed: number;
     newTopics: number;
+    errors: string[];
 }> {
     const db = getBlogClient();
     const SCORE_THRESHOLD = 50;
+    const MAX_KEYWORDS_PER_RUN = 2;
+    const errors: string[] = [];
 
     // Aktif keyword'leri çek
     const { data: keywords } = await db
         .from("keywords")
         .select("*")
-        .eq("is_active", true);
+        .eq("is_active", true)
+        .limit(MAX_KEYWORDS_PER_RUN);
 
     if (!keywords || keywords.length === 0) {
-        return { keywordsProcessed: 0, newTopics: 0 };
+        return { keywordsProcessed: 0, newTopics: 0, errors };
     }
 
     let newTopics = 0;
 
     for (const keyword of keywords) {
         try {
+            console.log(`🔍 Topic keşfi: "${keyword.keyword}"`);
+
             const response = await openai.responses.create({
                 model: "gpt-4o",
                 tools: [{ type: "web_search_preview" }],
@@ -154,14 +161,22 @@ export async function discoverTopicsFromKeywords(): Promise<{
             const textOutput = response.output.find(
                 (o) => o.type === "message"
             );
-            if (!textOutput || textOutput.type !== "message") continue;
+            if (!textOutput || textOutput.type !== "message") {
+                console.log(`⚠️ "${keyword.keyword}" — AI text output bulunamadı`);
+                continue;
+            }
 
             const textContent = textOutput.content.find(
                 (c) => c.type === "output_text"
             );
-            if (!textContent || textContent.type !== "output_text") continue;
+            if (!textContent || textContent.type !== "output_text") {
+                console.log(`⚠️ "${keyword.keyword}" — text content bulunamadı`);
+                continue;
+            }
 
             let rawText = textContent.text.trim();
+            console.log(`📝 "${keyword.keyword}" AI yanıtı (ilk 200 char): ${rawText.substring(0, 200)}`);
+
             if (rawText.startsWith("```")) {
                 rawText = rawText
                     .replace(/^```(?:json)?\n?/, "")
@@ -171,6 +186,8 @@ export async function discoverTopicsFromKeywords(): Promise<{
             const topics: Array<{ title: string; description: string; score: number }> =
                 JSON.parse(rawText);
 
+            console.log(`📋 "${keyword.keyword}" — ${topics.length} topic parse edildi`);
+
             for (const topic of topics) {
                 if (topic.score < SCORE_THRESHOLD) continue;
 
@@ -179,7 +196,7 @@ export async function discoverTopicsFromKeywords(): Promise<{
                     .from("topics")
                     .select("id")
                     .eq("original_title", topic.title)
-                    .single();
+                    .maybeSingle();
 
                 if (existing) continue;
 
@@ -191,12 +208,17 @@ export async function discoverTopicsFromKeywords(): Promise<{
                     status: "discovered",
                 });
 
-                if (!error) newTopics++;
+                if (!error) {
+                    newTopics++;
+                    console.log(`✅ Topic kaydedildi: ${topic.title} (score: ${topic.score})`);
+                }
             }
         } catch (err) {
-            console.error(`Keyword discovery error (${keyword.keyword}):`, err);
+            const msg = err instanceof Error ? err.message : String(err);
+            errors.push(`${keyword.keyword}: ${msg}`);
+            console.error(`❌ Keyword discovery error (${keyword.keyword}):`, msg);
         }
     }
 
-    return { keywordsProcessed: keywords.length, newTopics };
+    return { keywordsProcessed: keywords.length, newTopics, errors };
 }

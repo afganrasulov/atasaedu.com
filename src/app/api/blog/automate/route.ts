@@ -67,6 +67,7 @@ export async function POST(request: Request) {
         try {
             const result = await discoverTopicsFromKeywords();
             discovered = result.newTopics;
+            if (result.errors.length > 0) errors.push(...result.errors);
             console.log(`✅ ${discovered} yeni topic keşfedildi (${result.keywordsProcessed} keyword tarandı)`);
         } catch (err) {
             const msg = err instanceof Error ? err.message : "Unknown";
