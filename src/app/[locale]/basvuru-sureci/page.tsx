@@ -4,13 +4,17 @@ import { ApplyWhyUs } from "@/features/application-process/components/ApplyWhyUs
 import { ApplySteps } from "@/features/application-process/components/ApplySteps";
 import { ApplyAdvantages } from "@/features/application-process/components/ApplyAdvantages";
 import { ApplyDocuments } from "@/features/application-process/components/ApplyDocuments";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-    title: "Başvuru Süreci | Atasa Education",
-    description: "Yabancı uyruklu öğrenciler için Türkiye'deki üniversitelere başvuru ve kayıt süreci rehberi. 8 adımda üniversiteli olun.",
-};
+export async function generateMetadata() {
+    const t = await getTranslations("basvuruSureciPage");
+    return {
+        title: t("pageTitle"),
+        description: t("pageDescription")
+    };
+}
 
-export default function ApplicationProcessPage() {
+export default async function ApplicationProcessPage() {
     return (
         <PageTransition>
             <ApplyHero />

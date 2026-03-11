@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Search, Tag } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { BlogPost } from "@/lib/blog/blogService";
+import { useTranslations } from "next-intl";
 
 interface PostsResponse {
     posts: BlogPost[];
@@ -18,6 +19,8 @@ interface PostsResponse {
 }
 
 export default function BlogPage() {
+    const t = useTranslations("blogPage");
+
     const [data, setData] = useState<PostsResponse | null>(null);
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
@@ -66,15 +69,14 @@ export default function BlogPage() {
                         <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
                             <Search className="w-4 h-4 text-white/80" />
                             <span className="text-white/90 text-sm font-medium">
-                                Eğitim ve Yaşam Rehberi
+                                {t("heroBadge")}
                             </span>
                         </div>
                         <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
-                            Blog
+                            {t("heroTitle")}
                         </h1>
                         <p className="text-xl text-white/80 max-w-xl mx-auto">
-                            Türkiye&apos;de eğitim almak isteyen öğrenciler için kapsamlı rehberler,
-                            güncel bilgiler ve uzman tavsiyeleri.
+                            {t("heroDescription")}
                         </p>
                     </div>
                 </Container>
@@ -92,7 +94,7 @@ export default function BlogPage() {
                                 }`}
                         >
                             <Tag className="w-4 h-4" />
-                            <span>Tümü</span>
+                            <span>{t("categoryAll")}</span>
                         </button>
                         {categories.map((cat) => (
                             <button
@@ -188,7 +190,7 @@ export default function BlogPage() {
                                             </p>
                                             <div className="mt-auto">
                                                 <span className="inline-flex items-center space-x-2 text-[#0055D4] font-semibold text-sm group-hover:space-x-3 transition-all">
-                                                    <span>Devamını Oku</span>
+                                                    <span>{t("readMore")}</span>
                                                     <ArrowRight className="w-4 h-4" />
                                                 </span>
                                             </div>
@@ -205,7 +207,7 @@ export default function BlogPage() {
                                         disabled={page === 1}
                                         className="px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                                     >
-                                        Önceki
+                                        {t("paginationPrevious")}
                                     </button>
                                     {Array.from(
                                         { length: data.pagination.totalPages },
@@ -231,7 +233,7 @@ export default function BlogPage() {
                                         disabled={page === data.pagination.totalPages}
                                         className="px-4 py-2 rounded-xl text-sm font-semibold bg-white border border-gray-200 text-gray-600 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                                     >
-                                        Sonraki
+                                        {t("paginationNext")}
                                     </button>
                                 </div>
                             )}
@@ -242,11 +244,10 @@ export default function BlogPage() {
                                 <Search className="w-10 h-10 text-[#0055D4]/40" />
                             </div>
                             <h3 className="text-2xl font-bold text-[#152239] mb-3">
-                                Henüz Blog Yazısı Yok
+                                {t("noPostsTitle")}
                             </h3>
                             <p className="text-gray-500 max-w-md mx-auto">
-                                Blog yazıları hazırlanıyor. Çok yakında eğitim ve yaşam rehberleri
-                                burada olacak.
+                                {t("noPostsDescription")}
                             </p>
                         </div>
                     )}

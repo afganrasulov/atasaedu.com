@@ -23,8 +23,8 @@ const SKIP_PATTERNS = [
   "layout.tsx",
 ];
 
-// ── AI Prompt ───────────────────────────────────────────────────────────────
-const SYSTEM_PROMPT = `You are an expert Next.js developer specializing in internationalization (i18n) with next-intl.
+// ── AI Prompts ──────────────────────────────────────────────────────────────
+const CLIENT_COMPONENT_PROMPT = `You are an expert Next.js developer specializing in internationalization (i18n) with next-intl.
 
 Your task is to convert a React/Next.js TSX component that has hardcoded Turkish text into one that uses the \`useTranslations\` hook from \`next-intl\`.
 
@@ -62,6 +62,41 @@ IMPORTANT:
 - Return ONLY valid JSON, no markdown, no explanation
 - updatedCode must be the COMPLETE file, not a diff`;
 
+const SERVER_COMPONENT_PROMPT = `You are an expert Next.js developer specializing in internationalization (i18n) with next-intl.
+
+Your task is to convert a Next.js page component (server component) that has hardcoded Turkish text into one that uses next-intl's server-side translation API.
+
+CRITICAL RULES FOR SERVER COMPONENTS:
+1. This is a SERVER COMPONENT (page.tsx file). Do NOT add "use client" directive.
+2. Do NOT use \`useTranslations\` hook — that is for client components only.
+3. Instead, use \`getTranslations\` from "next-intl/server":
+   - Import: import { getTranslations } from "next-intl/server";
+   - Usage: const t = await getTranslations("namespace");
+   - The component function MUST be async: export default async function PageName()
+4. If the file has \`export const metadata\` or \`export async function generateMetadata\`, keep them as-is but also translate their Turkish content using getTranslations inside generateMetadata.
+   - Convert static \`export const metadata\` to \`export async function generateMetadata()\` so you can use getTranslations inside it.
+5. Identify ALL hardcoded Turkish strings (text content, metadata titles/descriptions, placeholders, etc.)
+6. Create meaningful, short camelCase translation keys
+7. Replace hardcoded strings with t("keyName") calls
+8. Keep all existing imports and functionality
+9. Do NOT translate CSS class names, URLs, variable names, image paths, or numbers
+10. For metadata, move SEO-related Turkish titles and descriptions into translation keys
+11. Keep the exact same visual design and functionality — ONLY change text sourcing
+
+RESPONSE FORMAT:
+Return a JSON object with exactly two keys:
+{
+  "translationKeys": { ... },  // flat object of key-value pairs for tr.json  
+  "updatedCode": "..."         // the full updated TSX file content
+}
+
+IMPORTANT:
+- translationKeys should be a flat object (e.g., {"pageTitle": "KVKK Aydınlatma Metni", "description": "..."})
+- The namespace will be added as a wrapper by the calling code
+- Return ONLY valid JSON, no markdown, no explanation
+- updatedCode must be the COMPLETE file, not a diff
+- The file must remain a valid server component (no "use client", no client hooks)`;
+
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
 function hasHardcodedTurkish(content: string): boolean {
@@ -79,6 +114,22 @@ function hasHardcodedTurkish(content: string): boolean {
 
 function getNamespace(filePath: string): string {
   const basename = path.basename(filePath, ".tsx");
+  
+  // page.tsx dosyaları için dizin adını namespace olarak kullan
+  if (basename === "page") {
+    const dirName = path.basename(path.dirname(filePath));
+    // [locale] dizinini atla, bir üst dizine bak
+    if (dirName === "[locale]") {
+      return "homePage";
+    }
+    // [slug] gibi dinamik route'lar için üst dizini de ekle
+    if (dirName.startsWith("[")) {
+      const parentDir = path.basename(path.dirname(path.dirname(filePath)));
+      return parentDir.replace(/-([a-z])/g, (_, c) => c.toUpperCase()) + "DetailPage";
+    }
+    return dirName.replace(/-([a-z])/g, (_, c) => c.toUpperCase()) + "Page";
+  }
+  
   // PascalCase → camelCase
   return basename.charAt(0).toLowerCase() + basename.slice(1);
 }
@@ -86,8 +137,6 @@ function getNamespace(filePath: string): string {
 function shouldSkip(filePath: string): boolean {
   const basename = path.basename(filePath);
   if (SKIP_PATTERNS.includes(basename)) return true;
-  // Skip page.tsx files in app directory — they typically just compose components
-  if (filePath.includes("app/") && basename === "page.tsx") return true;
   return false;
 }
 
@@ -122,8 +171,8 @@ async function scanFiles(): Promise<ScanResult[]> {
     const absolutePath = path.join(SRC_DIR, relativePath);
     const content = fs.readFileSync(absolutePath, "utf-8");
 
-    // Skip if already using useTranslations
-    if (content.includes("useTranslations")) continue;
+    // Skip if already using useTranslations or getTranslations
+    if (content.includes("useTranslations") || content.includes("getTranslations")) continue;
     
     // Skip based on patterns
     if (shouldSkip(relativePath)) continue;
@@ -158,16 +207,21 @@ async function convertFile(
   namespace: string
 ): Promise<ConversionResult> {
   const content = fs.readFileSync(filePath, "utf-8");
+  
+  // page.tsx dosyaları server component — getTranslations kullan
+  const isPage = path.basename(filePath) === "page.tsx";
+  const systemPrompt = isPage ? SERVER_COMPONENT_PROMPT : CLIENT_COMPONENT_PROMPT;
+  const hookInfo = isPage ? "getTranslations (server)" : "useTranslations (client)";
 
   const response = await openai.chat.completions.create({
     model: MODEL,
     temperature: 0.1,
     response_format: { type: "json_object" },
     messages: [
-      { role: "system", content: SYSTEM_PROMPT },
+      { role: "system", content: systemPrompt },
       {
         role: "user",
-        content: `Convert this TSX component. The namespace for useTranslations should be "${namespace}".\n\nFile: ${path.basename(filePath)}\n\n${content}`,
+        content: `Convert this TSX ${isPage ? "page (server component)" : "component"}. The namespace for ${hookInfo} should be "${namespace}".\n\nFile: ${path.basename(filePath)}\nPath: ${filePath}\n\n${content}`,
       },
     ],
   });

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
 
 interface BlogPostPageProps {
     params: Promise<{ slug: string }>;
@@ -12,10 +13,11 @@ interface BlogPostPageProps {
 export async function generateMetadata({
     params,
 }: BlogPostPageProps): Promise<Metadata> {
+    const t = await getTranslations("blogDetailPage");
     const { slug } = await params;
     const post = await getPostBySlug(slug);
 
-    if (!post) return { title: "Yazı Bulunamadı" };
+    if (!post) return { title: t("notFoundTitle") };
 
     return {
         title: `${post.title} | Atasa Education Blog`,
@@ -32,6 +34,7 @@ export async function generateMetadata({
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
+    const t = await getTranslations("blogDetailPage");
     const { slug } = await params;
     const post = await getPostBySlug(slug);
 
@@ -67,7 +70,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             className="inline-flex items-center space-x-2 text-white/70 hover:text-white transition-colors mb-8 group"
                         >
                             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-sm font-medium">Blog&apos;a Dön</span>
+                            <span className="text-sm font-medium">{t("blogReturnLink")}</span>
                         </Link>
 
                         {post.category && (
@@ -95,7 +98,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             </div>
                             <div className="flex items-center space-x-2">
                                 <Clock className="w-4 h-4" />
-                                <span>{readTime} dk okuma</span>
+                                <span>{readTime} {t("readingTimeSuffix")}</span>
                             </div>
                             {post.keywords.length > 0 && (
                                 <div className="flex items-center space-x-2">
@@ -138,7 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         {post.keywords.length > 0 && (
                             <div className="mt-16 pt-8 border-t border-gray-100">
                                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
-                                    Etiketler
+                                    {t("tagsTitle")}
                                 </h3>
                                 <div className="flex flex-wrap gap-2">
                                     {post.keywords.map((keyword) => (
@@ -156,17 +159,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                         {/* CTA */}
                         <div className="mt-16 bg-gradient-to-br from-[#0047BB] to-[#2979FF] rounded-3xl p-10 text-center">
                             <h3 className="text-2xl font-bold text-white mb-4">
-                                Türkiye&apos;de Eğitim Almak İster misiniz?
+                                {t("ctaTitle")}
                             </h3>
                             <p className="text-white/80 mb-8 max-w-lg mx-auto">
-                                Atasa Education olarak size en uygun üniversite ve programı
-                                bulmanızda yardımcı oluyoruz.
+                                {t("ctaDescription")}
                             </p>
                             <Link
                                 href="/basvuru"
                                 className="inline-flex items-center space-x-2 bg-white text-[#0055D4] px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                             >
-                                <span>Ücretsiz Başvuru Yap</span>
+                                <span>{t("ctaButton")}</span>
                             </Link>
                         </div>
                     </div>
@@ -176,7 +178,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     );
 }
 
-/** Basit Markdown → HTML dönüştürücü (server-side) */
+/** Basit Markdown 14 HTML d F6n FC5Ft FCr FCc FC (server-side) */
 function markdownToHtml(markdown: string): string {
     return markdown
         // Headers

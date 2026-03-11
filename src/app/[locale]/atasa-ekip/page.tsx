@@ -2,11 +2,7 @@ import { Container } from "@/shared/components/ui/Container";
 import Image from "next/image";
 import { Award } from "lucide-react";
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "Ekibimiz | Atasa Education",
-    description: "Atasa Education uzman eğitim danışmanları ekibi. Alanında uzman, mevzuata hakim ve çözüm odaklı kadromuzla tanışın.",
-};
+import { getTranslations } from "next-intl/server";
 
 const SUPABASE_CDN = "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team";
 
@@ -75,7 +71,17 @@ const TEAM_MEMBERS = [
     }
 ];
 
-export default function AtasaEkipPage() {
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations("atasaEkipPage");
+    return {
+        title: t("pageTitle"),
+        description: t("pageDescription")
+    };
+}
+
+export default async function AtasaEkipPage() {
+    const t = await getTranslations("atasaEkipPage");
+
     return (
         <main className="min-h-screen bg-gray-50">
             {/* Hero */}
@@ -86,33 +92,33 @@ export default function AtasaEkipPage() {
 
                 <Container className="relative z-10 text-center text-white">
                     <span className="inline-block py-1.5 px-5 rounded-full bg-white/10 border border-white/20 text-blue-300 text-sm font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
-                        Uzman Kadromuz
+                        {t("heroBadge")}
                     </span>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight tracking-tight">
-                        Başarımızın Arkasındaki{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">İsimler</span>
+                        {t("heroTitlePart1")} {" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">{t("heroTitleHighlight")}</span>
                     </h1>
                     <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        Alanında uzman, mevzuata hakim ve çözüm odaklı ekibimizle tanışın. Sizi dinliyor, anlıyor ve çözüyoruz.
+                        {t("heroDescription")}
                     </p>
 
                     {/* Stats */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 mt-12 border-t border-white/10 max-w-3xl mx-auto">
                         <div>
                             <div className="text-3xl md:text-4xl font-black text-white mb-1">10K+</div>
-                            <div className="text-sm text-gray-400 font-medium">Mutlu Müşteri</div>
+                            <div className="text-sm text-gray-400 font-medium">{t("statHappyCustomers")}</div>
                         </div>
                         <div>
                             <div className="text-3xl md:text-4xl font-black text-white mb-1">%98</div>
-                            <div className="text-sm text-gray-400 font-medium">Başarı Oranı</div>
+                            <div className="text-sm text-gray-400 font-medium">{t("statSuccessRate")}</div>
                         </div>
                         <div>
                             <div className="text-3xl md:text-4xl font-black text-white mb-1">8+</div>
-                            <div className="text-sm text-gray-400 font-medium">Yıllık Tecrübe</div>
+                            <div className="text-sm text-gray-400 font-medium">{t("statExperienceYears")}</div>
                         </div>
                         <div>
                             <div className="text-3xl md:text-4xl font-black text-white mb-1">3</div>
-                            <div className="text-sm text-gray-400 font-medium">Ülke Ofisi</div>
+                            <div className="text-sm text-gray-400 font-medium">{t("statCountryOffices")}</div>
                         </div>
                     </div>
                 </Container>

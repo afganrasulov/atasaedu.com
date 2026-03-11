@@ -1,15 +1,19 @@
 import { GoogleReviewsSection } from "@/features/google-reviews/GoogleReviewsSection";
 import { PageTransition } from "@/shared/components/layout/PageTransition";
+import { getTranslations } from "next-intl/server";
 
-export const metadata = {
-    title: "Google Yorumları — Atasa Education",
-    description: "Atasa Danışmanlık Google İşletme Profili üzerinden doğrulanmış müşteri yorumları ve puanlar.",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("googleYorumlariPage");
+  return {
+    title: t("pageTitle"),
+    description: t("pageDescription")
+  };
+}
 
-export default function GoogleReviewsPage() {
-    return (
-        <PageTransition>
-            <GoogleReviewsSection />
-        </PageTransition>
-    );
+export default async function GoogleReviewsPage() {
+  return (
+    <PageTransition>
+      <GoogleReviewsSection />
+    </PageTransition>
+  );
 }
