@@ -1,5 +1,5 @@
 import { Container } from "@/shared/components/ui/Container";
-import { getPostBySlug, getPosts } from "@/lib/blog/blogService";
+import { getPostBySlug, getTranslatedPost } from "@/lib/blog/blogService";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -7,17 +7,22 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
 interface BlogPostPageProps {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateMetadata({
     params,
 }: BlogPostPageProps): Promise<Metadata> {
     const t = await getTranslations("blogDetailPage");
-    const { slug } = await params;
-    const post = await getPostBySlug(slug);
+    const { slug, locale } = await params;
+
+    // Türkçe dışı dillerde çevrilmiş post'u ara
+    const translatedPost = locale !== "tr" ? await getTranslatedPost(slug, locale) : null;
+    const post = translatedPost ?? await getPostBySlug(slug);
 
     if (!post) return { title: t("notFoundTitle") };
+
+    const BASE_URL = "https://atasaedu.com";
 
     return {
         title: `${post.title} | Atasa Education Blog`,
@@ -25,18 +30,31 @@ export async function generateMetadata({
         keywords: post.keywords,
         openGraph: {
             title: post.title,
-            description: post.meta_description,
+            description: post.meta_description ?? undefined,
             type: "article",
-            publishedTime: post.published_at ?? undefined,
-            images: post.image_url ? [post.image_url] : undefined,
+            locale,
+        },
+        alternates: {
+            canonical: `${BASE_URL}/${locale}/blog/${slug}`,
+            languages: {
+                tr: `${BASE_URL}/tr/blog/${slug}`,
+                en: `${BASE_URL}/en/blog/${slug}`,
+                ar: `${BASE_URL}/ar/blog/${slug}`,
+                fa: `${BASE_URL}/fa/blog/${slug}`,
+                fr: `${BASE_URL}/fr/blog/${slug}`,
+            },
         },
     };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const t = await getTranslations("blogDetailPage");
-    const { slug } = await params;
-    const post = await getPostBySlug(slug);
+    const { slug, locale } = await params;
+
+    // Türkçe dışı dillerde çevrilmiş post'u ara, yoksa orijinali kullan
+    const translatedPost = locale !== "tr" ? await getTranslatedPost(slug, locale) : null;
+    const originalPost = await getPostBySlug(translatedPost ? "" : slug);
+    const post = translatedPost ?? originalPost;
 
     if (!post) notFound();
 
@@ -73,9 +91,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             <span className="text-sm font-medium">{t("blogReturnLink")}</span>
                         </Link>
 
-                        {post.category && (
+                        {"category" in post && post.category && (
                             <span className="inline-block bg-white/15 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-                                {post.category}
+                                {post.category as string}
                             </span>
                         )}
 
@@ -87,12 +105,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                             <div className="flex items-center space-x-2">
                                 <Calendar className="w-4 h-4" />
                                 <span>
-                                    {post.published_at
-                                        ? new Date(post.published_at).toLocaleDateString("tr-TR", {
-                                            day: "numeric",
-                                            month: "long",
-                                            year: "numeric",
-                                        })
+                                    {"published_at" in post && post.published_at
+                                        ? new Date(post.published_at as string).toLocaleDateString(
+                                            locale === "tr" ? "tr-TR" : locale === "ar" ? "ar-SA" : locale === "fa" ? "fa-IR" : locale === "fr" ? "fr-FR" : "en-US",
+                                            {
+                                                day: "numeric",
+                                                month: "long",
+                                                year: "numeric",
+                                            }
+                                        )
                                         : ""}
                                 </span>
                             </div>

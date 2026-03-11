@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Search, Tag } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { BlogPost } from "@/lib/blog/blogService";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 interface PostsResponse {
     posts: BlogPost[];
@@ -20,6 +20,7 @@ interface PostsResponse {
 
 export default function BlogPage() {
     const t = useTranslations("blogPage");
+    const locale = useLocale();
 
     const [data, setData] = useState<PostsResponse | null>(null);
     const [loading, setLoading] = useState(true);
@@ -33,7 +34,7 @@ export default function BlogPage() {
     async function fetchPosts() {
         setLoading(true);
         try {
-            const res = await fetch(`/api/blog/posts?page=${page}&limit=9`);
+            const res = await fetch(`/api/blog/posts?page=${page}&limit=9&locale=${locale}`);
             const json = await res.json();
             setData(json);
         } catch {
@@ -167,7 +168,7 @@ export default function BlogPage() {
                                                 <span>
                                                     {post.published_at
                                                         ? new Date(post.published_at).toLocaleDateString(
-                                                            "tr-TR",
+                                                            locale === "tr" ? "tr-TR" : locale === "ar" ? "ar-SA" : locale === "fa" ? "fa-IR" : locale === "fr" ? "fr-FR" : "en-US",
                                                             {
                                                                 day: "numeric",
                                                                 month: "long",

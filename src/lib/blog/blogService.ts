@@ -235,3 +235,127 @@ export async function getLatestPosts(
     if (error) throw new Error(`Latest posts fetch failed: ${error.message}`);
     return (data ?? []) as BlogPostPreview[];
 }
+
+// ─── Post Translations ──────────────────────────────────────
+
+export interface PostTranslation {
+    id: string;
+    post_id: string;
+    locale: string;
+    title: string;
+    slug: string;
+    excerpt: string | null;
+    content: string;
+    meta_description: string | null;
+    keywords: string[];
+    faq: Array<{ question: string; answer: string }>;
+    schema_markup: Record<string, unknown> | null;
+    created_at: string;
+    updated_at: string;
+}
+
+/** Çevrilmiş post'u slug + locale ile getir. Yoksa null döndür. */
+export async function getTranslatedPost(
+    slug: string,
+    locale: string
+): Promise<PostTranslation | null> {
+    const db = getBlogClient();
+    const { data, error } = await db
+        .from("post_translations")
+        .select("*")
+        .eq("slug", slug)
+        .eq("locale", locale)
+        .single();
+
+    if (error && error.code !== "PGRST116") {
+        throw new Error(`Translated post fetch failed: ${error.message}`);
+    }
+    return data ?? null;
+}
+
+/** Belirli bir locale için çevrilmiş post listesi. Çevirisi yoksa orijinali döndürür. */
+export async function getTranslatedPosts(
+    page = 1,
+    limit = 10,
+    locale?: string
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+): Promise<{ posts: any[]; total: number }> {
+    if (!locale || locale === "tr") {
+        return getPosts(page, limit);
+    }
+
+    const db = getBlogClient();
+    const from = (page - 1) * limit;
+    const to = from + limit - 1;
+
+    // Çevirisi olan postları getir, orijinal post bilgileriyle birlikte
+    const { data, error, count } = await db
+        .from("post_translations")
+        .select(`
+            *,
+            post:posts!post_id (image_url, published_at, category)
+        `, { count: "exact" })
+        .eq("locale", locale)
+        .order("created_at", { ascending: false })
+        .range(from, to);
+
+    if (error) throw new Error(`Translated posts fetch failed: ${error.message}`);
+
+    const posts = (data ?? []).map((item: Record<string, unknown>) => {
+        const post = item.post as Record<string, unknown> | null;
+        return {
+            ...item,
+            image_url: post?.image_url as string | null ?? null,
+            published_at: post?.published_at as string | null ?? null,
+            category: post?.category as string | null ?? null,
+        };
+    });
+
+    return { posts, total: count ?? 0 };
+}
+
+/** Yeni çeviri kaydet */
+export async function createPostTranslation(
+    translation: Omit<PostTranslation, "id" | "created_at" | "updated_at">
+): Promise<PostTranslation> {
+    const db = getBlogClient();
+    const { data, error } = await db
+        .from("post_translations")
+        .upsert(translation, { onConflict: "post_id,locale" })
+        .select()
+        .single();
+
+    if (error) throw new Error(`Post translation create failed: ${error.message}`);
+    return data;
+}
+
+/** Çevirisi eksik olan post'ları bul */
+export async function getUntranslatedPosts(
+    locale: string
+): Promise<BlogPost[]> {
+    const db = getBlogClient();
+
+    // Zaten çevrilmiş post ID'lerini al
+    const { data: translated } = await db
+        .from("post_translations")
+        .select("post_id")
+        .eq("locale", locale);
+
+    const translatedIds = (translated ?? []).map((t: { post_id: string }) => t.post_id);
+
+    // Çevirisi olmayan published post'ları getir
+    let query = db
+        .from("posts")
+        .select("*")
+        .not("published_at", "is", null)
+        .order("published_at", { ascending: false });
+
+    if (translatedIds.length > 0) {
+        query = query.not("id", "in", `(${translatedIds.join(",")})`);
+    }
+
+    const { data, error } = await query;
+    if (error) throw new Error(`Untranslated posts fetch failed: ${error.message}`);
+    return data ?? [];
+}
+

@@ -1,13 +1,16 @@
 import { NextResponse } from "next/server";
-import { getPosts } from "@/lib/blog/blogService";
+import { getPosts, getTranslatedPosts } from "@/lib/blog/blogService";
 
 export async function GET(request: Request) {
     try {
         const { searchParams } = new URL(request.url);
         const page = parseInt(searchParams.get("page") ?? "1", 10);
         const limit = parseInt(searchParams.get("limit") ?? "10", 10);
+        const locale = searchParams.get("locale") ?? "tr";
 
-        const { posts, total } = await getPosts(page, limit);
+        const { posts, total } = locale === "tr"
+            ? await getPosts(page, limit)
+            : await getTranslatedPosts(page, limit, locale);
 
         return NextResponse.json({
             posts,

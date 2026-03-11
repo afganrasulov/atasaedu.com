@@ -17,7 +17,9 @@
     "translate": "npx tsx scripts/translate.ts",
     "translate:force": "npx tsx scripts/translate.ts --force",
     "scan-i18n": "npx tsx scripts/scan-i18n.ts",
-    "scan-i18n:apply": "npx tsx scripts/scan-i18n.ts --apply"
+    "scan-i18n:apply": "npx tsx scripts/scan-i18n.ts --apply",
+    "translate-blog": "npx tsx scripts/translate-blog.ts",
+    "translate-blog:dry": "npx tsx scripts/translate-blog.ts --dry-run"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
