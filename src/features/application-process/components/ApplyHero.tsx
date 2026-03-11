@@ -5,8 +5,11 @@ import { Button } from "@/shared/components/ui/Button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Sparkles, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ApplyHero() {
+    const t = useTranslations("applyHero");
+
     return (
         <section className="relative min-h-[60vh] flex items-center bg-white overflow-hidden py-20">
             {/* Premium Light Animated Background */}
@@ -27,18 +30,18 @@ export function ApplyHero() {
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-bold mb-8 shadow-sm">
                             <Sparkles size={16} className="text-blue-500" />
-                            <span>Geleceğinizi Birlikte Planlayalım</span>
+                            <span>{t("badge")}</span>
                         </div>
 
                         <h1 className="text-4xl md:text-6xl font-black tracking-tight text-slate-900 mb-8 leading-[1.1]">
-                            Yabancı Uyruklu Öğrenciler Üniversiteye <br />
-                            <span className="text-[#0056D2]">Nasıl Başvurabilir?</span>
+                            {t("titleLine1")} <br />
+                            <span className="text-[#0056D2]">{t("titleLine2")}</span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-slate-600 mb-12 font-medium leading-relaxed max-w-3xl">
-                            Yabancı Uyruklu Öğrenci olarak Üniversitelerimize
-                            <span className="text-blue-700 font-bold"> ücretsiz başvuru </span>
-                            yapabilmek için aşağıdaki 8 adımı takip edin!
+                            {t("descriptionPart1")}
+                            <span className="text-blue-700 font-bold"> {t("descriptionHighlight")} </span>
+                            {t("descriptionPart2")}
                         </p>
 
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -48,7 +51,7 @@ export function ApplyHero() {
                             >
                                 <span className="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0055D4_0%,#ffffff_50%,#0055D4_100%)]" />
                                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-blue-600 px-8 text-base font-bold text-white backdrop-blur-3xl gap-2 transition-colors group-hover:bg-blue-700">
-                                    Başvuru Süreçlerini Gör <span className="text-xl">↓</span>
+                                    {t("viewApplicationProcesses")} <span className="text-xl">↓</span>
                                 </span>
                             </Link>
 
@@ -56,7 +59,7 @@ export function ApplyHero() {
                                 href="/basvuru"
                                 className="inline-flex h-14 items-center justify-center rounded-full bg-white border border-slate-200 px-8 text-base font-bold text-slate-700 transition-all hover:bg-slate-50 hover:border-blue-200 shadow-sm gap-2 group"
                             >
-                                Hemen Başvur <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                                {t("applyNow")} <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </Link>
                         </div>
                     </motion.div>

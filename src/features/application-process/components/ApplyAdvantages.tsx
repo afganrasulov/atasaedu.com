@@ -3,19 +3,22 @@
 import { Container } from "@/shared/components/ui/Container";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
-
-const advantages = [
-    "Başvurular ücretsizdir. Size rehberlik etmek için buradayız. Eğitim hedeflerinizi gerçekleştirmenize yardımcı olmak için bekliyoruz.",
-    "Atasa Education'a özel indirimlerden otomatik olarak yararlanabilirsiniz. Ayrıca, sadece bizim aracılığımızla sunulan özel burs fırsatlarından faydalanma imkanınız bulunmaktadır.",
-    "Tek bir başvuru formu ile birden fazla üniversiteye aynı anda başvurabilirsiniz. Kabul mektuplarınız, üniversiteler tarafından doğrudan e-posta adresinize gönderilecektir.",
-    "Özel kontenjanlardan faydalanabilir, gerekliyse vize desteği alabilirsiniz. Ayrıca yurt veya konaklama konusunda da destek sağlıyoruz.",
-    "Deneyimli danışmanlarımız, doğru bölüm ve üniversite tercihi yapmanızda size yardımcı olacaktır.",
-    "Üniversiteye başlayana kadar sürecin her aşamasında destek sağlıyoruz.",
-    "Üniversitenin resmi temsilcisi ile başvur!",
-    "Sınavsız ve yalnızca diploma notunuzla üniversitelere kabul edilme imkanı sunuyoruz."
-];
+import { useTranslations } from "next-intl";
 
 export function ApplyAdvantages() {
+    const t = useTranslations("applyAdvantages");
+
+    const advantages = [
+        t("advantage1"),
+        t("advantage2"),
+        t("advantage3"),
+        t("advantage4"),
+        t("advantage5"),
+        t("advantage6"),
+        t("advantage7"),
+        t("advantage8")
+    ];
+
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             <Container>
@@ -27,14 +30,14 @@ export function ApplyAdvantages() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-4 border border-blue-100 uppercase tracking-wider">
                             <Sparkles size={14} />
-                            <span>Avantajlarınız</span>
+                            <span>{t("badge")}</span>
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 tracking-tight leading-tight">
-                            Atasa Education ile Başvurmanın <br />
-                            <span className="text-[#0056D2]">Ayrıcalıklarını Yaşayın</span>
+                            {t("titleLine1")} <br />
+                            <span className="text-[#0056D2]">{t("titleHighlight")}</span>
                         </h2>
                         <p className="text-slate-600 text-lg font-medium leading-relaxed mb-8">
-                            Türkiye'deki eğitim yolculuğunuzda size en iyi desteği sağlamak için buradayız. İşte sunduğumuz bazı avantajlar:
+                            {t("description")}
                         </p>
                     </motion.div>
 

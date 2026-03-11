@@ -4,8 +4,10 @@ import React, { useState, useEffect } from "react";
 import { MessageCircle } from "lucide-react";
 import { useWhatsApp } from "./WhatsAppContext";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export const FloatingWhatsAppButton: React.FC = () => {
+    const t = useTranslations("floatingWhatsAppButton");
     const { openWhatsApp, isOpen } = useWhatsApp();
     const [isVisible, setIsVisible] = useState(false);
 
@@ -49,10 +51,10 @@ export const FloatingWhatsAppButton: React.FC = () => {
                         {/* Yazı Alanı */}
                         <div className="text-left">
                             <span className="block text-xs text-green-100 font-medium uppercase tracking-wider mb-0.5">
-                                Canlı Destek
+                                {t("desktopBadge")}
                             </span>
                             <span className="block text-xl font-extrabold tracking-tight">
-                                WhatsApp&apos;tan Yaz
+                                {t("desktopTitle")}
                             </span>
                         </div>
 
@@ -80,10 +82,10 @@ export const FloatingWhatsAppButton: React.FC = () => {
                             </div>
                             <div className="flex flex-col items-start">
                                 <span className="text-sm text-green-100 font-medium leading-none mb-1">
-                                    Yardım mı lazım?
+                                    {t("mobileHelpQuestion")}
                                 </span>
                                 <span className="text-2xl font-extrabold leading-none">
-                                    WhatsApp Destek
+                                    {t("mobileTitle")}
                                 </span>
                             </div>
                         </button>

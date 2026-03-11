@@ -15,7 +15,9 @@
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "translate": "npx tsx scripts/translate.ts",
-    "translate:force": "npx tsx scripts/translate.ts --force"
+    "translate:force": "npx tsx scripts/translate.ts --force",
+    "scan-i18n": "npx tsx scripts/scan-i18n.ts",
+    "scan-i18n:apply": "npx tsx scripts/scan-i18n.ts --apply"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -47,6 +49,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
+    "glob": "^13.0.6",
     "jsdom": "^28.1.0",
     "prettier": "^3.8.1",
     "tailwindcss": "^4",

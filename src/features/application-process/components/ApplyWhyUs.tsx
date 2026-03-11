@@ -3,38 +3,41 @@
 import { Container } from "@/shared/components/ui/Container";
 import { Award, Briefcase, GraduationCap, Percent, CheckCircle, ShieldCheck, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function ApplyWhyUs() {
+    const t = useTranslations("applyWhyUs");
+
     const reasons = [
         {
-            title: "Üniversite Temsilcisi",
-            icon: <Briefcase className="w-6 h-6 text-blue-600" />,
-            desc: "Atasa Education, üniversitelerin resmi temsilcisi olarak faaliyet göstermektedir. Aracı değiliz, doğrudan üniversitelere bağlıyız.",
+            title: t("reasonUniversityRepTitle"),
+            icon: <Briefcase className="w-6 h-6 text-blue-600" />, 
+            desc: t("reasonUniversityRepDesc"),
         },
         {
-            title: "%100 Kabul Oranı",
-            icon: <CheckCircle className="w-6 h-6 text-blue-600" />,
-            desc: "Alanımızda tek olduğumuz için başarı oranımız %100'dir. Atasa Education ile Sizde üniversiteli olun.",
+            title: t("reasonFullAcceptanceTitle"),
+            icon: <CheckCircle className="w-6 h-6 text-blue-600" />, 
+            desc: t("reasonFullAcceptanceDesc"),
         },
         {
-            title: "Diploma Notu ile Kabul",
-            icon: <Award className="w-6 h-6 text-blue-600" />,
-            desc: "Anlaşmalı olduğumuz tüm üniversitelere sınavsız ve diploma notuyla yerleşme imkanı sunuyoruz.",
+            title: t("reasonDiplomaTitle"),
+            icon: <Award className="w-6 h-6 text-blue-600" />, 
+            desc: t("reasonDiplomaDesc"),
         },
         {
-            title: "+10.000 Öğrenci",
-            icon: <GraduationCap className="w-6 h-6 text-blue-600" />,
-            desc: "Atasa Education, 10.000'den fazla yabancı uyruklu öğrencinin Türkiye'deki üniversitelere kabul süreçlerine yardımcı oldu. Sıra sende!",
+            title: t("reasonStudentsTitle"),
+            icon: <GraduationCap className="w-6 h-6 text-blue-600" />, 
+            desc: t("reasonStudentsDesc"),
         },
         {
-            title: "Özel Burslar ve İndirimler",
-            icon: <Percent className="w-6 h-6 text-blue-600" />,
-            desc: "Atasa Education ile üniversitelere başvuru yapacak tüm yabancı uyruklu öğrenciler özel indirimlerden yararlanmaktadır.",
+            title: t("reasonScholarshipsTitle"),
+            icon: <Percent className="w-6 h-6 text-blue-600" />, 
+            desc: t("reasonScholarshipsDesc"),
         },
         {
-            title: "Danışmanlık Ücreti Yok!",
-            icon: <ShieldCheck className="w-6 h-6 text-blue-600" />,
-            desc: "Üniversitelerin resmi temsilcisi olduğumuz için herhangi bir danışmanlık ücreti almıyoruz. Başvurular tamamen ücretsizdir.",
+            title: t("reasonNoFeeTitle"),
+            icon: <ShieldCheck className="w-6 h-6 text-blue-600" />, 
+            desc: t("reasonNoFeeDesc"),
         }
     ];
 
@@ -53,10 +56,10 @@ export function ApplyWhyUs() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-4 border border-blue-100 uppercase tracking-wider">
                             <Sparkles size={14} />
-                            <span>Bizim Farkımız</span>
+                            <span>{t("badge")}</span>
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
-                            Neden Atasa Education ile Başvuru Yapmalısın?
+                            {t("title")}
                         </h2>
                         <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full mb-8" />
                     </motion.div>

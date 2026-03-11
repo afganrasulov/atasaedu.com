@@ -23,6 +23,7 @@ import {
     type GoogleReview,
     type GooglePlaceResult,
 } from "./googleReviewsService";
+import { useTranslations } from "next-intl";
 
 /* ── Google Partner Badge ────────────────────────── */
 function GooglePartnerBadge() {
@@ -81,6 +82,8 @@ function GoogleLogoSvg() {
 
 /* ── Main Section Component ─────────────────────── */
 export function GoogleReviewsSection() {
+    const t = useTranslations("googleReviewsSection");
+
     const [metadata, setMetadata] = useState<GooglePlaceResult | null>(null);
     const [reviews, setReviews] = useState<GoogleReview[]>([]);
     const [page, setPage] = useState(1);
@@ -106,13 +109,13 @@ export function GoogleReviewsSection() {
                     setReviews(initial);
                 }
             } catch {
-                setError("Bağlantı hatası. Lütfen sayfayı yenileyin.");
+                setError(t("connectionError"));
             } finally {
                 setLoading(false);
             }
         };
         init();
-    }, []);
+    }, [t]);
 
     // Pagination
     useEffect(() => {
@@ -170,7 +173,7 @@ export function GoogleReviewsSection() {
                             size={16}
                             className="group-hover:-translate-x-1 transition-transform"
                         />
-                        ANA SAYFAYA DÖN
+                        {t("backToHome")}
                     </Link>
                     <GooglePartnerBadge />
                 </div>
@@ -185,14 +188,10 @@ export function GoogleReviewsSection() {
                         <Star size={48} fill="currentColor" />
                     </motion.div>
                     <h1 className="text-4xl md:text-7xl font-black text-[#152239] mb-6 tracking-tight leading-none">
-                        Müşteri Deneyimleri
+                        {t("customerExperiences")}
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto font-medium">
-                        Atasa Danışmanlık&apos;ın{" "}
-                        <span className="text-blue-600 font-bold">
-                            {metadata?.user_ratings_total || "1200+"} gerçek kullanıcı
-                        </span>{" "}
-                        başarısı ve doğrulanmış Google yorumu.
+                        {t("realUsersSuccess", { count: metadata?.user_ratings_total || "1200+" })}
                     </p>
                 </div>
 
@@ -220,14 +219,14 @@ export function GoogleReviewsSection() {
                                     <span className="block text-3xl md:text-5xl font-black text-[#152239] tracking-tight">
                                         {metadata?.user_ratings_total || "1200"}+
                                     </span>
-                                    <span className="text-lg font-bold text-gray-400">Yorum</span>
+                                    <span className="text-lg font-bold text-gray-400">{t("reviewsLabel")}</span>
                                 </div>
                                 <div className="flex flex-col gap-2 mt-2">
                                     <span className="text-gray-400 font-black text-xs uppercase tracking-[0.2em] block">
-                                        Google İşletme Profili
+                                        {t("googleBusinessProfile")}
                                     </span>
                                     <div className="flex items-center justify-center md:justify-start gap-2 text-blue-600 font-black text-sm uppercase tracking-wider bg-blue-50 px-3 py-1.5 rounded-full border border-blue-100/50">
-                                        <BadgeCheck size={18} /> Resmi Google Partner
+                                        <BadgeCheck size={18} /> {t("officialGooglePartner")}
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +235,7 @@ export function GoogleReviewsSection() {
                         <div className="flex flex-col md:flex-row gap-6 items-center">
                             <div className="text-center md:text-right">
                                 <p className="text-[#152239] font-black text-xl mb-1">
-                                    Şeffaf ve Gerçek
+                                    {t("transparentAndReal")}
                                 </p>
                                 <p className="text-gray-500 text-sm font-medium">
                                     Tüm yorumlar müşterilerimiz tarafından
@@ -253,16 +252,12 @@ export function GoogleReviewsSection() {
                 {/* Filter Indicator */}
                 <div className="flex justify-between items-center mb-8 px-2">
                     <h3 className="text-2xl font-black text-[#152239] tracking-tight">
-                        Tüm Yorumlar{" "}
-                        <span className="text-gray-400 text-lg font-medium ml-2">
-                            ({reviews.length})
-                        </span>
+                        {t("allReviews")} <span className="text-gray-400 text-lg font-medium ml-2">({reviews.length})</span>
                     </h3>
                     <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-gray-200 shadow-sm">
                         <ListFilter size={16} className="text-gray-400" />
                         <span className="text-xs font-bold text-gray-600 uppercase tracking-wider hidden sm:inline">
-                            Sıralama:{" "}
-                            <span className="text-blue-600">En Yeni</span>
+                            {t("sorting")} <span className="text-blue-600">{t("newest")}</span>
                         </span>
                     </div>
                 </div>
@@ -273,7 +268,7 @@ export function GoogleReviewsSection() {
                         <div className="flex flex-col items-center justify-center py-32 gap-6">
                             <Loader2 className="animate-spin text-blue-500" size={64} />
                             <span className="text-gray-400 font-black text-sm uppercase tracking-[0.3em]">
-                                Google Verileri Güncelleniyor...
+                                {t("updatingGoogleData")}
                             </span>
                         </div>
                     ) : error ? (
@@ -283,7 +278,7 @@ export function GoogleReviewsSection() {
                                 onClick={() => window.location.reload()}
                                 className="text-blue-600 underline font-bold"
                             >
-                                Sayfayı Yenile
+                                {t("reloadPage")}
                             </button>
                         </div>
                     ) : (
@@ -359,7 +354,7 @@ export function GoogleReviewsSection() {
                                             {/* Footer */}
                                             <div className="pt-6 border-t border-gray-50 flex justify-between items-center">
                                                 <span className="flex items-center gap-2 text-[10px] font-black text-emerald-600 uppercase tracking-widest">
-                                                    <CheckCircle2 size={14} /> Google Doğrulamalı
+                                                    <CheckCircle2 size={14} /> {t("googleVerified")}
                                                 </span>
                                                 {review.author_url &&
                                                     review.author_url !== "#" && (
@@ -370,7 +365,7 @@ export function GoogleReviewsSection() {
                                                             className="flex items-center gap-2 opacity-40 hover:opacity-100 transition-all grayscale hover:grayscale-0"
                                                         >
                                                             <span className="text-[10px] font-black text-[#152239]">
-                                                                ORİJİNALİ GÖR
+                                                                {t("viewOriginal")}
                                                             </span>
                                                             <GoogleLogoSvg />
                                                             <ExternalLink size={12} />
@@ -391,7 +386,7 @@ export function GoogleReviewsSection() {
                                             size={20}
                                         />
                                         <span className="text-xs font-bold text-gray-600 uppercase tracking-widest">
-                                            Daha Fazla Yorum Yükleniyor...
+                                            {t("loadingMoreReviews")}
                                         </span>
                                     </div>
                                 </div>
@@ -404,17 +399,13 @@ export function GoogleReviewsSection() {
                 <div className="mt-20 p-10 md:p-20 bg-[#152239] rounded-[4rem] text-white flex flex-col lg:flex-row items-center justify-between gap-12 shadow-2xl relative overflow-hidden border border-white/5">
                     <div className="relative z-10 text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full text-[10px] font-black tracking-widest uppercase mb-6 border border-white/20">
-                            <Award size={14} className="text-yellow-400" /> Atasa Kalite
-                            Güvencesi
+                            <Award size={14} className="text-yellow-400" /> {t("atasaQualityAssurance")}
                         </div>
                         <h3 className="text-4xl md:text-6xl font-black mb-6 tracking-tight leading-none">
-                            Mutlu Müşterilerimiz
-                            <br className="hidden md:block" /> Arasına Katılın
+                            {t("joinHappyCustomers")}
                         </h3>
                         <p className="text-gray-400 text-xl max-w-2xl font-medium leading-relaxed">
-                            Google Partneri olmanın getirdiği şeffaflık ve binlerce onaylı
-                            dosyanın tecrübesiyle, eğitim süreçlerinizi profesyonelce
-                            yönetiyoruz.
+                            {t("transparencyExperience")}
                         </p>
                     </div>
                     <div className="flex flex-col gap-4 relative z-10 w-full md:w-auto">
@@ -422,7 +413,7 @@ export function GoogleReviewsSection() {
                             href="/iletisim"
                             className="bg-blue-600 text-white px-14 py-7 rounded-[2.5rem] font-black text-2xl transition-all shadow-2xl hover:bg-blue-700 hover:scale-105 active:scale-95 text-center"
                         >
-                            İletişime Geç
+                            {t("contactUs")}
                         </Link>
                         <a
                             href={writeReviewUrl}
@@ -430,7 +421,7 @@ export function GoogleReviewsSection() {
                             rel="noreferrer"
                             className="text-gray-500 font-bold text-center hover:text-white transition-colors underline decoration-gray-800 underline-offset-8"
                         >
-                            Yorum Yaparak Bize Destek Olun
+                            {t("supportUsByReview")}
                         </a>
                     </div>
                 </div>
@@ -439,12 +430,7 @@ export function GoogleReviewsSection() {
                 <div className="mt-16 p-8 bg-gray-200/30 rounded-[2.5rem] border border-gray-200 flex flex-col md:flex-row gap-6 items-center text-gray-500">
                     <Info className="shrink-0 text-blue-500" size={32} />
                     <p className="text-sm leading-relaxed font-bold italic text-center md:text-left">
-                        Bu sayfadaki veriler{" "}
-                        <strong>Atasa Danışmanlık Google İşletme Profilinden</strong> ve
-                        onaylı veritabanımızdan dinamik olarak çekilmektedir.{" "}
-                        <strong>
-                            Atasa Danışmanlık resmi bir Google Partneri&apos;dir.
-                        </strong>
+                        {t("footerWarning", { company: "Atasa Danışmanlık" })}
                     </p>
                 </div>
             </Container>

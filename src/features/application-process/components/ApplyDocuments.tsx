@@ -4,30 +4,32 @@ import { Container } from "@/shared/components/ui/Container";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, GraduationCap, School, Check, Sparkles } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ApplyDocuments() {
+    const t = useTranslations("applyDocuments");
     const [activeTab, setActiveTab] = useState<'undergrad' | 'grad'>('undergrad');
 
     const undergradDocs = [
-        "Lise Transkripti (9-10-11-12. sınıf not dökümü)",
-        "Lise Diploması (Mezun iseniz)",
-        "Pasaport veya Kimlik Fotokopisi",
-        "Mavi Kart (Var ise)",
-        "Varsa Dil Yeterlilik Belgesi (TÖMER, IELTS, TOEFL vb.)"
+        t("undergradDoc1"),
+        t("undergradDoc2"),
+        t("undergradDoc3"),
+        t("undergradDoc4"),
+        t("undergradDoc5")
     ];
 
     const gradDocs = [
-        "Lisans Diploması / Mezuniyet Belgesi",
-        "Lisans Transkripti (Not Dökümü)",
-        "Pasaport veya Kimlik Fotokopisi",
-        "Özgeçmiş (CV)",
-        "Niyet Mektubu",
-        "Varsa Dil Yeterlilik Belgesi"
+        t("gradDoc1"),
+        t("gradDoc2"),
+        t("gradDoc3"),
+        t("gradDoc4"),
+        t("gradDoc5"),
+        t("gradDoc6")
     ];
 
     const tabs = [
-        { id: 'undergrad', label: 'Lisans / Önlisans', icon: <School size={18} /> },
-        { id: 'grad', label: 'Yüksek Lisans / Doktora', icon: <GraduationCap size={18} /> }
+        { id: 'undergrad', label: t("tabUndergrad"), icon: <School size={18} /> },
+        { id: 'grad', label: t("tabGrad"), icon: <GraduationCap size={18} /> }
     ];
 
     return (
@@ -42,13 +44,21 @@ export function ApplyDocuments() {
                         >
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-4 border border-blue-100 uppercase tracking-wider">
                                 <Sparkles size={14} />
-                                <span>Gerekli Evraklar</span>
+                                <span>{t("badge")}</span>
                             </div>
                             <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
-                                Başvuru İçin <span className="text-[#0056D2]">Gerekli Belgeler</span>
+                                {t("title").split(" ").map((word, i, arr) => {
+                                    if (word === "Gerekli" && arr[i+1] === "Belgeler") {
+                                        return (
+                                            <span key={i} className="text-[#0056D2]">{word + " " + arr[i+1]}</span>
+                                        );
+                                    }
+                                    if (i > 0 && arr[i-1] === "Gerekli") return null;
+                                    return word + " ";
+                                })}
                             </h2>
                             <p className="text-slate-600 text-lg font-medium">
-                                Seçtiğiniz programa göre hazırlamanız gereken evrak listesi aşağıdadır.
+                                {t("description")}
                             </p>
                         </motion.div>
                     </div>
@@ -100,12 +110,12 @@ export function ApplyDocuments() {
                                             <FileText size={20} />
                                         </div>
                                         <div>
-                                            <h4 className="font-black text-slate-900">Eksik belgeniz mi var?</h4>
-                                            <p className="text-sm text-slate-600 font-medium">Endişelenmeyin, danışmanlarımız size yardımcı olacaktır.</p>
+                                            <h4 className="font-black text-slate-900">{t("missingDocsTitle")}</h4>
+                                            <p className="text-sm text-slate-600 font-medium">{t("missingDocsDescription")}</p>
                                         </div>
                                     </div>
                                     <button className="px-6 py-3 bg-white border border-blue-200 text-blue-700 rounded-full font-bold hover:bg-blue-50 transition-colors">
-                                        Danışmana Sor
+                                        {t("askAdvisorButton")}
                                     </button>
                                 </div>
                             </motion.div>

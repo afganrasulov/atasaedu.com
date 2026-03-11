@@ -10,6 +10,7 @@ import { Search, GraduationCap, Globe, Clock, ChevronLeft, ChevronRight, Loader2
 import { searchPrograms, getFilterOptions, getDegreeLabel } from "@/lib/program-search";
 import { getLogoUrl } from "@/lib/supabase";
 import type { ProgramResult, FilterOptions } from "@/lib/program-search";
+import { useTranslations } from "next-intl";
 
 const DEGREE_LABELS: Record<string, string> = {
     BACHELOR: "Lisans",
@@ -19,6 +20,7 @@ const DEGREE_LABELS: Record<string, string> = {
 };
 
 export function UniversityList() {
+    const t = useTranslations("universityList");
     const searchParams = useSearchParams();
     const router = useRouter();
 
@@ -80,27 +82,26 @@ export function UniversityList() {
                 <div className="flex flex-col mb-12 space-y-4 text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start space-x-2 text-primary font-semibold tracking-wider uppercase text-sm">
                         <span className="w-8 h-[2px] bg-primary" />
-                        <span>Program Bul</span>
+                        <span>{t("programFind")}</span>
                     </div>
                     <h2 className="text-3xl md:text-5xl font-black text-[#152239] leading-tight max-w-2xl">
-                        Arzu Ettiğiniz Bölümü Bulun!
+                        {t("findYourDesiredDepartment")}
                     </h2>
                     <p className="text-gray-600 leading-relaxed max-w-4xl text-lg mt-4">
-                        Yabancı öğrenciler için Türkiye&apos;nin en iyi özel üniversitelerinde eğitim almak hayal değil, gerçek.
-                        Derece, dil ve bölüm adıyla arama yaparak size en uygun programı bulun.
+                        {t("description")}
                     </p>
                 </div>
 
                 {/* Filter Bar */}
                 <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-4 md:p-6 mb-10 flex flex-col md:flex-row gap-4 items-end">
                     <div className="flex-1 w-full">
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Derece</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">{t("degree")}</label>
                         <select
                             value={degree}
                             onChange={(e) => setDegree(e.target.value)}
                             className="w-full h-12 rounded-xl border border-gray-200 bg-gray-50 px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                         >
-                            <option value="">Tümü</option>
+                            <option value="">{t("all")}</option>
                             {filters.degrees.map((d) => (
                                 <option key={d} value={d}>
                                     {DEGREE_LABELS[d] || d}
@@ -110,13 +111,13 @@ export function UniversityList() {
                     </div>
 
                     <div className="flex-1 w-full">
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Dil</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">{t("language")}</label>
                         <select
                             value={language}
                             onChange={(e) => setLanguage(e.target.value)}
                             className="w-full h-12 rounded-xl border border-gray-200 bg-gray-50 px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none"
                         >
-                            <option value="">Tümü</option>
+                            <option value="">{t("all")}</option>
                             {filters.languages.map((l) => (
                                 <option key={l} value={l}>
                                     {l}
@@ -126,13 +127,13 @@ export function UniversityList() {
                     </div>
 
                     <div className="flex-[2] w-full">
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Bölüm Ara</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">{t("searchDepartment")}</label>
                         <div className="relative">
                             <input
                                 type="text"
                                 value={searchText}
                                 onChange={(e) => setSearchText(e.target.value)}
-                                placeholder="Bölüm veya program adı yazın..."
+                                placeholder={t("searchPlaceholder")}
                                 className="w-full h-12 rounded-xl border border-gray-200 bg-gray-50 px-4 pr-12 text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
                             <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -145,7 +146,7 @@ export function UniversityList() {
                             variant="outline"
                             className="w-full md:w-auto h-12 px-6 border-gray-200 text-gray-600 rounded-xl"
                         >
-                            Temizle
+                            {t("clear")}
                         </Button>
                     </div>
                 </div>
@@ -155,15 +156,15 @@ export function UniversityList() {
                     <p className="text-gray-500 font-medium">
                         {loading ? (
                             <span className="flex items-center gap-2">
-                                <Loader2 className="w-4 h-4 animate-spin" /> Aranıyor...
+                                <Loader2 className="w-4 h-4 animate-spin" /> {t("searching")}
                             </span>
                         ) : (
-                            <span><strong className="text-[#152239]">{total}</strong> program bulundu</span>
+                            <span><strong className="text-[#152239]">{total}</strong> {t("programsFound")}</span>
                         )}
                     </p>
                     {totalPages > 1 && (
                         <p className="text-sm text-gray-400">
-                            Sayfa {currentPage} / {totalPages}
+                            {t("page")} {currentPage} {t("of")} {totalPages}
                         </p>
                     )}
                 </div>
@@ -176,8 +177,8 @@ export function UniversityList() {
                 ) : programs.length === 0 ? (
                     <div className="text-center py-32">
                         <BookOpen className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-                        <h3 className="text-xl font-bold text-gray-600 mb-2">Sonuç bulunamadı</h3>
-                        <p className="text-gray-400">Farklı filtreler deneyebilirsiniz.</p>
+                        <h3 className="text-xl font-bold text-gray-600 mb-2">{t("noResultsTitle")}</h3>
+                        <p className="text-gray-400">{t("noResultsDescription")}</p>
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -244,7 +245,7 @@ export function UniversityList() {
                                             {program.years && (
                                                 <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-orange-50 text-orange-700 text-xs font-bold">
                                                     <Clock className="w-3.5 h-3.5" />
-                                                    {program.years} Yıl
+                                                    {program.years} {t("years")}
                                                 </span>
                                             )}
                                         </div>
@@ -256,7 +257,7 @@ export function UniversityList() {
                                             href="/iletisim"
                                             className="text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors whitespace-nowrap"
                                         >
-                                            Başvur →
+                                            {t("apply")}
                                         </Link>
                                     </div>
                                 </div>

@@ -5,8 +5,11 @@ import { Container } from "@/shared/components/ui/Container";
 import Link from "next/link";
 import { PhoneCall, Play, ArrowRight, ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function AboutContact() {
+    const t = useTranslations("aboutContact");
+
     return (
         <section className="py-24 bg-gray-50/30 relative overflow-hidden">
             {/* Dekoratif Gradient Arka Planlar */}
@@ -23,26 +26,26 @@ export function AboutContact() {
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100 text-[#0047BB] font-bold mb-8">
                             <ShieldCheck size={18} />
-                            <span className="text-[10px] uppercase tracking-widest font-black">7/24 Destek Hattı</span>
+                            <span className="text-[10px] uppercase tracking-widest font-black">{t("supportLine")}</span>
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-                            Geleceğinizi <br /> <span className="text-[#0047BB]">Birlikte</span> Planlayalım
+                            {t("titlePart1")} <br /> <span className="text-[#0047BB]">{t("titlePart2")}</span> {t("titlePart3")}
                         </h2>
 
                         <p className="text-gray-600 text-lg mb-10 leading-relaxed max-w-lg font-medium">
-                            Profesyonel eğitim danışmanlarımızla hemen iletişime geçin, Türkiye'deki eğitim ve yaşam sürecinizi en doğru şekilde yönetelim.
+                            {t("description")}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link href="/iletisim" className="flex-1 sm:flex-none">
                                 <button className="w-full sm:w-auto bg-[#0047BB] text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 active:scale-95 flex items-center justify-center gap-2">
-                                    Bilgi Al <ArrowRight size={18} />
+                                    {t("infoButton")} <ArrowRight size={18} />
                                 </button>
                             </Link>
                             <a href="tel:+908503086998" className="flex-1 sm:flex-none">
                                 <button className="w-full sm:w-auto bg-white text-gray-900 border border-gray-100 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all shadow-sm active:scale-95 flex items-center justify-center gap-2">
-                                    <PhoneCall size={18} className="text-[#0047BB]" /> Bizi Arayın
+                                    <PhoneCall size={18} className="text-[#0047BB]" /> {t("callButton")}
                                 </button>
                             </a>
                         </div>
@@ -59,7 +62,7 @@ export function AboutContact() {
                         <div className="relative aspect-[4/3] md:aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl group border-8 border-white">
                             <Image
                                 src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/hero_bg.png"
-                                alt="Atasa Education Video Thumbnail"
+                                alt={t("videoAlt")}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                             />
@@ -84,8 +87,8 @@ export function AboutContact() {
                                     <ShieldCheck size={28} />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">Güvenilir Danışmanlık</p>
-                                    <p className="text-lg font-black text-gray-900">%100 Başvuru Takibi</p>
+                                    <p className="text-xs text-gray-400 font-bold uppercase tracking-wider">{t("trustedConsultingLabel")}</p>
+                                    <p className="text-lg font-black text-gray-900">{t("applicationTracking")}</p>
                                 </div>
                             </div>
                         </div>

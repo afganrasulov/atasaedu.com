@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import { Button } from "@/shared/components/ui/Button";
 import { Input } from "@/shared/components/ui/Input";
 import { User, Mail, Globe, HelpCircle, Phone, MessageSquare, Send, Loader2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function ContactForm() {
+    const t = useTranslations("contactForm");
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -52,38 +54,38 @@ export function ContactForm() {
                         className="flex items-center justify-center md:justify-start space-x-2 text-primary font-semibold mb-3"
                     >
                         <span className="w-8 h-[2px] bg-primary/50"></span>
-                        <span className="text-xs uppercase tracking-[0.2em] font-bold">Bizimle İletişime Geçin</span>
+                        <span className="text-xs uppercase tracking-[0.2em] font-bold">{t("contactUs")}</span>
                     </motion.div>
                     <motion.h2
                         variants={itemVariants}
                         className="text-4xl font-bold tracking-tight text-[#152239] mb-4"
                     >
-                        Mesaj Gönderin
+                        {t("sendMessage")}
                     </motion.h2>
                     <motion.p
                         variants={itemVariants}
                         className="text-gray-500 text-base leading-relaxed max-w-md"
                     >
-                        Sorularınız, iş birlikleri veya destek talepleriniz için uzman ekibimiz size yardımcı olmaya hazır.
+                        {t("description")}
                     </motion.p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <motion.div variants={itemVariants} className="relative group">
-                            <label htmlFor="name" className="sr-only">Ad Soyad*</label>
+                            <label htmlFor="name" className="sr-only">{t("nameLabel")}</label>
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
                                 <User className="w-5 h-5" />
                             </div>
                             <Input
                                 id="name"
                                 required
-                                placeholder="Ad Soyad*"
+                                placeholder={t("namePlaceholder")}
                                 className="pl-12 bg-gray-50 border-gray-200 h-14 rounded-2xl focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all"
                             />
                         </motion.div>
                         <motion.div variants={itemVariants} className="relative group">
-                            <label htmlFor="email" className="sr-only">E-posta*</label>
+                            <label htmlFor="email" className="sr-only">{t("emailLabel")}</label>
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
                                 <Mail className="w-5 h-5" />
                             </div>
@@ -91,7 +93,7 @@ export function ContactForm() {
                                 id="email"
                                 type="email"
                                 required
-                                placeholder="E-posta*"
+                                placeholder={t("emailPlaceholder")}
                                 className="pl-12 bg-gray-50 border-gray-200 h-14 rounded-2xl focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all"
                             />
                         </motion.div>
@@ -99,34 +101,34 @@ export function ContactForm() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <motion.div variants={itemVariants} className="relative group">
-                            <label htmlFor="nationality" className="sr-only">Uyruk*</label>
+                            <label htmlFor="nationality" className="sr-only">{t("nationalityLabel")}</label>
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
                                 <Globe className="w-5 h-5" />
                             </div>
                             <select id="nationality" required className="w-full pl-12 pr-4 bg-gray-50 border border-gray-200 h-14 rounded-2xl text-gray-700 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-                                <option value="" disabled selected>Uyruk*</option>
-                                <option value="Azerbaycan">Azerbaycan</option>
-                                <option value="Özbekistan">Özbekistan</option>
-                                <option value="Türkiye">Türkiye</option>
-                                <option value="Türkmenistan">Türkmenistan</option>
+                                <option value="" disabled selected>{t("nationalityPlaceholder")}</option>
+                                <option value="Azerbaycan">{t("nationalityAzerbaijan")}</option>
+                                <option value="Özbekistan">{t("nationalityUzbekistan")}</option>
+                                <option value="Türkiye">{t("nationalityTurkey")}</option>
+                                <option value="Türkmenistan">{t("nationalityTurkmenistan")}</option>
                             </select>
                         </motion.div>
                         <motion.div variants={itemVariants} className="relative group">
-                            <label htmlFor="subject" className="sr-only">Konu*</label>
+                            <label htmlFor="subject" className="sr-only">{t("subjectLabel")}</label>
                             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
                                 <HelpCircle className="w-5 h-5" />
                             </div>
                             <select id="subject" required className="w-full pl-12 pr-4 bg-gray-50 border border-gray-200 h-14 rounded-2xl text-gray-700 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-                                <option value="" disabled selected>Konu*</option>
-                                <option value="İkamet">İkamet</option>
-                                <option value="Çalışma İzni">Çalışma İzni</option>
-                                <option value="Eğitim Danışmanlığı">Eğitim Danışmanlığı</option>
+                                <option value="" disabled selected>{t("subjectPlaceholder")}</option>
+                                <option value="İkamet">{t("subjectResidence")}</option>
+                                <option value="Çalışma İzni">{t("subjectWorkPermit")}</option>
+                                <option value="Eğitim Danışmanlığı">{t("subjectEducationConsulting")}</option>
                             </select>
                         </motion.div>
                     </div>
 
                     <motion.div variants={itemVariants} className="relative group">
-                        <label htmlFor="phone" className="sr-only">Telefon Numarası*</label>
+                        <label htmlFor="phone" className="sr-only">{t("phoneLabel")}</label>
                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
                             <Phone className="w-5 h-5" />
                         </div>
@@ -134,20 +136,20 @@ export function ContactForm() {
                             id="phone"
                             type="tel"
                             required
-                            placeholder="Telefon Numarası*"
+                            placeholder={t("phonePlaceholder")}
                             className="pl-12 bg-gray-50 border-gray-200 h-14 rounded-2xl focus:bg-white focus:ring-2 focus:ring-primary/20 transition-all"
                         />
                     </motion.div>
 
                     <motion.div variants={itemVariants} className="relative group">
-                        <label htmlFor="message" className="sr-only">Mesaj*</label>
+                        <label htmlFor="message" className="sr-only">{t("messageLabel")}</label>
                         <div className="absolute top-4 left-4 text-gray-400 pointer-events-none group-focus-within:text-primary transition-colors">
                             <MessageSquare className="w-5 h-5" />
                         </div>
                         <textarea
                             id="message"
                             required
-                            placeholder="Mesaj*"
+                            placeholder={t("messagePlaceholder")}
                             rows={4}
                             className="w-full pl-12 pr-4 py-4 bg-gray-50 border border-gray-200 rounded-2xl text-gray-700 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
                         ></textarea>
@@ -163,11 +165,11 @@ export function ContactForm() {
                             {loading ? (
                                 <span className="flex items-center">
                                     <Loader2 className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" />
-                                    Gönderiliyor...
+                                    {t("sending")}
                                 </span>
                             ) : (
                                 <>
-                                    Gönder <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    {t("send")} <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </>
                             )}
                         </Button>

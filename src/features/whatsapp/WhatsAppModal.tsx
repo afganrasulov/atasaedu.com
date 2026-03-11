@@ -18,8 +18,10 @@ import {
 } from "./constants";
 import { useCountryCode } from "./useCountryCode";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export const WhatsAppModal: React.FC = () => {
+    const t = useTranslations("whatsAppModal");
     const { isOpen, closeWhatsApp } = useWhatsApp();
     const detectedCountryCode = useCountryCode();
 
@@ -50,13 +52,7 @@ export const WhatsAppModal: React.FC = () => {
     };
 
     const handleSubmit = () => {
-        const message = `Merhaba Atasa Education,
-    
-Ben ${formData.firstName} ${formData.lastName}.
-Konu: ${formData.topic}
-Soru: ${formData.question || "Danışmanlık almak istiyorum."}
-
-Yardımcı olabilir misiniz?`;
+        const message = `${t("modalTitle")} Atasa Education,\n    \nBen ${formData.firstName} ${formData.lastName}.\nKonu: ${formData.topic}\nSoru: ${formData.question || t("defaultQuestion")}\n\nYardımcı olabilir misiniz?`;
 
         const encodedMessage = encodeURIComponent(message);
         const targetNumber = WHATSAPP_COMPANY_INFO.phone.replace(/\D/g, "");
@@ -112,10 +108,10 @@ Yardımcı olabilir misiniz?`;
                                     />
                                 </div>
                                 <h2 className="text-3xl font-extrabold mb-1">
-                                    WhatsApp Destek
+                                    {t("modalTitle")}
                                 </h2>
                                 <p className="text-green-100 text-lg">
-                                    Eğitim danışmanlarımızla hemen yazışın
+                                    {t("modalDescription")}
                                 </p>
                             </div>
                         </div>
@@ -125,23 +121,23 @@ Yardımcı olabilir misiniz?`;
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
                                     <label className={labelStyle}>
-                                        <User size={20} className="text-slate-400" /> Adınız
+                                        <User size={20} className="text-slate-400" /> {t("firstNameLabel")}
                                     </label>
                                     <input
                                         type="text"
                                         name="firstName"
-                                        placeholder="Adınız"
+                                        placeholder={t("firstNamePlaceholder")}
                                         value={formData.firstName}
                                         onChange={handleChange}
                                         className={inputStyle}
                                     />
                                 </div>
                                 <div>
-                                    <label className={labelStyle}>Soyadınız</label>
+                                    <label className={labelStyle}>{t("lastNameLabel")}</label>
                                     <input
                                         type="text"
                                         name="lastName"
-                                        placeholder="Soyadınız"
+                                        placeholder={t("lastNamePlaceholder")}
                                         value={formData.lastName}
                                         onChange={handleChange}
                                         className={inputStyle}
@@ -152,8 +148,7 @@ Yardımcı olabilir misiniz?`;
                             {/* Telefon */}
                             <div>
                                 <label className={labelStyle}>
-                                    <PhoneIcon size={20} className="text-slate-400" /> Telefon
-                                    Numaranız
+                                    <PhoneIcon size={20} className="text-slate-400" /> {t("phoneLabel")}
                                 </label>
                                 <div className="flex gap-2">
                                     <div className="relative w-1/3 min-w-[110px]">
@@ -178,7 +173,7 @@ Yardımcı olabilir misiniz?`;
                                         <input
                                             type="tel"
                                             name="phone"
-                                            placeholder="5XX XXX XX XX"
+                                            placeholder={t("phonePlaceholder")}
                                             value={formData.phone}
                                             onChange={handleChange}
                                             className={inputStyle}
@@ -191,8 +186,7 @@ Yardımcı olabilir misiniz?`;
                             <div className="space-y-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
                                 <div className="relative">
                                     <label className={labelStyle}>
-                                        <HelpCircle size={20} className="text-slate-400" /> Konu
-                                        Seçiniz
+                                        <HelpCircle size={20} className="text-slate-400" /> {t("topicLabel")}
                                     </label>
                                     <select
                                         name="topic"
@@ -200,9 +194,9 @@ Yardımcı olabilir misiniz?`;
                                         onChange={handleChange}
                                         className={`${inputStyle} appearance-none cursor-pointer bg-white h-16`}
                                     >
-                                        {TOPICS.map((t) => (
-                                            <option key={t} value={t}>
-                                                {t}
+                                        {TOPICS.map((tItem) => (
+                                            <option key={tItem} value={tItem}>
+                                                {tItem}
                                             </option>
                                         ))}
                                     </select>
@@ -213,18 +207,15 @@ Yardımcı olabilir misiniz?`;
                                 </div>
 
                                 <div className="relative">
-                                    <label className={labelStyle}>Sorunuz Nedir?</label>
+                                    <label className={labelStyle}>{t("questionLabel")}</label>
                                     <select
                                         name="question"
                                         value={formData.question}
                                         onChange={handleChange}
                                         className={`${inputStyle} appearance-none cursor-pointer bg-white h-16`}
                                     >
-                                        <option value="">Lütfen listeden seçin...</option>
-                                        {(
-                                            PREDEFINED_QUESTIONS[formData.topic] ||
-                                            PREDEFINED_QUESTIONS["Diğer"]
-                                        ).map((q, idx) => (
+                                        <option value="">{t("questionPlaceholder")}</option>
+                                        {(PREDEFINED_QUESTIONS[formData.topic] || PREDEFINED_QUESTIONS["Diğer"]).map((q, idx) => (
                                             <option key={idx} value={q}>
                                                 {q}
                                             </option>
@@ -250,19 +241,18 @@ Yardımcı olabilir misiniz?`;
                                     className="w-full bg-green-600 hover:bg-green-700 text-white font-extrabold text-xl py-5 rounded-2xl transition-all flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed shadow-xl shadow-green-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                                 >
                                     <MessageCircle size={32} fill="currentColor" />
-                                    WhatsApp&apos;ı Aç
+                                    {t("openWhatsAppButton")}
                                 </button>
 
                                 <p className="text-center text-slate-500 text-sm font-medium">
-                                    Bu butona tıkladığınızda telefonunuzdaki WhatsApp uygulaması
-                                    açılacaktır.
+                                    {t("infoText")}
                                 </p>
 
                                 <button
                                     onClick={closeWhatsApp}
                                     className="w-full text-slate-400 hover:text-slate-600 font-bold py-3 transition-colors text-lg cursor-pointer"
                                 >
-                                    Vazgeç ve Kapat
+                                    {t("cancelButton")}
                                 </button>
                             </div>
                         </div>

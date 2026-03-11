@@ -3,8 +3,11 @@
 import { Mail, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function ContactInfo() {
+    const t = useTranslations("contactInfo");
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -27,26 +30,26 @@ export function ContactInfo() {
     const contactItems = [
         {
             icon: MapPin,
-            title: "Adres",
+            title: t("address"),
             details: [
-                { text: "Mecidiyeköy mah. Raşit Rıza sk. Ahmet Esin İş Merkezi NO:4 K:2 D:7, Şişli/İstanbul", href: "https://maps.app.goo.gl/cQXVomJozJ6p8neS8" },
-                { text: "Əhməd Rəcəbli küçəsi 1/10 Tivi Plaza Qat:1 Nərimanov/Bakı", href: "https://maps.app.goo.gl/cQXVomJozJ6p8neS8" }
+                { text: t("address1"), href: "https://maps.app.goo.gl/cQXVomJozJ6p8neS8" },
+                { text: t("address2"), href: "https://maps.app.goo.gl/cQXVomJozJ6p8neS8" }
             ]
         },
         {
             icon: Phone,
-            title: "Telefon Numarası",
+            title: t("phoneNumber"),
             details: [
-                { text: "Mobil: (+90) - 850 - 308 - 69 - 98", href: "tel:+908503086998" },
-                { text: "Mobil: (+994) - 10 - 323 - 69 - 98", href: "tel:+994103236998" }
+                { text: t("phone1"), href: "tel:+908503086998" },
+                { text: t("phone2"), href: "tel:+994103236998" }
             ]
         },
         {
             icon: Clock,
-            title: "Çalışma Saatleri",
+            title: t("workingHours"),
             details: [
-                { text: "Pzt - Cum: 09:00 - 18:00", href: null },
-                { text: "Cmt: 10:00 - 13:00", href: null }
+                { text: t("workingHoursWeek"), href: null },
+                { text: t("workingHoursSat"), href: null }
             ]
         }
     ];
@@ -61,10 +64,10 @@ export function ContactInfo() {
         >
             <motion.div variants={itemVariants}>
                 <h2 className="text-4xl md:text-5xl font-black tracking-tight text-[#152239] mb-6">
-                    Sizinle Tanışmak İçin <span className="text-primary">Heyecanlıyız</span>
+                    {t("excitedToMeet").split(" ").slice(0,3).join(" ")} <span className="text-primary">{t("excitedToMeet").split(" ").slice(3).join(" ")}</span>
                 </h2>
                 <p className="text-lg text-gray-500 max-w-lg leading-relaxed">
-                    Eğitim yolculuğunuzda size rehberlik etmek için buradayız. Her türlü sorunuz için bize ulaşabilirsiniz.
+                    {t("description")}
                 </p>
             </motion.div>
 

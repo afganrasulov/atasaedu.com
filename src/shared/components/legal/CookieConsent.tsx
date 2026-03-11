@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { X, Cookie, Settings2 } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 // Types
 interface CookiePreferences {
@@ -82,6 +83,7 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
 
 // Responsive Cookie Consent Component
 export const CookieConsentModal: React.FC = () => {
+    const t = useTranslations("cookieConsent");
     const { isOpen, closeModal, preferences, savePreferences, acceptAll } = useCookieConsent();
     const [view, setView] = useState<'summary' | 'details'>('summary');
     const [localPrefs, setLocalPrefs] = useState(preferences);
@@ -128,8 +130,8 @@ export const CookieConsentModal: React.FC = () => {
                                 <Cookie size={24} />
                             </div>
                             <div>
-                                <span className="block text-lg font-black text-[#152239] leading-tight mb-0.5 tracking-tight">Çerez Tercihleri</span>
-                                <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Atasa Education</span>
+                                <span className="block text-lg font-black text-[#152239] leading-tight mb-0.5 tracking-tight">{t("cookiePreferences")}</span>
+                                <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">{t("brandName")}</span>
                             </div>
                         </div>
                         <button onClick={closeModal} className="p-2.5 hover:bg-slate-200 rounded-full transition-colors text-slate-400 hover:text-slate-600 bg-white shadow-sm border border-slate-100">
@@ -141,8 +143,8 @@ export const CookieConsentModal: React.FC = () => {
                         {view === 'summary' ? (
                             <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
                                 <p className="text-slate-600 text-[15px] leading-relaxed font-medium">
-                                    Size daha iyi bir eğitim danışmanlığı deneyimi sunabilmek için sitemizde çerezler kullanıyoruz.
-                                    Detaylı bilgi için <Link href="/cookie-policy" onClick={closeModal} className="text-primary hover:underline font-black mx-1 bg-primary/5 px-2 py-0.5 rounded-md">Çerez Aydınlatma Metni</Link>'ni inceleyebilirsiniz.
+                                    {t("cookieInfo")}{' '}
+                                    <Link href="/cookie-policy" onClick={closeModal} className="text-primary hover:underline font-black mx-1 bg-primary/5 px-2 py-0.5 rounded-md">{t("cookiePolicyLink")}</Link>{"'"}ni inceleyebilirsiniz.
                                 </p>
 
                                 <div className="flex flex-col gap-3">
@@ -150,50 +152,50 @@ export const CookieConsentModal: React.FC = () => {
                                         onClick={acceptAll}
                                         className="w-full bg-[#152239] text-white py-4 rounded-full text-base font-black hover:bg-primary transition-colors shadow-lg shadow-slate-200 active:scale-95 flex items-center justify-center gap-2"
                                     >
-                                        <Cookie size={18} /> Tümünü Kabul Et
+                                        <Cookie size={18} /> {t("acceptAll")}
                                     </button>
                                     <button
                                         onClick={() => setView('details')}
                                         className="w-full bg-slate-50 text-slate-600 py-4 rounded-full text-base font-bold hover:bg-slate-100 transition-colors border border-slate-200 flex items-center justify-center gap-2 active:scale-95"
                                     >
-                                        <Settings2 size={18} /> Tercihleri Yönet
+                                        <Settings2 size={18} /> {t("managePreferences")}
                                     </button>
                                 </div>
                             </div>
                         ) : (
                             <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
                                 <MiniCookieOption
-                                    label="Zorunlu Çerezler"
-                                    desc="Sitenin temel işlevleri için gereklidir."
+                                    label={t("mandatoryCookies")}
+                                    desc={t("mandatoryCookiesDesc")}
                                     checked={true}
                                     disabled={true}
                                     onChange={() => { }}
                                 />
                                 <MiniCookieOption
-                                    label="Analitik Çerezler"
-                                    desc="Ziyaretçi sayımı ve trafik analizi."
+                                    label={t("analyticsCookies")}
+                                    desc={t("analyticsCookiesDesc")}
                                     checked={localPrefs.performance}
                                     onChange={() => handleToggle('performance')}
                                 />
                                 <MiniCookieOption
-                                    label="Pazarlama Çerezleri"
-                                    desc="Size özel eğitim fırsatları."
+                                    label={t("marketingCookies")}
+                                    desc={t("marketingCookiesDesc")}
                                     checked={localPrefs.marketing}
                                     onChange={() => handleToggle('marketing')}
                                 />
                                 <MiniCookieOption
-                                    label="İşlevsel Çerezler"
-                                    desc="Dil ve kullanım tercihlerinizi hatırlar."
+                                    label={t("functionalCookies")}
+                                    desc={t("functionalCookiesDesc")}
                                     checked={localPrefs.functional}
                                     onChange={() => handleToggle('functional')}
                                 />
 
                                 <div className="pt-6 mt-2 border-t border-slate-100 flex gap-3">
                                     <button onClick={() => setView('summary')} className="flex-1 bg-slate-100 text-slate-600 py-3.5 rounded-full text-sm font-bold flex items-center justify-center gap-2 hover:bg-slate-200 transition-colors active:scale-95">
-                                        Geri Dön
+                                        {t("goBack")}
                                     </button>
                                     <button onClick={handleSave} className="flex-[2] bg-primary text-white py-3.5 rounded-full text-sm font-bold flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 active:scale-95">
-                                        Seçimleri Kaydet
+                                        {t("saveSelections")}
                                     </button>
                                 </div>
                             </div>

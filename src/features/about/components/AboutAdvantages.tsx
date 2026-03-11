@@ -3,39 +3,42 @@
 import { motion } from "framer-motion";
 import { Container } from "@/shared/components/ui/Container";
 import { Users, Globe2, HeartHandshake, GraduationCap } from "lucide-react";
-
-const advantages = [
-    {
-        icon: Users,
-        title: "Uzmanlık Hizmeti",
-        description: "Eğitim danışmanlarımız, sizin ihtiyaçlarınıza ve hedeflerinize özel rehberlik eder.",
-        gradient: "from-blue-600 to-blue-700",
-        shadow: "shadow-blue-500/20"
-    },
-    {
-        icon: Globe2,
-        title: "Geniş Ağ",
-        description: "Dünya çapında birçok üniversiteyle iş birliklerimiz sayesinde geniş seçenekler sunarız.",
-        gradient: "from-orange-500 to-orange-700",
-        shadow: "shadow-orange-500/20"
-    },
-    {
-        icon: HeartHandshake,
-        title: "Tam Destek",
-        description: "Üniversite başvuruları, vize işlemleri ve burs olanakları gibi konularda yanınızdayız.",
-        gradient: "from-emerald-500 to-emerald-700",
-        shadow: "shadow-emerald-500/20"
-    },
-    {
-        icon: GraduationCap,
-        title: "Burs Olanakları",
-        description: "%50'ye varan burs imkanlarıyla eğitim hayallerinize ulaşmanızı kolaylaştırıyoruz.",
-        gradient: "from-rose-500 to-rose-700",
-        shadow: "shadow-rose-500/20"
-    }
-];
+import { useTranslations } from "next-intl";
 
 export function AboutAdvantages() {
+    const t = useTranslations("aboutAdvantages");
+
+    const advantages = [
+        {
+            icon: Users,
+            title: t("expertServiceTitle"),
+            description: t("expertServiceDescription"),
+            gradient: "from-blue-600 to-blue-700",
+            shadow: "shadow-blue-500/20"
+        },
+        {
+            icon: Globe2,
+            title: t("wideNetworkTitle"),
+            description: t("wideNetworkDescription"),
+            gradient: "from-orange-500 to-orange-700",
+            shadow: "shadow-orange-500/20"
+        },
+        {
+            icon: HeartHandshake,
+            title: t("fullSupportTitle"),
+            description: t("fullSupportDescription"),
+            gradient: "from-emerald-500 to-emerald-700",
+            shadow: "shadow-emerald-500/20"
+        },
+        {
+            icon: GraduationCap,
+            title: t("scholarshipOpportunitiesTitle"),
+            description: t("scholarshipOpportunitiesDescription"),
+            gradient: "from-rose-500 to-rose-700",
+            shadow: "shadow-rose-500/20"
+        }
+    ];
+
     return (
         <section className="py-24 bg-white relative overflow-hidden">
             <Container>
@@ -46,7 +49,7 @@ export function AboutAdvantages() {
                         viewport={{ once: true }}
                         className="inline-block px-4 py-1 rounded-full bg-blue-50 text-[#0047BB] text-xs font-black uppercase tracking-widest mb-4"
                     >
-                        Neden Biz?
+                        {t("whyUs")}
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -55,7 +58,7 @@ export function AboutAdvantages() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-5xl font-black text-gray-900 mb-6"
                     >
-                        Atasa Education <br /> <span className="text-[#0047BB]">Ayrıcalıkları</span>
+                        Atasa Education <br /> <span className="text-[#0047BB]">{t("titleHighlight")}</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -64,7 +67,7 @@ export function AboutAdvantages() {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-gray-500 font-medium"
                     >
-                        Geleceğinizi şekillendirirken size en iyi ve en güvenilir deneyimi sunmak için her detayda yanınızdayız.
+                        {t("description")}
                     </motion.p>
                 </div>
 

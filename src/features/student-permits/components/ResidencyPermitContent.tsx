@@ -8,8 +8,22 @@ import {
     Info, School
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 export const ResidencyPermitContent: React.FC = () => {
+    const t = useTranslations("residencyPermitContent");
+
+    const requiredDocuments = [
+        { title: t("requiredDocuments.0.title"), desc: t("requiredDocuments.0.desc") },
+        { title: t("requiredDocuments.1.title"), desc: t("requiredDocuments.1.desc") },
+        { title: t("requiredDocuments.2.title"), desc: t("requiredDocuments.2.desc") },
+        { title: t("requiredDocuments.3.title"), desc: t("requiredDocuments.3.desc") },
+        { title: t("requiredDocuments.4.title"), desc: t("requiredDocuments.4.desc") },
+        { title: t("requiredDocuments.5.title"), desc: t("requiredDocuments.5.desc") },
+        { title: t("requiredDocuments.6.title"), desc: t("requiredDocuments.6.desc") },
+        { title: t("requiredDocuments.7.title"), desc: t("requiredDocuments.7.desc") }
+    ];
+
     return (
         <div className="min-h-screen pt-32 pb-20 bg-slate-50 relative overflow-hidden">
             {/* Background Gradients */}
@@ -24,13 +38,13 @@ export const ResidencyPermitContent: React.FC = () => {
                     <div className="relative z-10 text-center">
                         <div className="flex items-center justify-center gap-2 text-red-500 font-bold mb-6 text-sm uppercase tracking-widest bg-red-50 w-fit mx-auto px-4 py-2 rounded-full">
                             <GraduationCap size={18} />
-                            <span>İkamet İzni Rehberi</span>
+                            <span>{t("badge")}</span>
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-                            Öğrenci İkamet İzni
+                            {t("title")}
                         </h1>
                         <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                            Türkiye'de ön lisans, lisans, yüksek lisans veya doktora eğitimi alacak yabancı uyruklu öğrenciler için zorunlu ikamet izni türüdür.
+                            {t("description")}
                         </p>
                     </div>
                 </div>
@@ -51,19 +65,16 @@ export const ResidencyPermitContent: React.FC = () => {
                         >
                             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                                 <Info className="text-red-500 w-8 h-8" />
-                                Önemli Bilgiler
+                                {t("importantInfoTitle")}
                             </h2>
                             <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
                                 <p>
-                                    Öğrenci ikamet izni başvurusu, <strong className="text-slate-900">e-İkamet</strong> sistemi üzerinden yapılır.
-                                    Başvuru formunu doldurduktan sonra, gerekli belgelerle birlikte üniversitenizin Uluslararası Öğrenci Birimi'ne (veya Göç İdaresi'nin belirttiği birime)
-                                    başvuru tarihinden itibaren en geç <strong className="text-slate-900">10 gün</strong> içinde teslim etmeniz gerekebilir.
+                                    {t("importantInfoText1")}<strong className="text-slate-900">{t("importantInfoStrong1")}</strong>{" "}{t("importantInfoText2")}<strong className="text-slate-900">{t("importantInfoStrong2")}</strong>{t("importantInfoText3")}
                                 </p>
                                 <div className="p-5 bg-red-50/50 border border-red-100 rounded-2xl text-red-900 flex items-start gap-4 shadow-sm">
                                     <AlertTriangle className="w-6 h-6 shrink-0 mt-0.5 text-red-500" />
                                     <p>
-                                        <strong>Dikkat:</strong> Açık öğretim veya uzaktan eğitim programları için öğrenci ikamet izni <u>verilmemektedir</u>.
-                                        Türkiye'de fiziksel olarak eğitim alıyor olmanız şarttır.
+                                        <strong>{t("warningTitle")}</strong> {t("warningText")}<u>{t("warningUnderline")}</u>. {t("warningText2")}
                                     </p>
                                 </div>
                             </div>
@@ -78,19 +89,10 @@ export const ResidencyPermitContent: React.FC = () => {
                         >
                             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                                 <FileText className="text-red-500 w-8 h-8" />
-                                Gerekli Belgeler
+                                {t("requiredDocumentsTitle")}
                             </h2>
                             <div className="grid sm:grid-cols-2 gap-6">
-                                {[
-                                    { title: "Başvuru Formu", desc: "e-İkamet sisteminden alınan ıslak imzalı form." },
-                                    { title: "Pasaport", desc: "Aslı ve işlem gören sayfaların fotokopisi." },
-                                    { title: "Öğrenci Belgesi", desc: "Aktif öğrencilik durumunu gösteren güncel ıslak/e-imzalı belge." },
-                                    { title: "Biyometrik Fotoğraf", desc: "Son 6 ay içinde çekilmiş, beyaz fonlu 4 adet." },
-                                    { title: "Sağlık Sigortası", desc: "Türkiye'de geçerli bir özel sağlık sigortası poliçesi." },
-                                    { title: "Adres Belgesi", desc: "Noter onaylı kira kontratı veya yurt belgesi." },
-                                    { title: "Kart Bedeli Makbuzu", desc: "Değerli kağıt bedelinin ödendiğine dair vergi dairesi dekontu." },
-                                    { title: "UETS Belgesi", desc: "e-Devlet veya PTT üzerinden alınan tebligat adresi belgesi." }
-                                ].map((doc, idx) => (
+                                {requiredDocuments.map((doc, idx) => (
                                     <div key={idx} className="flex gap-4 items-start p-4 bg-slate-50/50 rounded-2xl hover:bg-slate-50 transition-colors">
                                         <CheckCircle className="text-red-500 shrink-0 mt-1" size={24} />
                                         <div>
@@ -108,17 +110,17 @@ export const ResidencyPermitContent: React.FC = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
                         >
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pl-2">Kritik Süreçler</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pl-2">{t("criticalProcessesTitle")}</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all">
                                     <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-500 mb-6">
                                         <School className="w-7 h-7" />
                                     </div>
                                     <h3 className="text-xl font-bold text-slate-900 mb-3">
-                                        Bölüm Değişikliği
+                                        {t("processChangeDepartmentTitle")}
                                     </h3>
                                     <p className="text-slate-600 leading-relaxed">
-                                        Aynı il içinde fakülte/bölüm değişikliğinde 20 gün içinde bildirim yapılmalıdır. Farklı bir ile geçiş yapıldığında ise 10 gün içinde o ilin Göç İdaresi'ne yeni başvuru yapılmalıdır.
+                                        {t("processChangeDepartmentDesc")}
                                     </p>
                                 </div>
                                 <div className="bg-white p-8 rounded-3xl border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all">
@@ -126,10 +128,10 @@ export const ResidencyPermitContent: React.FC = () => {
                                         <AlertTriangle className="w-7 h-7" />
                                     </div>
                                     <h3 className="text-xl font-bold text-slate-900 mb-3">
-                                        Kayıt Dondurma
+                                        {t("processFreezeRegistrationTitle")}
                                     </h3>
                                     <p className="text-slate-600 leading-relaxed">
-                                        Herhangi bir sebeple kaydını donduran öğrencilerin ikamet izinleri iptal edilir. Eğitime geri dönüldüğünde sıfırdan ilk başvuru yapılması gerekmektedir.
+                                        {t("processFreezeRegistrationDesc")}
                                     </p>
                                 </div>
                             </div>
@@ -142,23 +144,23 @@ export const ResidencyPermitContent: React.FC = () => {
                             transition={{ delay: 0.4 }}
                             className="bg-white p-8 md:p-10 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100"
                         >
-                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 pl-2">Sıkça Sorulan Sorular</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 pl-2">{t("faqTitle")}</h2>
                             <div className="space-y-4">
                                 <AccordionItem
-                                    question="Mezun olduktan sonra ikamet iznim ne olur?"
-                                    answer="Mezuniyet tarihinden itibaren öğrenci ikamet izniniz sona erer. Türkiye'de kalmaya devam edecekseniz 10 gün içinde 'Kısa Dönem İkamet İzni'ne (mezuniyet sonrası 6 ay içinde başvurulabilir) geçiş yapmanız gerekmektedir."
+                                    question={t("faq1Question")}
+                                    answer={t("faq1Answer")}
                                 />
                                 <AccordionItem
-                                    question="Hem okuyup hem çalışabilir miyim?"
-                                    answer="Öğrenci ikamet izni doğrudan çalışma hakkı vermez. Ön lisans ve lisans öğrencileri ilk yıldan sonra kısmi süreli çalışma izni alabilir. Yüksek lisans ve doktora öğrencileri ise süre kısıtlaması olmaksızın çalışma izni alabilir."
+                                    question={t("faq2Question")}
+                                    answer={t("faq2Answer")}
                                 />
                                 <AccordionItem
-                                    question="Harç ödemesi yapmam gerekiyor mu?"
-                                    answer="Öğrenci ikamet izni başvurularında yabancılar 'İkamet İzni Harcı' ödemesinden muaftır. Sadece yıllık olarak belirlenen 'İkamet İzni Kart Bedeli' ödenmelidir."
+                                    question={t("faq3Question")}
+                                    answer={t("faq3Answer")}
                                 />
                                 <AccordionItem
-                                    question="Adresim değişti ne yapmalıyım?"
-                                    answer="Adres veya iletişim bilgileriniz değiştiğinde yasal olarak 20 iş günü içinde önce Nüfus Müdürlüğü'ne ardından İl Göç İdaresi Müdürlüğü'ne güncel adresinizi bildirmeniz zorunludur. Aksi takdirde ceza ile karşılaşabilirsiniz."
+                                    question={t("faq4Question")}
+                                    answer={t("faq4Answer")}
                                 />
                             </div>
                         </motion.section>
@@ -178,9 +180,9 @@ export const ResidencyPermitContent: React.FC = () => {
                                     <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm border border-white/20">
                                         <Shield className="w-8 h-8 text-white" />
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-4">Profesyonel Destek</h3>
+                                    <h3 className="text-2xl font-bold mb-4">{t("ctaTitle")}</h3>
                                     <p className="text-blue-100 mb-8 leading-relaxed">
-                                        Üniversite kayıt, denklik ve ikamet izni başvurularınızda uzman kadromuzla yanınızdayız. Riski sıfıra indirin.
+                                        {t("ctaDescription")}
                                     </p>
 
                                     <Link
@@ -189,18 +191,18 @@ export const ResidencyPermitContent: React.FC = () => {
                                         rel="noopener noreferrer"
                                         className="block w-full bg-white text-[#0047BB] hover:bg-slate-50 font-bold py-4 px-6 rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn"
                                     >
-                                        Hemen Başvurun
+                                        {t("ctaButton")}
                                         <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                                     </Link>
                                     <p className="text-xs text-blue-200 mt-6 mt-4 mix-blend-screen opacity-70">
-                                        Ücretsiz ön değerlendirme
+                                        {t("ctaSubtext")}
                                     </p>
                                 </div>
                             </div>
 
                             {/* Other Permit Types Links */}
                             <div className="bg-white p-6 rounded-[2rem] border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                                <h4 className="font-bold text-slate-900 mb-4 px-2">Bağlantılar</h4>
+                                <h4 className="font-bold text-slate-900 mb-4 px-2">{t("linksTitle")}</h4>
                                 <ul className="space-y-2">
                                     <li>
                                         <Link href="/ogrenci-calisma-izni" className="flex items-center justify-between text-slate-600 hover:text-blue-600 p-4 hover:bg-blue-50 rounded-2xl transition-all font-medium group">
@@ -208,7 +210,7 @@ export const ResidencyPermitContent: React.FC = () => {
                                                 <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-white transition-colors">
                                                     <CheckCircle className="w-4 h-4 text-blue-500" />
                                                 </div>
-                                                Öğrenci Çalışma İzni
+                                                {t("linkStudentWorkPermit")}
                                             </span>
                                             <ArrowRight size={16} className="text-slate-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
                                         </Link>
@@ -219,7 +221,7 @@ export const ResidencyPermitContent: React.FC = () => {
                                                 <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-white transition-colors">
                                                     <AlertTriangle className="w-4 h-4 text-slate-400 group-hover:text-blue-500" />
                                                 </div>
-                                                Ana Sayfaya Dön
+                                                {t("linkHome")}
                                             </span>
                                             <ArrowRight size={16} className="text-slate-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
                                         </Link>

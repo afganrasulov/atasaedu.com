@@ -1,22 +1,27 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import { Container } from "@/shared/components/ui/Container";
 import { Card } from "@/shared/components/ui/Card";
 
-const steps = [
-    { num: "01", title: "Ön Görüşme ve Hedef Belirleme", icon: "💬" },
-    { num: "02", title: "Uygun Program ve Bütçe Seçimi", icon: "🔍" },
-    { num: "03", title: "Başvuru Evraklarının Hazırlanması", icon: "📄" },
-    { num: "04", title: "Okul Kabul ve Onay Süreci", icon: "✅" },
-    { num: "05", title: "Vize Başvurusu ve Oryantasyon", icon: "✈️" }
-];
-
 export function ApplicationProcess() {
+    const t = useTranslations("applicationProcess");
+
+    const steps = [
+        { num: "01", title: t("step1Title"), icon: "💬" },
+        { num: "02", title: t("step2Title"), icon: "🔍" },
+        { num: "03", title: t("step3Title"), icon: "📄" },
+        { num: "04", title: t("step4Title"), icon: "✅" },
+        { num: "05", title: t("step5Title"), icon: "✈️" }
+    ];
+
     return (
         <section className="py-24 bg-white dark:bg-gray-950 min-h-screen border-b border-gray-100 dark:border-gray-800">
             <Container>
                 <div className="text-center mb-16">
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">Nasıl Çalışıyoruz?</h1>
+                    <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">{t("howItWorks")}</h1>
                     <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        İlk günden gideceğiniz ana kadar tüm sürecinizi profesyonelce planlıyoruz.
+                        {t("intro")}
                     </p>
                 </div>
 
@@ -35,7 +40,7 @@ export function ApplicationProcess() {
                                         <span className="text-5xl font-black text-blue-50/50 dark:text-gray-800/50 absolute top-4 right-4 z-0 pointer-events-none">{step.num}</span>
                                         <h3 className="text-xl font-bold relative z-10 mb-2">{step.title}</h3>
                                         <p className="text-gray-600 dark:text-gray-400 relative z-10">
-                                            Sürecin bu adımında uzman danışmanlarımız, gerekli tüm detayları sizin için şeffaf bir şekilde organize eder.
+                                            {t("stepDescription")}
                                         </p>
                                     </Card>
                                 </div>

@@ -3,51 +3,54 @@
 import { Container } from "@/shared/components/ui/Container";
 import { motion } from "framer-motion";
 import { CheckCircle2, Sparkles } from "lucide-react";
-
-const steps = [
-    {
-        num: "01",
-        title: "Online Başvuru",
-        desc: "Başvurunuzu gerçekleştirmek için öncelikle Başvuru Formunu eksiksiz doldurmanız gerekmektedir. İlgili form üzerinden gerekli belgeleri yükleyin. Henüz hangi üniversiteye başvuracağınıza karar vermediyseniz, ilgilendiğiniz bölümleri seçmeniz yeterli olacaktır."
-    },
-    {
-        num: "02",
-        title: "Danışman İle İletişim",
-        desc: "Başvurunuz bize ulaştığında, danışmanlarımız sizinle WhatsApp, e-posta veya telefon yoluyla iletişime geçecek, başvurunuz ve süreç hakkında bilgi verecektir."
-    },
-    {
-        num: "03",
-        title: "Danışman İle Randevu",
-        desc: "Daha detaylı bilgi almak için ofisimize gelebilir ve eğitim uzmanlarımız tarafından sunulan ücretsiz danışmanlık hizmetlerinden faydalanabilirsiniz. Danışmanlarımız, üniversite ve bölüm seçiminden, kontenjan durumlarına, ödeme koşullarına kadar birçok konuda size yardımcı olacaktır."
-    },
-    {
-        num: "04",
-        title: "Üniversite Kabulü",
-        desc: "Tercihlerinize ve kriterlerinize uygun olarak anlaşmalı olduğumuz üniversitelerden, kabul mektubunuz e-posta yoluyla gönderilecektir. Gönderilen kabul mektupları bağlayıcı nitelikte değildir, yani kayıt zorunluluğunuz yoktur. Bu mektupları bir teklif olarak değerlendirebilirsiniz."
-    },
-    {
-        num: "05",
-        title: "Üniversiteye Harç Ödemesi",
-        desc: "Kabul edildiğiniz üniversite ve bölümü uygun bulduysanız, teklif mektubunda belirtilen üniversitenin resmi banka hesaplarına harç ödemenizi gerçekleştirmeniz gerekir. Harç ödemesini tüm yılı kapsayacak şekilde tek seferde ya da başlangıçta bir depozito olarak yapabilirsiniz."
-    },
-    {
-        num: "06",
-        title: "Dekont",
-        desc: "Üniversiteye yaptığınız ödemenin ardından, ödeme dekontunuzu danışmanınıza WhatsApp veya E-Mail yoluyla iletmeyi unutmayın. Danışmanınız, işlemleri hızlandırmak amacıyla dekontu üniversiteyle paylaşacaktır."
-    },
-    {
-        num: "07",
-        title: "Resmi Kabul Mektubu",
-        desc: "Harç ödemeniz üniversitenin banka hesabına ulaştığında, üniversite tarafından E-Mail adresinize resmi kabul mektubunuz gönderilecektir."
-    },
-    {
-        num: "08",
-        title: "Üniversite Kaydı",
-        desc: "Resmi kabul mektubunuzu ve kayıt için gerekli tüm evrakları hazırlayarak üniversitenizi ziyaret edin ve kaydınızı tamamlayın."
-    }
-];
+import { useTranslations } from "next-intl";
 
 export function ApplySteps() {
+    const t = useTranslations("applySteps");
+
+    const steps = [
+        {
+            num: "01",
+            title: t("step01Title"),
+            desc: t("step01Desc")
+        },
+        {
+            num: "02",
+            title: t("step02Title"),
+            desc: t("step02Desc")
+        },
+        {
+            num: "03",
+            title: t("step03Title"),
+            desc: t("step03Desc")
+        },
+        {
+            num: "04",
+            title: t("step04Title"),
+            desc: t("step04Desc")
+        },
+        {
+            num: "05",
+            title: t("step05Title"),
+            desc: t("step05Desc")
+        },
+        {
+            num: "06",
+            title: t("step06Title"),
+            desc: t("step06Desc")
+        },
+        {
+            num: "07",
+            title: t("step07Title"),
+            desc: t("step07Desc")
+        },
+        {
+            num: "08",
+            title: t("step08Title"),
+            desc: t("step08Desc")
+        }
+    ];
+
     return (
         <section id="apply-steps-sec" className="py-24 bg-[#F8FAFC] border-y border-slate-100 relative overflow-hidden">
             {/* Background Decor */}
@@ -62,13 +65,13 @@ export function ApplySteps() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-4 border border-blue-100 uppercase tracking-wider">
                             <Sparkles size={14} />
-                            <span>Adım Adım Başvuru</span>
+                            <span>{t("badge")}</span>
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
-                            8 Kolay Adımda <span className="text-[#0056D2]">Üniversiteli Olun!</span>
+                            8 Kolay Adımda <span className="text-[#0056D2]">{t("titleHighlight")}</span>
                         </h2>
                         <p className="text-slate-600 text-lg font-medium leading-relaxed">
-                            Atasa Education ile üniversite başvuruları artık çok kolay. Danışmanlarımız her adımda yanınızda olacak.
+                            {t("description")}
                         </p>
                     </motion.div>
                 </div>

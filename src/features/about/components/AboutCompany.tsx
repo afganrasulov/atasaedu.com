@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { Container } from "@/shared/components/ui/Container";
 import Image from "next/image";
 import { CheckCircle2, ShieldCheck, Globe, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function AboutCompany() {
+    const t = useTranslations("aboutCompany");
+
     return (
         <section className="py-24 bg-gray-50/30 relative overflow-hidden">
             {/* Dekoratif Arka Plan Elemanları (atasa.mobi stili) */}
@@ -24,20 +27,20 @@ export function AboutCompany() {
                         <div>
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100 text-[#0047BB] font-bold mb-6">
                                 <ShieldCheck size={18} />
-                                <span className="text-[10px] uppercase tracking-widest font-black">Hikayemiz & Vizyonumuz</span>
+                                <span className="text-[10px] uppercase tracking-widest font-black">{t("badge")}</span>
                             </div>
                             <h2 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-8">
-                                Eğitimde <br /> <span className="text-[#0047BB]">Güvenilir</span> Rehberiniz
+                                {t("titlePart1")} <br /> <span className="text-[#0047BB]">{t("titlePart2")}</span> {t("titlePart3")}
                             </h2>
                             <div className="w-20 h-1.5 bg-[#0047BB] rounded-full" />
                         </div>
 
                         <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-medium">
                             <p>
-                                2016 yılında İstanbul'un kalbinde başlayan yolculuğumuz, bugün Azerbaycan, Türkmenistan ve çok yakında Özbekistan'da uluslararası bir vizyona dönüştü.
+                                {t("storyParagraph1")}
                             </p>
                             <p className="bg-white/50 backdrop-blur-sm p-6 rounded-3xl border border-white shadow-sm italic text-gray-900 border-l-4 border-l-[#0047BB]">
-                                "Bugüne kadar binlerce öğrencinin hayalini gerçekleştirdik. Çünkü biz, geleceği aydınlatmak için eğitimin gücüne inananlardanız."
+                                {t("storyQuote")}
                             </p>
                         </div>
 
@@ -49,8 +52,8 @@ export function AboutCompany() {
                                 <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-[#0047BB] mb-4">
                                     <Globe size={24} />
                                 </div>
-                                <h3 className="text-lg font-black text-gray-900 mb-2">Misyonumuz</h3>
-                                <p className="text-sm text-gray-500 font-medium">Potansiyelini keşfetmek isteyen bireylere dünyayı daha iyi bir yer yapmaları için aracılık etmek.</p>
+                                <h3 className="text-lg font-black text-gray-900 mb-2">{t("missionTitle")}</h3>
+                                <p className="text-sm text-gray-500 font-medium">{t("missionDescription")}</p>
                             </motion.div>
 
                             <motion.div
@@ -60,8 +63,8 @@ export function AboutCompany() {
                                 <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-orange-600 mb-4">
                                     <Star size={24} />
                                 </div>
-                                <h3 className="text-lg font-black text-gray-900 mb-2">Vizyonumuz</h3>
-                                <p className="text-sm text-gray-500 font-medium">Öğrencilerin gelişimini desteklemek ve başarı yolunda en güvenilir rehber olmak.</p>
+                                <h3 className="text-lg font-black text-gray-900 mb-2">{t("visionTitle")}</h3>
+                                <p className="text-sm text-gray-500 font-medium">{t("visionDescription")}</p>
                             </motion.div>
                         </div>
                     </motion.div>
@@ -96,11 +99,11 @@ export function AboutCompany() {
                                     <CheckCircle2 size={24} />
                                 </div>
                                 <div>
-                                    <div className="text-3xl font-black text-gray-900">5k+</div>
-                                    <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Mezun Öğrenci</div>
+                                    <div className="text-3xl font-black text-gray-900">{t("graduatesCount")}</div>
+                                    <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{t("graduatesLabel")}</div>
                                 </div>
                             </div>
-                            <p className="text-xs text-gray-500 font-bold leading-relaxed">Binlerce hayali gerçeğe dönüştürmenin haklı gururunu yaşıyoruz.</p>
+                            <p className="text-xs text-gray-500 font-bold leading-relaxed">{t("graduatesDescription")}</p>
                         </motion.div>
 
                         {/* Mini Dekoratif Kart */}

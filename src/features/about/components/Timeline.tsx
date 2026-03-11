@@ -2,35 +2,38 @@
 
 import { motion } from "framer-motion";
 import { Container } from "@/shared/components/ui/Container";
-
-const milestones = [
-    {
-        year: "2016",
-        title: "İlk Adım",
-        description: "Atasa Education, İstanbul'un kalbinde küçük bir ofis ve büyük hayallerle kuruldu.",
-        highlight: "Kuruluş"
-    },
-    {
-        year: "2019",
-        title: "Uluslararası Açılım",
-        description: "Azerbaycan ve Türkmenistan şubelerimizle bölgedeki en güçlü eğitim köprüsü olduk.",
-        highlight: "Bölgesel Güç"
-    },
-    {
-        year: "2023",
-        title: "Dijital Devrim",
-        description: "Tüm başvuru ve takip süreçlerimizi yeni nesil online platformumuza taşıdık.",
-        highlight: "Teknolojik Liderlik"
-    },
-    {
-        year: "2026",
-        title: "Geleceğe Hazır",
-        description: "Özbekistan şubemiz ve modern SPA altyapımızla 2026 vizyonuna odaklandık.",
-        highlight: "Vizyon 2026"
-    }
-];
+import { useTranslations } from "next-intl";
 
 export function Timeline() {
+    const t = useTranslations("timeline");
+
+    const milestones = [
+        {
+            year: "2016",
+            title: t("milestones.0.title"),
+            description: t("milestones.0.description"),
+            highlight: t("milestones.0.highlight")
+        },
+        {
+            year: "2019",
+            title: t("milestones.1.title"),
+            description: t("milestones.1.description"),
+            highlight: t("milestones.1.highlight")
+        },
+        {
+            year: "2023",
+            title: t("milestones.2.title"),
+            description: t("milestones.2.description"),
+            highlight: t("milestones.2.highlight")
+        },
+        {
+            year: "2026",
+            title: t("milestones.3.title"),
+            description: t("milestones.3.description"),
+            highlight: t("milestones.3.highlight")
+        }
+    ];
+
     return (
         <section className="py-32 bg-[#F8FAFC] relative overflow-hidden">
             {/* Dekoratif Arka Plan Parıltıları */}
@@ -44,7 +47,7 @@ export function Timeline() {
                         viewport={{ once: true }}
                         className="inline-block px-4 py-1 rounded-full bg-blue-100 text-[#0047BB] text-[10px] font-black uppercase tracking-[0.2em] mb-4"
                     >
-                        Yolculuğumuz
+                        {t("journey")}
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
@@ -53,7 +56,7 @@ export function Timeline() {
                         transition={{ delay: 0.1 }}
                         className="text-4xl md:text-6xl font-black text-gray-900 mb-8"
                     >
-                        Kilometre <br /> <span className="text-[#0047BB]">Taşlarımız</span>
+                        {t("titlePart1")} <br /> <span className="text-[#0047BB]">{t("titlePart2")}</span>
                     </motion.h2>
                     <div className="w-20 h-1.5 bg-[#0047BB] mx-auto rounded-full" />
                 </div>
