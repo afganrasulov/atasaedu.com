@@ -359,3 +359,112 @@ export async function getUntranslatedPosts(
     return data ?? [];
 }
 
+// ─── Keywords ────────────────────────────────────────────────
+
+export interface BlogKeyword {
+    id: string;
+    keyword: string;
+    is_active: boolean;
+    created_at: string;
+    updated_at: string;
+}
+
+export async function getKeywords(): Promise<BlogKeyword[]> {
+    const db = getBlogClient();
+    const { data, error } = await db
+        .from("keywords")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+    if (error) throw new Error(`Keywords fetch failed: ${error.message}`);
+    return data ?? [];
+}
+
+export async function addKeyword(keyword: string): Promise<BlogKeyword> {
+    const db = getBlogClient();
+    const { data, error } = await db
+        .from("keywords")
+        .insert({ keyword: keyword.toLowerCase().trim() })
+        .select()
+        .single();
+
+    if (error) throw new Error(`Keyword add failed: ${error.message}`);
+    return data;
+}
+
+export async function updateKeyword(
+    id: string,
+    updates: Partial<Pick<BlogKeyword, "keyword" | "is_active">>
+): Promise<void> {
+    const db = getBlogClient();
+    const { error } = await db
+        .from("keywords")
+        .update({ ...updates, updated_at: new Date().toISOString() })
+        .eq("id", id);
+
+    if (error) throw new Error(`Keyword update failed: ${error.message}`);
+}
+
+export async function deleteKeyword(id: string): Promise<void> {
+    const db = getBlogClient();
+    const { error } = await db.from("keywords").delete().eq("id", id);
+    if (error) throw new Error(`Keyword delete failed: ${error.message}`);
+}
+
+// ─── Auto-Approve & Daily Limit ─────────────────────────────
+
+/** En yeni N adet discovered topic'i otomatik onaylar */
+export async function autoApproveTopics(limit = 3): Promise<number> {
+    const db = getBlogClient();
+
+    const { data: topics, error } = await db
+        .from("topics")
+        .select("id")
+        .eq("status", "discovered")
+        .order("created_at", { ascending: false })
+        .limit(limit);
+
+    if (error || !topics || topics.length === 0) return 0;
+
+    const ids = topics.map((t: { id: string }) => t.id);
+
+    const { error: updateError } = await db
+        .from("topics")
+        .update({ status: "approved" })
+        .in("id", ids);
+
+    if (updateError) throw new Error(`Auto-approve failed: ${updateError.message}`);
+    return ids.length;
+}
+
+/** Bugün kaç makale üretildiğini sayar */
+export async function getTodayGenerationCount(): Promise<number> {
+    const db = getBlogClient();
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const { count, error } = await db
+        .from("posts")
+        .select("*", { count: "exact", head: true })
+        .gte("created_at", today.toISOString());
+
+    if (error) throw new Error(`Today count failed: ${error.message}`);
+    return count ?? 0;
+}
+
+// ─── Automation Logging ──────────────────────────────────────
+
+export interface AutomationLog {
+    discovered: number;
+    approved: number;
+    generated: number;
+    errors: string[];
+    duration_ms: number;
+    status: "success" | "partial" | "failed";
+}
+
+export async function logAutomationRun(log: AutomationLog): Promise<void> {
+    const db = getBlogClient();
+    const { error } = await db.from("automation_logs").insert(log);
+    if (error) console.error(`Automation log failed: ${error.message}`);
+}

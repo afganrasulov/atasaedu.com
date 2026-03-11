@@ -5,6 +5,7 @@ import {
     updateTopicStatus,
     type BlogTopic,
 } from "./blogService";
+import { generateOgImage } from "./ogImageGenerator";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
@@ -106,7 +107,10 @@ Yanıtı SADECE geçerli JSON olarak ver, başka hiçbir metin ekleme:
             article.faq
         );
 
-        // 5. Supabase'e kaydet
+        // 5. OG görsel üret (opsiyonel — hata olursa null)
+        const imageUrl = await generateOgImage(article.title, article.slug);
+
+        // 6. Supabase'e kaydet
         await createPost({
             topic_id: topic.id,
             title: article.title,
@@ -117,7 +121,7 @@ Yanıtı SADECE geçerli JSON olarak ver, başka hiçbir metin ekleme:
             keywords: article.keywords,
             schema_markup: schemaMarkup,
             category: article.category,
-            image_url: null,
+            image_url: imageUrl,
             seo_score: article.seoScore,
             published_at: new Date().toISOString(),
         });
