@@ -1,13 +1,68 @@
 import { Container } from "@/shared/components/ui/Container";
 import { getPostBySlug, getTranslatedPost } from "@/lib/blog/blogService";
 import Link from "next/link";
-import { ArrowLeft, Calendar, Clock, Tag } from "lucide-react";
+import Image from "next/image";
+import { Calendar, Clock, Tag, ChevronRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import "@/app/blog-theme.css";
+import { BlogDetailClient } from "@/features/blog/components/BlogDetailClient";
 
 interface BlogPostPageProps {
     params: Promise<{ slug: string; locale: string }>;
+}
+
+/** Güvenli domainler — sadece bunlar korunur, diğerleri düz metne dönüşür */
+const SAFE_DOMAINS = [".gov.tr", ".edu.tr", "atasaedu.com", "turkiyeburslari.gov.tr"];
+
+/**
+ * İçerik güvenlik filtresi + SEO keyword highlight + heading ID ekleme
+ */
+function processContent(html: string, keywords: string[]): string {
+    let processed = html;
+
+    // 1. Harici linkleri filtrele — sadece güvenli domainler kalsın
+    processed = processed.replace(
+        /<a\s+([^>]*?)href="(https?:\/\/[^"]+)"([^>]*?)>(.*?)<\/a>/gi,
+        (match, _pre, url, _post, text) => {
+            const isSafe = SAFE_DOMAINS.some((d) => url.includes(d));
+            if (isSafe) return match;
+            return text;
+        }
+    );
+
+    // 2. H2/H3'lere id attribute ekle (ToC anchor için)
+    processed = processed.replace(
+        /<(h[23])>(.*?)<\/\1>/gi,
+        (_match, tag, content) => {
+            const plainText = content.replace(/<[^>]+>/g, "").trim();
+            const id = plainText
+                .toLowerCase()
+                .replace(/[^a-z0-9\s]/g, "")
+                .replace(/\s+/g, "-")
+                .substring(0, 60);
+            return `<${tag} id="${id}">${content}</${tag}>`;
+        }
+    );
+
+    // 3. İlk keyword geçişini vurgula
+    if (keywords.length > 0) {
+        const primaryKeyword = keywords[0];
+        const escapedKw = primaryKeyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        // HTML tag'ları dışında ilk geçişi bul
+        let found = false;
+        processed = processed.replace(
+            new RegExp(`(>)([^<]*?)\\b(${escapedKw})\\b`, "i"),
+            (_match, gt, before, kw) => {
+                if (found) return _match;
+                found = true;
+                return `${gt}${before}<span class="keyword-highlight">${kw}</span>`;
+            }
+        );
+    }
+
+    return processed;
 }
 
 export async function generateMetadata({
@@ -16,9 +71,9 @@ export async function generateMetadata({
     const t = await getTranslations("blogDetailPage");
     const { slug, locale } = await params;
 
-    // Türkçe dışı dillerde çevrilmiş post'u ara
-    const translatedPost = locale !== "tr" ? await getTranslatedPost(slug, locale) : null;
-    const post = translatedPost ?? await getPostBySlug(slug);
+    const translatedPost =
+        locale !== "tr" ? await getTranslatedPost(slug, locale) : null;
+    const post = translatedPost ?? (await getPostBySlug(slug));
 
     if (!post) return { title: t("notFoundTitle") };
 
@@ -51,16 +106,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const t = await getTranslations("blogDetailPage");
     const { slug, locale } = await params;
 
-    // Türkçe dışı dillerde çevrilmiş post'u ara, yoksa orijinali kullan
-    const translatedPost = locale !== "tr" ? await getTranslatedPost(slug, locale) : null;
+    const translatedPost =
+        locale !== "tr" ? await getTranslatedPost(slug, locale) : null;
     const originalPost = await getPostBySlug(translatedPost ? "" : slug);
     const post = translatedPost ?? originalPost;
 
     if (!post) notFound();
 
-    // Okuma süresi tahmini
     const wordCount = post.content.split(/\s+/).length;
     const readTime = Math.max(1, Math.ceil(wordCount / 200));
+
+    const processedContent = processContent(post.content, post.keywords);
+    const categoryName = "category" in post && post.category ? (post.category as string) : "Blog";
 
     return (
         <>
@@ -74,155 +131,185 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 />
             )}
 
-            {/* Hero */}
-            <section className="relative bg-gradient-to-br from-[#0047BB] via-[#0055D4] to-[#2979FF] py-20 overflow-hidden">
-                <div className="absolute inset-0">
-                    <div className="absolute top-20 right-20 w-72 h-72 bg-white/5 rounded-full blur-3xl" />
-                    <div className="absolute bottom-10 left-10 w-96 h-96 bg-white/3 rounded-full blur-3xl" />
-                </div>
+            {/* Breadcrumb JSON-LD — SEO */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        itemListElement: [
+                            { "@type": "ListItem", position: 1, name: "Home", item: `https://atasaedu.com/${locale}` },
+                            { "@type": "ListItem", position: 2, name: "Blog", item: `https://atasaedu.com/${locale}/blog` },
+                            { "@type": "ListItem", position: 3, name: post.title },
+                        ],
+                    }),
+                }}
+            />
 
+            {/* Breadcrumb Navigation */}
+            <section style={{ background: "#F7F5F2", borderBottom: "1px solid #E8E0D8", padding: "0.75rem 0" }}>
                 <Container>
-                    <div className="relative z-10 max-w-4xl mx-auto">
-                        <Link
-                            href="/blog"
-                            className="inline-flex items-center space-x-2 text-white/70 hover:text-white transition-colors mb-8 group"
-                        >
-                            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-sm font-medium">{t("blogReturnLink")}</span>
-                        </Link>
-
-                        {"category" in post && post.category && (
-                            <span className="inline-block bg-white/15 backdrop-blur-sm text-white px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
-                                {post.category as string}
-                            </span>
-                        )}
-
-                        <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
-                            {post.title}
-                        </h1>
-
-                        <div className="flex flex-wrap items-center gap-6 text-white/70 text-sm">
-                            <div className="flex items-center space-x-2">
-                                <Calendar className="w-4 h-4" />
-                                <span>
-                                    {"published_at" in post && post.published_at
-                                        ? new Date(post.published_at as string).toLocaleDateString(
-                                            locale === "tr" ? "tr-TR" : locale === "ar" ? "ar-SA" : locale === "fa" ? "fa-IR" : locale === "fr" ? "fr-FR" : "en-US",
-                                            {
-                                                day: "numeric",
-                                                month: "long",
-                                                year: "numeric",
-                                            }
-                                        )
-                                        : ""}
-                                </span>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                                <Clock className="w-4 h-4" />
-                                <span>{readTime} {t("readingTimeSuffix")}</span>
-                            </div>
-                            {post.keywords.length > 0 && (
-                                <div className="flex items-center space-x-2">
-                                    <Tag className="w-4 h-4" />
-                                    <span>{post.keywords.slice(0, 3).join(", ")}</span>
-                                </div>
-                            )}
-                        </div>
-                    </div>
+                    <nav
+                        aria-label="Breadcrumb"
+                        style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.5rem",
+                            fontSize: "0.85rem",
+                            fontFamily: "'Inter', sans-serif",
+                            color: "#78716C",
+                        }}
+                    >
+                        <Link href={`/${locale}`} style={{ color: "#78716C", textDecoration: "none" }}>Home</Link>
+                        <ChevronRight className="w-3.5 h-3.5" style={{ color: "#A8A29E" }} />
+                        <Link href={`/${locale}/blog`} style={{ color: "#78716C", textDecoration: "none" }}>Blog</Link>
+                        <ChevronRight className="w-3.5 h-3.5" style={{ color: "#A8A29E" }} />
+                        <span style={{ color: "#D97706", fontWeight: 500 }}>{categoryName}</span>
+                    </nav>
                 </Container>
             </section>
 
-            {/* Content */}
-            <section className="py-16 bg-white">
+            {/* Hero — Warm editorial style with scribble */}
+            <section
+                className="relative blog-dot-pattern blog-grain"
+                style={{
+                    background: "linear-gradient(135deg, #FFFBF5 0%, #FFF7ED 50%, #FFFBF5 100%)",
+                    paddingTop: "3rem",
+                    paddingBottom: "3rem",
+                }}
+            >
                 <Container>
-                    <div className="max-w-4xl mx-auto">
-                        {/* Excerpt/Lead */}
-                        <p className="text-xl text-gray-600 leading-relaxed mb-12 pb-12 border-b border-gray-100 font-medium">
-                            {post.excerpt}
-                        </p>
+                    <div
+                        className="blog-layout-grid relative z-10"
+                        style={{
+                            maxWidth: "1100px",
+                            margin: "0 auto",
+                            display: "grid",
+                            gridTemplateColumns: "1fr 280px",
+                            gap: "3rem",
+                            alignItems: "center",
+                        }}
+                    >
+                        {/* Sol: Başlık + Meta */}
+                        <div>
+                            {"category" in post && post.category && (
+                                <span
+                                    style={{
+                                        display: "inline-block",
+                                        background: "linear-gradient(135deg, #D97706, #F59E0B)",
+                                        color: "white",
+                                        padding: "0.375rem 1rem",
+                                        borderRadius: "9999px",
+                                        fontSize: "0.8rem",
+                                        fontWeight: 700,
+                                        marginBottom: "1.5rem",
+                                        fontFamily: "'Inter', sans-serif",
+                                        letterSpacing: "0.03em",
+                                    }}
+                                >
+                                    {post.category as string}
+                                </span>
+                            )}
 
-                        {/* Markdown Content */}
-                        <article
-                            className="prose prose-lg prose-slate max-w-none
-                prose-headings:text-[#152239] prose-headings:font-bold
-                prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:pb-3 prose-h2:border-b prose-h2:border-gray-100
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-4
-                prose-p:text-gray-600 prose-p:leading-relaxed
-                prose-a:text-[#0055D4] prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-[#152239]
-                prose-ul:my-6 prose-li:text-gray-600
-                prose-blockquote:border-l-[#0055D4] prose-blockquote:bg-blue-50/50 prose-blockquote:rounded-r-xl prose-blockquote:py-1
-              "
-                            dangerouslySetInnerHTML={{
-                                __html: markdownToHtml(post.content),
-                            }}
-                        />
-
-                        {/* Keywords */}
-                        {post.keywords.length > 0 && (
-                            <div className="mt-16 pt-8 border-t border-gray-100">
-                                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">
-                                    {t("tagsTitle")}
-                                </h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {post.keywords.map((keyword) => (
-                                        <span
-                                            key={keyword}
-                                            className="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-medium"
-                                        >
-                                            {keyword}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-
-                        {/* CTA */}
-                        <div className="mt-16 bg-gradient-to-br from-[#0047BB] to-[#2979FF] rounded-3xl p-10 text-center">
-                            <h3 className="text-2xl font-bold text-white mb-4">
-                                {t("ctaTitle")}
-                            </h3>
-                            <p className="text-white/80 mb-8 max-w-lg mx-auto">
-                                {t("ctaDescription")}
-                            </p>
-                            <Link
-                                href="/basvuru"
-                                className="inline-flex items-center space-x-2 bg-white text-[#0055D4] px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                            <h1
+                                className="blog-hero-title blog-fade-up"
+                                style={{
+                                    fontSize: "clamp(2rem, 5vw, 3.25rem)",
+                                    color: "#1C1917",
+                                    marginBottom: "2rem",
+                                }}
                             >
-                                <span>{t("ctaButton")}</span>
-                            </Link>
+                                {post.title}
+                            </h1>
+
+                            <div
+                                className="blog-fade-up"
+                                style={{
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    alignItems: "center",
+                                    gap: "1.5rem",
+                                    fontSize: "0.875rem",
+                                    fontFamily: "'Inter', sans-serif",
+                                    color: "#92400E",
+                                    opacity: 0.8,
+                                    animationDelay: "0.15s",
+                                }}
+                            >
+                                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                                    <Calendar className="w-4 h-4" />
+                                    <span>
+                                        {"published_at" in post && post.published_at
+                                            ? new Date(post.published_at as string).toLocaleDateString(
+                                                locale === "tr" ? "tr-TR"
+                                                    : locale === "ar" ? "ar-SA"
+                                                        : locale === "fa" ? "fa-IR"
+                                                            : locale === "fr" ? "fr-FR" : "en-US",
+                                                { day: "numeric", month: "long", year: "numeric" }
+                                            )
+                                            : ""}
+                                    </span>
+                                </div>
+                                <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                                    <Clock className="w-4 h-4" />
+                                    <span>{readTime} {t("readingTimeSuffix")}</span>
+                                </div>
+                                {post.keywords.length > 0 && (
+                                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                                        <Tag className="w-4 h-4" />
+                                        <span>{post.keywords.slice(0, 3).join(", ")}</span>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Sağ: Notion-style scribble illustration */}
+                        <div className="blog-hero-scribble" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                            <Image
+                                src="/images/blog-scribble-default.png"
+                                alt="Blog illustration"
+                                width={280}
+                                height={280}
+                                style={{ opacity: 0.6, maxWidth: "100%", height: "auto" }}
+                                priority
+                            />
                         </div>
                     </div>
+                </Container>
+
+                {/* Decorative amber line */}
+                <div
+                    className="blog-shimmer"
+                    style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: "3px",
+                        background: "linear-gradient(90deg, transparent, #D97706, #F59E0B, #D97706, transparent)",
+                        backgroundSize: "200% 100%",
+                    }}
+                />
+            </section>
+
+            {/* Content — Editoryal layout */}
+            <section className="blog-editorial" style={{ paddingTop: "3rem", paddingBottom: "4rem" }}>
+                <Container>
+                    <BlogDetailClient
+                        processedContent={processedContent}
+                        rawContent={post.content}
+                        title={post.title}
+                        slug={post.slug}
+                        keywords={post.keywords}
+                        excerpt={post.excerpt ?? ""}
+                        ctaTitle={t("ctaTitle")}
+                        ctaDescription={t("ctaDescription")}
+                        ctaButton={t("ctaButton")}
+                        tagsTitle={t("tagsTitle")}
+                    />
                 </Container>
             </section>
         </>
     );
-}
-
-/** Basit Markdown 14 HTML d F6n FC5Ft FCr FCc FC (server-side) */
-function markdownToHtml(markdown: string): string {
-    return markdown
-        // Headers
-        .replace(/^### (.+)$/gm, "<h3>$1</h3>")
-        .replace(/^## (.+)$/gm, "<h2>$1</h2>")
-        .replace(/^# (.+)$/gm, "<h1>$1</h1>")
-        // Bold & Italic
-        .replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>")
-        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-        .replace(/\*(.+?)\*/g, "<em>$1</em>")
-        // Links
-        .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2">$1</a>')
-        // Unordered lists
-        .replace(/^- (.+)$/gm, "<li>$1</li>")
-        .replace(/(<li>.*<\/li>\n?)+/g, "<ul>$&</ul>")
-        // Ordered lists
-        .replace(/^\d+\. (.+)$/gm, "<li>$1</li>")
-        // Blockquotes
-        .replace(/^> (.+)$/gm, "<blockquote><p>$1</p></blockquote>")
-        // Horizontal rules
-        .replace(/^---$/gm, "<hr>")
-        // Paragraphs (lines that are not already wrapped)
-        .replace(/^(?!<[h|u|o|l|b|hr])(.*\S.*)$/gm, "<p>$1</p>")
-        // Clean up double line breaks
-        .replace(/\n{2,}/g, "\n");
 }
