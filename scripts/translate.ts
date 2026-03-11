@@ -32,6 +32,20 @@ RULES:
 - For Arabic and Persian: use proper RTL-compatible text
 - Use formal/professional tone appropriate for an education consultancy
 - Translate naturally, not literally — adapt idioms and expressions
+
+SEO KEYWORD OPTIMIZATION (CRITICAL):
+- Use the most commonly searched terms in the target language, NOT literal translations
+- For service-related terms, use the exact keywords people search for in that language:
+  * "çalışma izni" → EN: "work permit" (not "working permission"), AR: "تصريح العمل", FA: "مجوز کار"
+  * "oturma izni" / "ikamet izni" → EN: "residence permit", AR: "تصريح الإقامة", FA: "اجازه اقامت"  
+  * "şirket kuruluşu" → EN: "company formation" or "business setup", AR: "تأسيس شركة", FA: "ثبت شرکت"
+  * "Türkiye'de eğitim" → EN: "study in Turkey", AR: "الدراسة في تركيا", FA: "تحصیل در ترکیه"
+  * "üniversite başvurusu" → EN: "university application", AR: "التقديم للجامعة", FA: "ثبت‌نام دانشگاه"
+  * "Türkiye'de yaşam" → EN: "living in Turkey", AR: "العيش في تركيا", FA: "زندگی در ترکیه"
+- For metadata (titles, descriptions): prioritize high-volume search keywords naturally
+- For CTA buttons and headings: use action-oriented, locally common phrasing
+- Think like an SEO specialist in the target language — what would a user actually search for?
+
 - Return ONLY valid JSON, no markdown, no explanation`;
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
