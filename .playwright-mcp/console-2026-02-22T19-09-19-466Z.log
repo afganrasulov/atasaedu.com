@@ -1,0 +1,282 @@
+[     189ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6001/:0
+[     917ms] Error: Attempted to call createMotionComponent() from the server but createMotionComponent is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+    at Object.get (about://React/Server/file:///Users/kent/Applications/atasaedu.com/.next/dev/server/chunks/ssr/8233f_framer-motion_dist_es_e854668b._.js?24:172:268)
+    at FeaturedUniversities (about://React/Server/file:///Users/kent/Applications/atasaedu.com/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__0f81c001._.js?42:273:544)
+    at resolveErrorDev (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:1894:148)
+    at processFullStringRow (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2402:29)
+    at processFullBinaryRow (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2361:9)
+    at processBinaryChunk (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2470:221)
+    at progress (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2640:13)
+[     939ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:6001/favicon.ico:0
+[     968ms] TypeError: Failed to execute 'measure' on 'Performance': '​ServicesSummary' cannot have a negative time stamp.
+    at flushComponentPerformance (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2152:45)
+    at flushComponentPerformance (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2124:31)
+    at flushComponentPerformance (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2124:31)
+    at flushInitialRenderPerformance (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2314:74)
+[    3978ms] [WARNING] The resource http://localhost:6001/_next/static/chunks/%5Broot-of-the-server%5D__b111776b._.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[    3978ms] [WARNING] The resource https://i.pravatar.cc/100?u=13 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[    3978ms] [WARNING] The resource https://i.pravatar.cc/100?u=14 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[    3978ms] [WARNING] The resource https://i.pravatar.cc/100?u=12 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[    3978ms] [WARNING] The resource https://i.pravatar.cc/100?u=11 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:6001/:0
+[    8982ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    9072ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:6001/:0
+[    9402ms] Error: Attempted to call createMotionComponent() from the server but createMotionComponent is on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+    at Object.get (about://React/Server/file:///Users/kent/Applications/atasaedu.com/.next/dev/server/chunks/ssr/8233f_framer-motion_dist_es_e854668b._.js?24:172:268)
+    at ServicesSummary (about://React/Server/file:///Users/kent/Applications/atasaedu.com/.next/dev/server/chunks/ssr/%5Broot-of-the-server%5D__0fd32768._.js?25:306:544)
+    at resolveErrorDev (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:1894:148)
+    at processFullStringRow (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2402:29)
+    at processFullBinaryRow (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2361:9)
+    at processBinaryChunk (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2470:221)
+    at progress (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-server-dom-turbopack_0b7d2bf4._.js:2640:13)
+[   10699ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   11471ms] [ERROR] %s is an async Client Component. Only Server Components can be async at the moment. This error is often caused by accidentally adding `'use client'` to a module that was originally written for the server. <FeaturedUniversities> @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:3127
+[   11472ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   11996ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   12014ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   12122ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   12148ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13936ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13970ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13970ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13972ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13973ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13976ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13976ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13976ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13976ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13976ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13979ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   13980ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14020ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14039ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14039ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14039ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14039ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14039ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14039ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14048ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14048ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14049ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14049ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14050ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14056ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14056ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14056ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14077ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14090ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14518ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14518ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14532ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14532ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14567ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14587ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14587ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14594ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14594ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14596ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14596ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14596ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14599ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14601ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14617ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14636ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14636ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14637ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14637ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14637ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14637ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14638ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14638ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14638ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14638ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14642ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14642ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14669ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14669ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14669ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14669ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14669ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14669ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14669ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14672ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14672ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14672ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14689ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14718ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14719ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14719ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14719ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14738ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14739ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14739ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14739ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14739ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14741ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14758ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14758ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14758ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14764ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14764ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14870ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14870ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14870ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14870ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14870ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14870ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14874ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14874ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14874ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14877ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14878ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14881ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14881ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14956ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14966ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14966ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14966ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14970ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14995ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14995ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14995ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14995ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14995ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14995ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14996ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14996ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14996ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14996ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14996ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14999ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   14999ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15000ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15000ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15000ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15000ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15000ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15000ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15058ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15062ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15062ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15062ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15064ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15091ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15091ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15100ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15103ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15103ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15103ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15103ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15103ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15103ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15103ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15104ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15107ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15107ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15107ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15107ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15107ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15107ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15107ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15108ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15111ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15111ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15150ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15150ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15150ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15152ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15153ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15174ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15174ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15174ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15177ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15179ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15179ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15179ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15180ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15180ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15180ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15180ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15182ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15183ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15183ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15183ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15184ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15184ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15187ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15187ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15204ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15204ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15249ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15249ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15249ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15249ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15250ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15250ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15251ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15252ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15252ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15270ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15270ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15271ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15271ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15271ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15271ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15273ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15273ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15284ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15285ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15285ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15287ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15299ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15392ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15393ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15395ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15395ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15395ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15395ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15395ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15395ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15395ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15396ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15396ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15398ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15398ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15399ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15399ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15399ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15399ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15399ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   15399ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0

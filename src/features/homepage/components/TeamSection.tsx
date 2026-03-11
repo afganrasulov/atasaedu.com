@@ -4,28 +4,31 @@ import { Container } from "@/shared/components/ui/Container";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const SUPABASE_CDN = "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu";
 
-const teamMembers = [
-    {
-        name: "Pusat Habib",
-        role: "Eğitim Danışmanı",
-        image: `${SUPABASE_CDN}/team/5.jpg`
-    },
-    {
-        name: "Buse Yıldız",
-        role: "Çalışma İzni Danışmanı",
-        image: `${SUPABASE_CDN}/team/3.jpg`
-    },
-    {
-        name: "Ömer Habib",
-        role: "Yönetici ve Kurucu Ortağı",
-        image: `${SUPABASE_CDN}/team/8.jpg`
-    }
-];
-
 export function TeamSection() {
+    const t = useTranslations("team");
+
+    const teamMembers = [
+        {
+            name: "Pusat Habib",
+            role: t("role1"),
+            image: `${SUPABASE_CDN}/team/5.jpg`
+        },
+        {
+            name: "Buse Yıldız",
+            role: t("role2"),
+            image: `${SUPABASE_CDN}/team/3.jpg`
+        },
+        {
+            name: "Ömer Habib",
+            role: t("role3"),
+            image: `${SUPABASE_CDN}/team/8.jpg`
+        }
+    ];
+
     return (
         <section className="py-24 bg-gray-50 overflow-hidden relative">
             <Container>
@@ -35,25 +38,25 @@ export function TeamSection() {
                     <div className="w-full lg:w-5/12 text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 mb-4 justify-center lg:justify-start">
                             <span className="w-12 h-[2px] bg-red-500" />
-                            <span className="text-red-500 font-bold uppercase tracking-widest text-sm">DANIŞMANLARIMIZ</span>
+                            <span className="text-red-500 font-bold uppercase tracking-widest text-sm">{t("badge")}</span>
                         </div>
 
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-[#152239] leading-tight mb-6">
-                            Uzman Eğitim Danışmanlarımızla Tanışın
+                            {t("title")}
                         </h2>
 
                         <p className="text-lg text-gray-500 font-medium mb-10 leading-relaxed">
-                            Eğitim danışmanlarımız, Türkiye&apos;deki üniversite seçimi ve başvuru evraklarının hazırlanmasında yabancı öğrencilere özel destek sunar. Akademik hedeflerine en uygun üniversiteyi bulmaları ve başvuru sürecini sorunsuz geçirmeleri için yanlarında oluyoruz.
+                            {t("description")}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <button className="bg-red-500 text-white font-bold px-8 h-14 rounded-xl shadow-lg shadow-red-500/30 hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 inline-flex items-center gap-2 group">
-                                BİZE ULAŞIN
+                                {t("contactUs")}
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
                             <Link href="/atasa-ekip">
                                 <button className="border-2 border-gray-200 text-[#152239] font-bold px-8 h-14 rounded-xl hover:bg-gray-100 hover:border-gray-300 transition-all duration-300">
-                                    TÜM EKİBİ GÖR
+                                    {t("seeAllTeam")}
                                 </button>
                             </Link>
                         </div>
@@ -86,4 +89,3 @@ export function TeamSection() {
         </section>
     );
 }
-

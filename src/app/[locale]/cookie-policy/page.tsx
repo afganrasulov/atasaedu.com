@@ -173,7 +173,7 @@ export default function CookiePolicyPage() {
                             </h4>
                             <p className="text-lg mb-6 leading-relaxed">
                                 Taleplerinizi, Veri Sorumlusuna Başvuru Usul ve Esasları Hakkında Tebliğ’e uygun şekilde yazılı olarak veya elektronik imzalı olarak
-                                <a href="mailto:info@atasaedu.com" className="text-primary hover:underline mx-2 font-bold px-3 py-1 bg-primary/5 rounded-lg">info@atasaedu.com</a>
+                                <a href="mailto:support@atasa.tr" className="text-primary hover:underline mx-2 font-bold px-3 py-1 bg-primary/5 rounded-lg">support@atasa.tr</a>
                                 adresine iletebilirsiniz.
                             </p>
 
@@ -181,11 +181,11 @@ export default function CookiePolicyPage() {
                                 <div className="bg-slate-50/80 p-5 rounded-2xl">
                                     <span className="block font-bold text-primary text-xs uppercase tracking-widest mb-2">Veri Sorumlusu</span>
                                     <span className="font-black text-[#152239] block mb-2 text-lg">ATASA EDUCATION DANIŞMANLIK LİMİTED ŞİRKETİ</span>
-                                    <span className="text-slate-600 text-sm">Ataköy 7-8-10. Kısım Mah. Çobançeşme E-5, Bakırköy/İstanbul</span>
+                                    <span className="text-slate-600 text-sm">Mecidiyeköy mah. Raşit Rıza sk. Ahmet Esin İş Merkezi NO:4 K:2 D:7, Şişli/İstanbul</span>
                                 </div>
                                 <div className="bg-slate-50/80 p-5 rounded-2xl flex flex-col justify-center">
                                     <span className="block font-bold text-primary text-xs uppercase tracking-widest mb-2">Kurumsal İletişim</span>
-                                    <a href="mailto:info@atasaedu.com" className="text-slate-800 hover:text-primary transition-colors font-black text-xl mb-1">info@atasaedu.com</a>
+                                    <a href="mailto:support@atasa.tr" className="text-slate-800 hover:text-primary transition-colors font-black text-xl mb-1">support@atasa.tr</a>
                                     <a href="tel:+908503086998" className="text-slate-600 hover:text-primary transition-colors font-medium">+90 (850) 308 69 98</a>
                                 </div>
                             </div>

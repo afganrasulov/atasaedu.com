@@ -1,0 +1,128 @@
+[    3168ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    3989ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   11166ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   11182ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   17578ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   17742ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[   17743ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[   17752ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[   17752ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[   17786ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[   17786ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[   17804ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[   17804ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[   17886ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[   18406ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   18413ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   19626ms] [WARNING] Image with src "/images/students-arab-turkmen.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   19634ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[   19634ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/5.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  186142ms] [ERROR] ./Applications/atasaedu.com/src/shared/components/layout/Header.tsx:135:23
+Parsing ecmascript source code failed
+  133 |                         </button>
+  134 |                     </div>
+> 135 |                 </div>
+      |                       ^
+> 136 |
+      | ^
+> 137 |                 {/* Mobile Dropdown */}
+      | ^^^^^^^^^^^^^^^^^
+  138 |                 {isOpen && (
+  139 |                     <div className="lg:hidden bg-white border-t p-4 flex flex-col gap-4 shadow-lg absolute w-full left-0">
+  140 |                         {NAV_LINKS.map((link) => (
+
+Expected '</', got 'jsx text'
+
+Import trace:
+  Server Component:
+    ./Applications/atasaedu.com/src/shared/components/layout/Header.tsx
+    ./Applications/atasaedu.com/src/app/layout.tsx @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:3127
+[  227317ms] ReferenceError: Container is not defined
+    at Header (http://localhost:6001/_next/static/chunks/Applications_atasaedu_com_src_866fa64b._.js?id=%255Bproject%255D%252FApplications%252Fatasaedu.com%252Fsrc%252Fshared%252Fcomponents%252Flayout%252FHeader.tsx+%255Bapp-client%255D+%2528ecmascript%2529:102:265)
+    at Object.react_stack_bottom_frame (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:14826:24)
+    at renderWithHooks (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:4651:24)
+    at updateFunctionComponent (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:6112:21)
+    at beginWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:6708:24)
+    at runWithFiberInDEV (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:965:74)
+    at performUnitOfWork (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9562:97)
+    at workLoopSync (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9456:40)
+    at renderRootSync (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9440:13)
+    at performWorkOnRoot (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9068:186)
+    at performSyncWorkOnRoot (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:10238:9)
+    at flushSyncWorkAcrossRoots_impl (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:10154:316)
+    at flushSyncWork$1 (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:9237:86)
+    at Object.scheduleRefresh (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_react-dom_12b6841a._.js:299:13)
+    at http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:391:33
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:384:38)
+    at applyUpdate (http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:878:31)
+    at http://localhost:6001/_next/static/chunks/8233f_next_dist_compiled_4e76eb23._.js:886:13
+[  228937ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  229344ms] [WARNING] The texture size ([Extent3D width:0, height:0, depthOrArrayLayers:1]) or mipLevelCount (1) is empty.
+ - While validating [TextureDescriptor ""colorBuffer""].
+ - While calling [Device].CreateTexture([TextureDescriptor ""colorBuffer""]).
+ @ http://localhost:6001/:0
+[  229499ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[  230225ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  230398ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[  230398ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[  230410ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[  230410ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[  230422ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[  230422ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[  230446ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3342, height: 1814) does not match the size of the other attachments' base plane (width: 1671, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[  230446ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[  230850ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[  231921ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  231924ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297

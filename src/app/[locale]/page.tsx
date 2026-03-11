@@ -1,7 +1,6 @@
 import { PageTransition } from "@/shared/components/layout/PageTransition";
 import { HeroSection } from "@/features/homepage/components/HeroSection";
 import { ProgramSearchSection } from "@/features/homepage/components/ProgramSearchSection";
-import { FeaturedUniversities } from "@/features/homepage/components/FeaturedUniversities";
 import { AboutSection } from "@/features/homepage/components/AboutSection";
 import { CtaBanner } from "@/features/homepage/components/CtaBanner";
 import { ServicesSummary } from "@/features/homepage/components/ServicesSummary";
@@ -17,7 +16,6 @@ export default function Home() {
   return (
     <PageTransition>
       <HeroSection />
-      <FeaturedUniversities />
       <ProgramSearchSection />
       <AboutSection />
       <CtaBanner />

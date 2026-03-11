@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search, GraduationCap } from "lucide-react";
 import { getFilterOptions, autocompleteSuggestions, getDegreeLabel } from "@/lib/program-search";
 import type { FilterOptions, Suggestion } from "@/lib/program-search";
+import { useTranslations } from "next-intl";
 
 const DEGREE_LABELS: Record<string, string> = {
     BACHELOR: "Lisans",
@@ -14,13 +15,13 @@ const DEGREE_LABELS: Record<string, string> = {
 };
 
 export function ProgramSearchSection() {
+    const t = useTranslations("programSearch");
     const router = useRouter();
     const [filters, setFilters] = useState<FilterOptions>({ degrees: [], languages: [] });
     const [degree, setDegree] = useState("");
     const [language, setLanguage] = useState("");
     const [searchText, setSearchText] = useState("");
 
-    // Autocomplete state
     const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [activeIndex, setActiveIndex] = useState(-1);
@@ -32,7 +33,6 @@ export function ProgramSearchSection() {
         getFilterOptions().then(setFilters);
     }, []);
 
-    // Close dropdown on outside click
     useEffect(() => {
         const handleClick = (e: MouseEvent) => {
             if (
@@ -48,7 +48,6 @@ export function ProgramSearchSection() {
         return () => document.removeEventListener("mousedown", handleClick);
     }, []);
 
-    // Debounced autocomplete
     const fetchSuggestions = useCallback((text: string) => {
         if (debounceRef.current) clearTimeout(debounceRef.current);
         if (text.length < 2) {
@@ -73,7 +72,6 @@ export function ProgramSearchSection() {
     const selectSuggestion = (suggestion: Suggestion) => {
         setSearchText(suggestion.label);
         setShowSuggestions(false);
-        // Navigate immediately
         const params = new URLSearchParams();
         if (degree) params.set("degree", degree);
         if (language) params.set("language", language);
@@ -121,10 +119,10 @@ export function ProgramSearchSection() {
                 <div className="flex flex-col items-center justify-center text-center mb-10">
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 border border-white/30 backdrop-blur-md mb-4 shadow-lg shadow-blue-900/20">
                         <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-                        <span className="text-white font-semibold tracking-wide text-sm uppercase">Başvuru Yap</span>
+                        <span className="text-white font-semibold tracking-wide text-sm uppercase">{t("badge")}</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                        Arzu ettiğiniz bölümü bulun!
+                        {t("title")}
                     </h2>
                 </div>
 
@@ -135,7 +133,7 @@ export function ProgramSearchSection() {
                             onChange={(e) => setDegree(e.target.value)}
                             className="w-full h-12 rounded-xl border border-white/30 bg-white/80 backdrop-blur-sm px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500 appearance-none"
                         >
-                            <option value="">Derece</option>
+                            <option value="">{t("degree")}</option>
                             {filters.degrees.map((d) => (
                                 <option key={d} value={d}>
                                     {DEGREE_LABELS[d] || d}
@@ -150,7 +148,7 @@ export function ProgramSearchSection() {
                             onChange={(e) => setLanguage(e.target.value)}
                             className="w-full h-12 rounded-xl border border-white/30 bg-white/80 backdrop-blur-sm px-4 text-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500 appearance-none"
                         >
-                            <option value="">Dil</option>
+                            <option value="">{t("language")}</option>
                             {filters.languages.map((l) => (
                                 <option key={l} value={l}>
                                     {l}
@@ -159,7 +157,6 @@ export function ProgramSearchSection() {
                         </select>
                     </div>
 
-                    {/* Search input with autocomplete */}
                     <div className="flex-[2] w-full relative">
                         <input
                             ref={inputRef}
@@ -168,13 +165,12 @@ export function ProgramSearchSection() {
                             onChange={handleInputChange}
                             onKeyDown={handleKeyDown}
                             onFocus={() => suggestions.length > 0 && setShowSuggestions(true)}
-                            placeholder="Bölüm Ara..."
+                            placeholder={t("placeholder")}
                             autoComplete="off"
                             className="w-full h-12 rounded-xl border border-white/30 bg-white/80 backdrop-blur-sm px-4 pr-12 text-gray-800 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500"
                         />
                         <Search className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
 
-                        {/* Autocomplete Dropdown */}
                         {showSuggestions && suggestions.length > 0 && (
                             <div
                                 ref={dropdownRef}
@@ -210,7 +206,7 @@ export function ProgramSearchSection() {
                             onClick={handleSearch}
                             className="w-full md:w-auto h-12 px-8 bg-red-500 hover:bg-red-600 shadow-lg shadow-red-500/30 text-white font-bold tracking-wide rounded-xl inline-flex items-center justify-center gap-2 transition-all duration-300 group"
                         >
-                            ARA
+                            {t("search")}
                             <Search className="w-4 h-4 group-hover:scale-110 transition-transform" />
                         </button>
                     </div>

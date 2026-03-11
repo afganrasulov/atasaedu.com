@@ -1,0 +1,56 @@
+name: Auto Translate
+
+on:
+  schedule:
+    # Her gece 00:00 UTC (03:00 TR saati)
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Tüm key'leri yeniden çevir (--force)"
+        required: false
+        default: "false"
+        type: boolean
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run translation
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ "${{ github.event.inputs.force }}" = "true" ]; then
+            npx tsx scripts/translate.ts --force
+          else
+            npx tsx scripts/translate.ts
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet src/messages/ || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit & Push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/messages/
+          git commit -m "chore(i18n): auto-translate updated keys"
+          git push

@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "title": "Atasa Education - Yurtdışı Eğitim Danışmanlığı",
+    "description": "Türkiye'de üniversite eğitimi, çalışma izni, ikamet izni ve şirket kuruluşu danışmanlığı. Sınavsız ve garantili süreçlerle hayalinizdeki eğitime ulaşın."
+  },
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetlerimiz",
+    "applicationProcess": "Başvuru Süreci",
+    "reviews": "Yorumlar",
+    "universities": "Üniversitelerimiz",
+    "blog": "Blog",
+    "contact": "İletişim",
+    "getInfo": "Bilgi Al"
+  },
+  "header": {
+    "phone": "+90 (850) 308 69 98",
+    "email": "support@atasa.tr",
+    "officeCount": "3 Ülkede Ofis"
+  },
+  "hero": {
+    "badge": "Eğitimde Mükemmeliyet Merkezi",
+    "titlePrefix": "Türkiye'de",
+    "phrases": [
+      "Sınavsız Üniversite Kaydı",
+      "Garantili Kabul Süreci",
+      "Hızlı İkamet İzni",
+      "Yasal Danışmanlık Desteği",
+      "Türkiye'de Eğitim Fırsatı"
+    ],
+    "descriptionPrefix": "Binlerce öğrencinin tercihi. Hayalinizdeki üniversite eğitimine",
+    "descriptionSuffix": "ile",
+    "descriptionEnd": "süreçlerle ulaşın.",
+    "highlight": "Atasa VIP danışmanlığı",
+    "guarantee": "sınavsız ve garantili",
+    "ctaPrimary": "Hemen Başla",
+    "ctaSecondary": "Keşfet",
+    "trustUniversities": "100+ Üniversite",
+    "trustLegal": "Yasal Güvence",
+    "trustGlobal": "Global Destek",
+    "googleScore": "Google Puanı",
+    "testimonialQuote": "\"Türkiye'deki en profesyonel danışmanlık ekibi. Süreç beklediğimden çok daha hızlı ve kolay ilerledi.\"",
+    "satisfiedStudents": "Binlerce Memnun Öğrenci"
+  },
+  "about": {
+    "badge": "Geleceğinize Açılan Kapı",
+    "title": "Hayallerinizdeki Eğitime {brand} ile Ulaşın",
+    "description": "Orta Doğu ve Orta Asya başta olmak üzere dünyanın dört bir yanından gelen öğrencilere Türkiye'nin ve dünyanın en iyi üniversitelerinde eğitim kapılarını aralıyoruz. Sınavsız geçiş ve %100 yerleştirme garantisiyle yanınızdayız.",
+    "benefit1": "Uluslararası standartlarda eğitim danışmanlığı",
+    "benefit2": "Dünya çapında 500+ anlaşmalı üniversite",
+    "benefit3": "Kişiye özel kariyer ve eğitim planlama",
+    "benefit4": "Vize ve başvuru süreçlerinde tam destek",
+    "happyStudents": "Mutlu Öğrenci",
+    "freeConsultation": "Ücretsiz Danışmanlık Al",
+    "appliedCount": "başvuruda bulundular"
+  },
+  "services": {
+    "badge": "Ayrıcalıklarımız",
+    "title": "Türkiye'de {highlight} Eğitim Yolculuğu",
+    "highlight": "Kusursuz",
+    "registeredStudents": "Kayıtlı Öğrenci",
+    "acceptanceGuarantee": "Kabul Garantisi",
+    "freeConsultation": "ÜCRETSİZ DANIŞMANLIK AL",
+    "culturalRichness": "Kültürel Zenginlik",
+    "culturalRichnessDesc": "Türkiye'nin eşsiz kültürel mozaiğinde eğitim alma fırsatı.",
+    "qualityEducation": "Kaliteli Eğitim",
+    "qualityEducationDesc": "Uluslararası standartlarda üniversitelerde lisansüstü eğitim.",
+    "economicOpportunities": "Ekonomik Fırsatlar",
+    "economicOpportunitiesDesc": "Bütçe dostu öğrenim ücretleri ve düşük yaşam maliyetleri.",
+    "easyAccess": "Kolay Erişim",
+    "easyAccessDesc": "Avrupa ve Asya'nın kesişim noktasında merkezi lokasyon."
+  },
+  "stats": {
+    "students": "Öğrenci",
+    "successRate": "Başarı Oranı",
+    "consultingHours": "Danışmanlık Saati"
+  },
+  "testimonials": {
+    "badge": "ÖĞRENCİ YORUMLARI",
+    "title": "Öğrenciler Üniversitemiz Hakkında Ne Diyor?",
+    "verifiedReviews": "Doğrulanmış Google Yorumu",
+    "readExperiences": "Binlerce müşterimizin gerçek deneyimlerini okuyun.",
+    "seeAllReviews": "Tüm Yorumları Gör",
+    "review1": "Atasa Education, Türkiye'deki üniversite hayatıma geçişimi kolaylaştırdı. Buradaki öğrenci topluluğu çok cana yakın ve destekleyici. Eğitim sisteminden çok memnunum.",
+    "review1Name": "B***** Ü*******",
+    "review1Dept": "Malzeme Bilimi ve Nanoteknoloji Mühendisliği",
+    "review2": "Türkiye'deki üniversite deneyimim hayatımı değiştirdi. Burada kazandığım bilgi ve tecrübeler sayesinde kariyerimde büyük bir adım attım. Atasa Education ekibi her adımda yanımda oldu.",
+    "review2Name": "M***** K*******",
+    "review2Dept": "Bilgisayar Mühendisliği"
+  },
+  "socialProof": {
+    "badge": "SOSYAL MEDYA",
+    "title": "Bizi Takip Eden Topluluk",
+    "description": "Yüz binlerce kişi eğitim yolculuğunda bize güveniyor. Sosyal medyada da yanınızdayız.",
+    "subscriber": "Abone",
+    "follower": "Takipçi",
+    "reviews1200": "1200+ Yorum",
+    "officialPartner": "Resmi Google Partner",
+    "digitalCommunity": "kişilik dijital topluluk",
+    "seeReviews": "Yorumları Gör",
+    "subscribe": "Abone Ol"
+  },
+  "cta": {
+    "getInfoOnline": "Çevrimiçi Bilgi Alın",
+    "getSupport": "Profesyonel Danışmanlarından Destek Alın!",
+    "getInfo": "BİLGİ AL"
+  },
+  "bursary": {
+    "badge": "Hazır mısınız?",
+    "title": "Türkiye'de eğitimin kapılarını aralayan cazip {highlight} olanaklarıyla hayalinizdeki üniversite eğitimine adım atın!",
+    "highlight": "burs"
+  },
+  "footer": {
+    "tagline": "Yurtdışında eğitim hayallerinizde dünyanın kapılarını aralıyor.",
+    "taglineHighlight": "Modern, kurumsal ve sonuç odaklı danışmanlık uzmanlığı.",
+    "googleReviews": "1200+ Google Yorumu",
+    "corporate": "KURUMSAL",
+    "support": "DESTEK",
+    "contactTitle": "İLETİŞİM",
+    "headquarters": "Merkez Ofis",
+    "supportLine": "7/24 Destek Hattı",
+    "privacyPolicy": "GİZLİLİK POLİTİKASI",
+    "legalNotice": "YASAL BİLDİRİM",
+    "cookieSettings": "ÇEREZ AYARLARI",
+    "excellenceInEducation": "Eğitimde Mükemmeliyet",
+    "aboutLink": "Hakkımızda",
+    "servicesLink": "Hizmetlerimiz",
+    "universitiesLink": "Üniversiteler",
+    "processLink": "Başvuru Süreci",
+    "reviewsLink": "Yorumlar",
+    "contactLink": "İletişim",
+    "kvkkLink": "KVKK Aydınlatma",
+    "cookiePolicyLink": "Çerez Politikası"
+  },
+  "common": {
+    "learnMore": "Daha Fazla",
+    "applyNow": "Şimdi Başvur",
+    "readMore": "Devamını Oku",
+    "contactUs": "Bize Ulaşın",
+    "close": "Kapat",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu",
+    "send": "Gönder",
+    "name": "İsim",
+    "email": "Email",
+    "phone": "Telefon",
+    "message": "Mesaj",
+    "submit": "Gönder",
+    "success": "Başarılı"
+  },
+  "programSearch": {
+    "badge": "Başvuru Yap",
+    "title": "Arzu ettiğiniz bölümü bulun!",
+    "degree": "Derece",
+    "language": "Dil",
+    "placeholder": "Bölüm Ara...",
+    "search": "ARA"
+  },
+  "dualAction": {
+    "workPermit": "Öğrenci Çalışma İzni",
+    "residencePermit": "Öğrenci İkamet İzni",
+    "getInfo": "BİLGİ AL"
+  },
+  "featured": {
+    "popular": "Popüler",
+    "departments": "BÖLÜMLER",
+    "title": "Geleceğinizi",
+    "titleHighlight": "Keşfetmeye",
+    "titleEnd": "Başlayın",
+    "description": "Global geçerliliği olan, prestijli üniversitelerin en çok tercih edilen akademik programlarını sizin için seçtik.",
+    "seeAll": "TÜM BÖLÜMLERİ GÖR",
+    "university": "Üniversite",
+    "details": "Detaylar"
+  },
+  "partners": {
+    "badge": "Ortaklarımız",
+    "title": "Ortağımız Var",
+    "loading": "Yükleniyor..."
+  },
+  "team": {
+    "badge": "DANIŞMANLARIMIZ",
+    "title": "Uzman Eğitim Danışmanlarımızla Tanışın",
+    "description": "Eğitim danışmanlarımız, Türkiye'deki üniversite seçimi ve başvuru evraklarının hazırlanmasında yabancı öğrencilere özel destek sunar. Akademik hedeflerine en uygun üniversiteyi bulmaları ve başvuru sürecini sorunsuz geçirmeleri için yanlarında oluyoruz.",
+    "contactUs": "BİZE ULAŞIN",
+    "seeAllTeam": "TÜM EKİBİ GÖR",
+    "role1": "Eğitim Danışmanı",
+    "role2": "Çalışma İzni Danışmanı",
+    "role3": "Yönetici ve Kurucu Ortağı"
+  },
+  "blog": {
+    "badge": "Güncel Bloglar",
+    "title": "Eğitim ve Yaşam Rehberiniz",
+    "seeAll": "Tümünü Gör",
+    "readMore": "Devamını Oku"
+  },
+  "languageSwitcher": {
+    "tr": "Türkçe",
+    "en": "English",
+    "ar": "العربية",
+    "fa": "فارسی",
+    "fr": "Français"
+  }
+}

@@ -1,0 +1,291 @@
+[     575ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    1029ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[    1375ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    1378ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    8265ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1135, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8265ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8286ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1152, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8286ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8306ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1182, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8306ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8325ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1182, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8325ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8355ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1244, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8355ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8373ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1329, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8373ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8386ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1329, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8386ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8415ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1450, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8415ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8433ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1542, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8433ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8446ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1542, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8446ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8464ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1652, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8464ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8485ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1730, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8485ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8527ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1788, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8527ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8532ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1788, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8532ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8545ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1788, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8545ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8565ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1879, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8565ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8585ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1902, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8585ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8604ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8604ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8624ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8625ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8645ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8645ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8665ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8665ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[    8684ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 2264, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_0"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_0"].
+ @ http://localhost:6001/:0
+[    8684ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_0"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_0"]])
+ @ http://localhost:6001/:0
+[  233652ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/:0
+[  233652ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/:0
+[  233670ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/:0
+[  233670ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/:0
+[  233696ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/:0
+[  233696ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/:0
+[  233728ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/:0
+[  233728ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/:0
+[  233749ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/:0
+[  233749ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/:0
+[  265430ms] [WARNING] The texture size ([Extent3D width:0, height:0, depthOrArrayLayers:1]) or mipLevelCount (1) is empty.
+    at ValidateTextureDescriptor (../../third_party/dawn/src/dawn/native/Texture.cpp:795)
+ @ http://localhost:6001/basvuru:0
+[  265430ms] [WARNING] Could not create a swapchain texture of size 0.
+    at APIInjectError (../../third_party/dawn/src/dawn/native/Device.cpp:2004)
+ @ http://localhost:6001/basvuru:0
+[  265430ms] [WARNING] [Invalid Texture] is invalid.
+ - While calling [Invalid Texture].CreateView([TextureViewDescriptor]).
+ @ http://localhost:6001/basvuru:0
+[  265430ms] [WARNING] [Invalid TextureView] is invalid.
+ - While validating colorAttachments[0].
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/basvuru:0
+[  265431ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/basvuru:0
+[  274593ms] [WARNING] The texture size ([Extent3D width:0, height:0, depthOrArrayLayers:1]) or mipLevelCount (1) is empty.
+ - While validating [TextureDescriptor ""colorBuffer""].
+ - While calling [Device].CreateTexture([TextureDescriptor ""colorBuffer""]).
+ @ http://localhost:6001/:0
+[  274673ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_6"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_6"].
+ @ http://localhost:6001/:0
+[  274673ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_6"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_6"]])
+ @ http://localhost:6001/:0
+[  274695ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_6"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_6"].
+ @ http://localhost:6001/:0
+[  274695ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_6"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_6"]])
+ @ http://localhost:6001/:0
+[  274718ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_6"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_6"].
+ @ http://localhost:6001/:0
+[  274718ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_6"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_6"]])
+ @ http://localhost:6001/:0
+[  274835ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[  305106ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[  305493ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  305496ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  317388ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/hero_bg.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  320883ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[  320921ms] [WARNING] The texture size ([Extent3D width:0, height:0, depthOrArrayLayers:1]) or mipLevelCount (1) is empty.
+ - While validating [TextureDescriptor ""colorBuffer""].
+ - While calling [Device].CreateTexture([TextureDescriptor ""colorBuffer""]).
+ @ http://localhost:6001/:0
+[  407182ms] [WARNING] Image with src "/images/students-arab-turkmen.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  408748ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/2.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  408750ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  408805ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/5.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  408808ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/8.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  409332ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/altinbas.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  409356ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/ankara-bilim.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  409361ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/medipol.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  409389ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/antalya-bilim.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  409391ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/atlas.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  409391ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-logos/bau.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[ 1355418ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/3.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[ 1355430ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/5.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[ 1355430ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team/8.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[ 1355915ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0

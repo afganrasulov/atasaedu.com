@@ -3,8 +3,11 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Briefcase, FileText } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function DualActionCards() {
+    const t = useTranslations("dualAction");
+
     return (
         <section className="py-16 bg-white">
             <div className="container mx-auto px-4">
@@ -20,12 +23,12 @@ export function DualActionCards() {
                             </div>
 
                             <h3 className="text-2xl md:text-3xl font-black text-slate-800 mb-6 pr-12">
-                                Öğrenci Çalışma İzni
+                                {t("workPermit")}
                             </h3>
 
                             <div className="mt-auto">
                                 <Link href="/ogrenci-calisma-izni" className="bg-white text-blue-600 border border-blue-100 shadow-sm hover:shadow-md hover:bg-blue-50 rounded-xl px-6 h-12 inline-flex items-center gap-2 font-bold transition-all duration-300 group/btn">
-                                    BİLGİ AL
+                                    {t("getInfo")}
                                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
@@ -42,12 +45,12 @@ export function DualActionCards() {
                             </div>
 
                             <h3 className="text-2xl md:text-3xl font-black text-slate-800 mb-6 pr-12">
-                                Öğrenci İkamet İzni
+                                {t("residencePermit")}
                             </h3>
 
                             <div className="mt-auto">
                                 <Link href="/ogrenci-ikamet-izni" className="bg-white text-red-500 border border-red-100 shadow-sm hover:shadow-md hover:bg-red-50 rounded-xl px-6 h-12 inline-flex items-center gap-2 font-bold transition-all duration-300 group/btn">
-                                    BİLGİ AL
+                                    {t("getInfo")}
                                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                 </Link>
                             </div>

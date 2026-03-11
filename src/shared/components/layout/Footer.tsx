@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useCookieConsent } from "../legal/CookieConsent";
 import { Container } from "../ui/Container";
-import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, Star, ShieldCheck, Award } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Youtube, Star } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
     const { openModal } = useCookieConsent();
+    const t = useTranslations("footer");
 
     return (
         <footer className="footer-gradient text-white pt-28 pb-14 overflow-hidden relative">
@@ -30,8 +32,8 @@ export function Footer() {
                             />
                             <div className="space-y-6">
                                 <p className="text-gray-400 leading-bold text-[17px] max-w-md font-medium">
-                                    Yurtdışında eğitim hayallerinize giden yolda dünyanın kapılarını aralıyoruz. <br />
-                                    <span className="text-primary/80">Modern, kurumsal ve sonuç odaklı danışmanlık uzmanlığı.</span>
+                                    {t("tagline")} <br />
+                                    <span className="text-primary/80">{t("taglineHighlight")}</span>
                                 </p>
 
                                 {/* Google Rating Badge */}
@@ -53,7 +55,7 @@ export function Footer() {
                                                 ))}
                                             </div>
                                         </div>
-                                        <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">1200+ Google Yorumu</span>
+                                        <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{t("googleReviews")}</span>
                                     </div>
                                 </div>
                             </div>
@@ -61,15 +63,15 @@ export function Footer() {
 
                         <div className="flex items-center space-x-6">
                             {[
-                                { icon: Instagram, href: "https://instagram.com/atasadanismanlik", name: "Instagram" },
-                                { icon: Youtube, href: "https://youtube.com/@atasadanismanlik", name: "Youtube" },
+                                { icon: Instagram, href: "https://www.instagram.com/atasa_tr", name: "Instagram" },
+                                { icon: Youtube, href: "https://www.youtube.com/@atasa_tr", name: "Youtube" },
                                 {
                                     icon: ({ className }: { className?: string }) => (
                                         <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
                                             <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
                                         </svg>
                                     ),
-                                    href: "https://tiktok.com/@atasadanismanlik",
+                                    href: "https://www.tiktok.com/@atasa_tr",
                                     name: "TikTok"
                                 }
                             ].map((social) => (
@@ -89,14 +91,14 @@ export function Footer() {
 
                     {/* Navigation Columns */}
                     <div className="lg:col-span-2">
-                        <h4 className="premium-heading mb-12">KURUMSAL</h4>
+                        <h4 className="premium-heading mb-12">{t("corporate")}</h4>
                         <ul className="space-y-6">
                             {[
-                                { name: "Hakkımızda", href: "/hakkimizda" },
-                                { name: "Hizmetlerimiz", href: "/hizmetlerimiz" },
-                                { name: "Üniversiteler", href: "/universiteler" },
-                                { name: "Başvuru Süreci", href: "/basvuru-sureci" },
-                                { name: "Yorumlar", href: "/google-yorumlari" }
+                                { name: t("aboutLink"), href: "/hakkimizda" },
+                                { name: t("servicesLink"), href: "/hizmetlerimiz" },
+                                { name: t("universitiesLink"), href: "/universiteler" },
+                                { name: t("processLink"), href: "/basvuru-sureci" },
+                                { name: t("reviewsLink"), href: "/google-yorumlari" }
                             ].map((link) => (
                                 <li key={link.name}>
                                     <Link href={link.href} className="premium-link text-[16px] font-medium inline-flex items-center">
@@ -108,12 +110,12 @@ export function Footer() {
                     </div>
 
                     <div className="lg:col-span-2">
-                        <h4 className="premium-heading mb-12">DESTEK</h4>
+                        <h4 className="premium-heading mb-12">{t("support")}</h4>
                         <ul className="space-y-6">
                             {[
-                                { name: "İletişim", href: "/iletisim" },
-                                { name: "KVKK Aydınlatma", href: "/kvkk" },
-                                { name: "Çerez Politikası", href: "/cookie-policy" }
+                                { name: t("contactLink"), href: "/iletisim" },
+                                { name: t("kvkkLink"), href: "/kvkk" },
+                                { name: t("cookiePolicyLink"), href: "/cookie-policy" }
                             ].map((link) => (
                                 <li key={link.name}>
                                     <Link href={link.href} className="premium-link text-[16px] font-medium inline-flex items-center">
@@ -126,15 +128,15 @@ export function Footer() {
 
                     {/* Contact Detail Section */}
                     <div className="lg:col-span-3">
-                        <h4 className="premium-heading mb-12">İLETİŞİM</h4>
+                        <h4 className="premium-heading mb-12">{t("contactTitle")}</h4>
                         <ul className="space-y-10">
                             <li className="flex items-start space-x-5 group">
                                 <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/[0.05] flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 group-hover:border-primary/30 transition-all duration-500">
                                     <MapPin className="w-6 h-6 text-primary/80 group-hover:text-white transition-colors" />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-[11px] text-gray-500 uppercase tracking-widest font-black">Genel Merkez</p>
-                                    <p className="text-gray-300 text-[15px] leading-relaxed font-medium">Ataköy 7-8-10. Kısım Mah. <br />Çobançeşme E-5, İstanbul</p>
+                                    <p className="text-[11px] text-gray-500 uppercase tracking-widest font-black">{t("headquarters")}</p>
+                                    <p className="text-gray-300 text-[15px] leading-relaxed font-medium">Mecidiyeköy mah. Raşit Rıza sk. <br />Ahmet Esin İş Merkezi NO:4 K:2 D:7, Şişli/İstanbul</p>
                                 </div>
                             </li>
                             <li className="flex items-center space-x-5 group">
@@ -142,7 +144,7 @@ export function Footer() {
                                     <Phone className="w-6 h-6 text-primary/80 group-hover:text-white transition-colors" />
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-[11px] text-gray-500 uppercase tracking-widest font-black">7/24 Destek Hattı</p>
+                                    <p className="text-[11px] text-gray-500 uppercase tracking-widest font-black">{t("supportLine")}</p>
                                     <p className="text-gray-300 text-[15px] font-medium">+90 (850) 308 69 98</p>
                                 </div>
                             </li>
@@ -162,17 +164,17 @@ export function Footer() {
                             </p>
                         </div>
                         <div className="hidden md:block h-4 w-[1px] bg-white/[0.08]" />
-                        <p className="text-gray-600 text-[11px] tracking-[0.2em] font-black uppercase pointer-events-none">Eğitimde Mükemmeliyet</p>
+                        <p className="text-gray-600 text-[11px] tracking-[0.2em] font-black uppercase pointer-events-none">{t("excellenceInEducation")}</p>
                     </div>
 
                     <div className="flex flex-wrap justify-center md:justify-end items-center gap-10">
-                        <Link href="/kvkk" className="text-gray-500 hover:text-white text-xs font-semibold transition-all duration-300">GİZLİLİK POLİTİKASI</Link>
-                        <Link href="/cookie-policy" className="text-gray-500 hover:text-white text-xs font-semibold transition-all duration-300">YASAL BİLDİRİM</Link>
+                        <Link href="/kvkk" className="text-gray-500 hover:text-white text-xs font-semibold transition-all duration-300">{t("privacyPolicy")}</Link>
+                        <Link href="/cookie-policy" className="text-gray-500 hover:text-white text-xs font-semibold transition-all duration-300">{t("legalNotice")}</Link>
                         <button
                             onClick={openModal}
                             className="group relative px-6 py-2.5 rounded-full bg-white/[0.02] border border-white/[0.08] hover:border-primary/50 transition-all duration-500 overflow-hidden"
                         >
-                            <span className="relative z-10 text-gray-400 group-hover:text-white text-xs font-bold transition-colors">ÇEREZ AYARLARI</span>
+                            <span className="relative z-10 text-gray-400 group-hover:text-white text-xs font-bold transition-colors">{t("cookieSettings")}</span>
                             <div className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                         </button>
                     </div>

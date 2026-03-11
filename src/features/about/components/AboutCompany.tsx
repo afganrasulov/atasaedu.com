@@ -75,7 +75,7 @@ export function AboutCompany() {
                     >
                         <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white group">
                             <Image
-                                src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/about_img.png"
+                                src="/images/about-hero.png"
                                 alt="Atasa Education Story"
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-105"

@@ -51,7 +51,7 @@ export default function KvkkPage() {
                                     Veri Sorumlusu
                                 </h3>
                                 <p className="text-lg">
-                                    6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca, kişisel verileriniz; veri sorumlusu olarak <strong className="font-black text-[#152239] bg-primary/5 px-2 py-0.5 rounded">ATASA EDUCATION DANIŞMANLIK LTD. ŞTİ.</strong> (Adres: Ataköy 7-8-10. Kısım Mah. Çobançeşme E-5, Bakırköy / İstanbul) tarafından işlenmektedir.
+                                    6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, kişisel verileriniz; veri sorumlusu olarak <strong className="font-black text-[#152239] bg-primary/5 px-2 py-0.5 rounded">ATASA EDUCATION DANIŞMANLIK LTD. ŞTİ.</strong> (Adres: Mecidiyeköy mah. Raşit Rıza sk. Ahmet Esin İş Merkezi NO:4 K:2 D:7, Şişli / İstanbul) tarafından işlenmektedir.
                                 </p>
                             </section>
 
@@ -148,12 +148,12 @@ export default function KvkkPage() {
                                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100/50 hover:border-primary/20 transition-colors">
                                         <span className="block font-bold text-primary text-xs uppercase tracking-widest mb-3">Merkez Ofis Adresi</span>
                                         <p className="font-bold text-[#152239] leading-relaxed">
-                                            Ataköy 7-8-10. Kısım Mah. <br />Çobançeşme E-5, <br />Bakırköy / İstanbul
+                                            Mecidiyeköy mah. Raşit Rıza sk. <br />Ahmet Esin İş Merkezi NO:4 K:2 D:7, <br />Şişli / İstanbul
                                         </p>
                                     </div>
                                     <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100/50 hover:border-primary/20 transition-colors flex flex-col justify-center">
                                         <span className="block font-bold text-primary text-xs uppercase tracking-widest mb-3">Elektronik İletişim</span>
-                                        <a href="mailto:info@atasaedu.com" className="text-2xl font-black text-slate-800 hover:text-primary transition-colors mb-2 inline-block">info@atasaedu.com</a>
+                                        <a href="mailto:support@atasa.tr" className="text-2xl font-black text-slate-800 hover:text-primary transition-colors mb-2 inline-block">support@atasa.tr</a>
                                         <a href="tel:+908503086998" className="text-lg font-medium text-slate-600 hover:text-primary transition-colors">+90 (850) 308 69 98</a>
                                     </div>
                                 </div>

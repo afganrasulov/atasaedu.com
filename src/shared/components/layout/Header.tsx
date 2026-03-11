@@ -3,20 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Container } from "../ui/Container";
-import { Phone, Mail, Menu, X, Clock, Instagram, Youtube, Globe } from "lucide-react";
+import { Phone, Mail, Menu, X, Instagram, Youtube, Globe } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-const NAV_LINKS = [
-    { label: "Ana Sayfa", href: "/" },
-    { label: "Hakkımızda", href: "/hakkimizda" },
-    { label: "Hizmetlerimiz", href: "/hizmetlerimiz" },
-    { label: "Başvuru Süreci", href: "/basvuru-sureci" },
-    { label: "Yorumlar", href: "/google-yorumlari" },
-    { href: "/universiteler", label: "Üniversitelerimiz" },
-    { href: "/blog", label: "Blog" },
-    { href: "/iletisim", label: "İletişim" },
-];
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "../ui/LanguageSwitcher";
 
 const TikTokIcon = () => (
     <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -27,6 +18,19 @@ const TikTokIcon = () => (
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const t = useTranslations("navigation");
+    const h = useTranslations("header");
+
+    const NAV_LINKS = [
+        { label: t("home"), href: "/" },
+        { label: t("about"), href: "/hakkimizda" },
+        { label: t("services"), href: "/hizmetlerimiz" },
+        { label: t("applicationProcess"), href: "/basvuru-sureci" },
+        { label: t("reviews"), href: "/google-yorumlari" },
+        { label: t("universities"), href: "/universiteler" },
+        { label: t("blog"), href: "/blog" },
+        { label: t("contact"), href: "/iletisim" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -38,35 +42,44 @@ export function Header() {
 
     return (
         <div className="w-full font-sans bg-white">
-            {/* Top Bar */}
+            {/* Top Bar — Sosyal Güç Barı */}
             <div className="hidden md:block bg-[#0056D2] text-white">
-                <Container className="py-2.5">
+                <Container className="py-2">
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-6 text-[12px] font-medium tracking-wide">
-                            <a href="tel:+908503086998" className="flex items-center gap-2 hover:text-blue-100 transition-all">
+                        {/* Sol: İletişim */}
+                        <div className="flex items-center gap-5 text-[12px] font-medium tracking-wide">
+                            <a href={`tel:+908503086998`} className="flex items-center gap-2 hover:text-blue-100 transition-all">
                                 <Phone size={14} className="fill-white" />
-                                <span>+90 (850) 308 69 98</span>
+                                <span>{h("phone")}</span>
                             </a>
                             <span className="text-white/30">|</span>
-                            <a href="mailto:tr@atasaedu.com" className="flex items-center gap-2 hover:text-blue-100 transition-all">
+                            <a href={`mailto:${h("email")}`} className="flex items-center gap-2 hover:text-blue-100 transition-all">
                                 <Mail size={14} className="fill-white" />
-                                <span>tr@atasaedu.com</span>
+                                <span>{h("email")}</span>
                             </a>
-                            <span className="text-white/30">|</span>
-                            <div className="flex items-center gap-2 text-white/90">
-                                <Clock size={14} className="text-white/70" />
-                                <span className="uppercase text-[11px] font-bold tracking-wider">Pzt - Cmt: 09:00 - 17:00</span>
+                        </div>
+
+                        {/* Sağ: Sosyal Güç + Dil Değiştirici */}
+                        <div className="flex items-center gap-3">
+                            <a href="https://www.youtube.com/@atasa_tr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-all group cursor-pointer">
+                                <Youtube size={14} className="text-red-400 group-hover:text-red-300" />
+                                <span className="text-[11px] font-black tracking-wide">100K+</span>
+                            </a>
+                            <a href="https://www.instagram.com/atasa_tr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-all group cursor-pointer">
+                                <Instagram size={14} className="text-pink-400 group-hover:text-pink-300" />
+                                <span className="text-[11px] font-black tracking-wide">60K+</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@atasa_tr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10 hover:bg-white/20 transition-all group cursor-pointer">
+                                <TikTokIcon />
+                                <span className="text-[11px] font-black tracking-wide">151K+</span>
+                            </a>
+                            <span className="text-white/20 mx-1">|</span>
+                            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/10">
+                                <Globe size={14} className="text-emerald-400" />
+                                <span className="text-[11px] font-black tracking-wide">{h("officeCount")}</span>
                             </div>
-                            <span className="text-white/30 hidden xl:block">|</span>
-                            <div className="hidden xl:flex items-center gap-4">
-                                <span className="text-white/60 text-[10px] font-bold uppercase tracking-[0.2em]">Sosyal Medya</span>
-                                <div className="flex items-center gap-4">
-                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><span className="text-base font-bold leading-none">f</span></a>
-                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><TikTokIcon /></a>
-                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><Instagram size={16} /></a>
-                                    <a href="#" className="hover:scale-110 transition-all text-white/90 hover:text-white"><Youtube size={16} /></a>
-                                </div>
-                            </div>
+                            <span className="text-white/20 mx-1">|</span>
+                            <LanguageSwitcher />
                         </div>
                     </div>
                 </Container>
@@ -120,7 +133,7 @@ export function Header() {
                         <div className="hidden lg:block">
                             <Link href="/iletisim">
                                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-colors shadow-lg shadow-blue-600/20">
-                                    Bilgi Al
+                                    {t("getInfo")}
                                 </button>
                             </Link>
                         </div>
@@ -148,10 +161,13 @@ export function Header() {
                                 {link.label}
                             </Link>
                         ))}
+                        {/* Mobile Language Switcher */}
+                        <div className="pt-2">
+                            <LanguageSwitcher />
+                        </div>
                     </div>
                 )}
             </header>
         </div>
     );
 }
-

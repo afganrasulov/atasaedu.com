@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "title": "Atasa Education - Overseas Education Consultancy",
+    "description": "Consultancy for university education in Turkey, work permits, residence permits, and company formation. Reach your dream education with exam-free and guaranteed processes."
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "applicationProcess": "Application Process",
+    "reviews": "Reviews",
+    "universities": "Our Universities",
+    "blog": "Blog",
+    "contact": "Contact",
+    "getInfo": "Get Info"
+  },
+  "header": {
+    "phone": "+90 (850) 308 69 98",
+    "email": "support@atasa.tr",
+    "officeCount": "Offices in 3 Countries"
+  },
+  "hero": {
+    "badge": "Center of Excellence in Education",
+    "titlePrefix": "In Turkey",
+    "phrases": [
+      "Exam-Free University Enrollment",
+      "Guaranteed Admission Process",
+      "Fast Residence Permit",
+      "Legal Consultancy Support",
+      "Educational Opportunity in Turkey"
+    ],
+    "highlight": "Atasa VIP consultancy",
+    "guarantee": "exam-free and guaranteed",
+    "ctaPrimary": "Start Now",
+    "ctaSecondary": "Discover",
+    "trustUniversities": "100+ Universities",
+    "trustLegal": "Legal Assurance",
+    "trustGlobal": "Global Support",
+    "googleScore": "Google Rating",
+    "testimonialQuote": "\"The most professional consultancy team in Turkey. The process was much faster and easier than I expected.\"",
+    "satisfiedStudents": "Thousands of Satisfied Students",
+    "descriptionPrefix": "The choice of thousands of students. Reach your dream university education",
+    "descriptionSuffix": "with",
+    "descriptionEnd": "processes."
+  },
+  "footer": {
+    "tagline": "Your dreams of studying abroad open the doors to the world.",
+    "taglineHighlight": "Modern, corporate, and results-oriented consultancy expertise.",
+    "googleReviews": "1200+ Google Reviews",
+    "corporate": "CORPORATE",
+    "support": "SUPPORT",
+    "contactTitle": "CONTACT",
+    "headquarters": "Head Office",
+    "supportLine": "24/7 Support Line",
+    "privacyPolicy": "PRIVACY POLICY",
+    "legalNotice": "LEGAL NOTICE",
+    "cookieSettings": "COOKIE SETTINGS",
+    "excellenceInEducation": "Excellence in Education",
+    "aboutLink": "About Us",
+    "servicesLink": "Our Services",
+    "universitiesLink": "Universities",
+    "processLink": "Application Process",
+    "reviewsLink": "Reviews",
+    "contactLink": "Contact",
+    "kvkkLink": "KVKK Disclosure",
+    "cookiePolicyLink": "Cookie Policy"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "applyNow": "Apply Now",
+    "readMore": "Read More",
+    "contactUs": "Contact Us",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "send": "Send",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Submit",
+    "success": "Successful"
+  },
+  "languageSwitcher": {
+    "tr": "Turkish",
+    "en": "English",
+    "ar": "العربية",
+    "fa": "فارسی",
+    "fr": "Français"
+  },
+  "about": {
+    "badge": "The Door to Your Future",
+    "title": "Reach Your Dream Education with {brand}",
+    "description": "We open the doors to education at Turkey's and the world's best universities for students coming from all over the world, especially the Middle East and Central Asia. We stand by you with exam-free transfer and 100% placement guarantee.",
+    "benefit1": "Education consultancy at international standards",
+    "benefit2": "500+ partner universities worldwide",
+    "benefit3": "Personalized career and education planning",
+    "benefit4": "Full support in visa and application processes",
+    "happyStudents": "Happy Student",
+    "freeConsultation": "Get Free Consultation",
+    "appliedCount": "have applied"
+  },
+  "services": {
+    "badge": "Our Privileges",
+    "title": "The {highlight} Education Journey in Turkey",
+    "highlight": "Flawless",
+    "registeredStudents": "Registered Student",
+    "acceptanceGuarantee": "Acceptance Guarantee",
+    "freeConsultation": "GET FREE CONSULTATION",
+    "culturalRichness": "Cultural Richness",
+    "culturalRichnessDesc": "Opportunity to study in Turkey's unique cultural mosaic.",
+    "qualityEducation": "Quality Education",
+    "qualityEducationDesc": "Graduate education at universities with international standards.",
+    "economicOpportunities": "Economic Opportunities",
+    "economicOpportunitiesDesc": "Budget-friendly tuition fees and low living costs.",
+    "easyAccess": "Easy Access",
+    "easyAccessDesc": "Central location at the crossroads of Europe and Asia."
+  },
+  "stats": {
+    "students": "Students",
+    "successRate": "Success Rate",
+    "consultingHours": "Consulting Hours"
+  },
+  "testimonials": {
+    "badge": "STUDENT REVIEWS",
+    "title": "What Do Students Say About Our University?",
+    "verifiedReviews": "Verified Google Review",
+    "readExperiences": "Read the real experiences of thousands of our clients.",
+    "seeAllReviews": "See All Reviews",
+    "review1": "Atasa Education made my transition to university life in Turkey easy. The student community here is very friendly and supportive. I am very satisfied with the education system.",
+    "review1Name": "B***** Ü*******",
+    "review1Dept": "Materials Science and Nanotechnology Engineering",
+    "review2": "My university experience in Turkey changed my life. Thanks to the knowledge and experience I gained here, I took a big step in my career. The Atasa Education team was with me every step of the way.",
+    "review2Name": "M***** K*******",
+    "review2Dept": "Computer Engineering"
+  },
+  "socialProof": {
+    "badge": "SOCIAL MEDIA",
+    "title": "Community Following Us",
+    "description": "Hundreds of thousands trust us on their education journey. We are also with you on social media.",
+    "subscriber": "Subscriber",
+    "follower": "Follower",
+    "reviews1200": "1200+ Reviews",
+    "officialPartner": "Official Google Partner",
+    "digitalCommunity": "member digital community",
+    "seeReviews": "See Reviews",
+    "subscribe": "Subscribe"
+  },
+  "cta": {
+    "getInfoOnline": "Get Information Online",
+    "getSupport": "Get Support from Professional Consultants!",
+    "getInfo": "GET INFO"
+  },
+  "bursary": {
+    "badge": "Are You Ready?",
+    "title": "Step into your dream university education with attractive {highlight} opportunities that open the doors to education in Turkey!",
+    "highlight": "scholarship"
+  },
+  "programSearch": {
+    "badge": "Apply",
+    "title": "Find the program you desire!",
+    "degree": "Degree",
+    "language": "Language",
+    "placeholder": "Search Program...",
+    "search": "SEARCH"
+  },
+  "dualAction": {
+    "workPermit": "Student Work Permit",
+    "residencePermit": "Student Residence Permit",
+    "getInfo": "GET INFO"
+  },
+  "featured": {
+    "popular": "Popular",
+    "departments": "DEPARTMENTS",
+    "title": "Start",
+    "titleHighlight": "Discovering",
+    "titleEnd": "Your Future",
+    "description": "We have selected the most preferred academic programs of prestigious universities with global recognition for you.",
+    "seeAll": "SEE ALL DEPARTMENTS",
+    "university": "University",
+    "details": "Details"
+  },
+  "partners": {
+    "badge": "Our Partners",
+    "title": "We Have Partners",
+    "loading": "Loading..."
+  },
+  "team": {
+    "badge": "OUR CONSULTANTS",
+    "title": "Meet Our Expert Education Consultants",
+    "description": "Our education consultants provide special support to foreign students in university selection and preparation of application documents in Turkey. We support them in finding the most suitable university for their academic goals and ensuring a smooth application process.",
+    "contactUs": "CONTACT US",
+    "seeAllTeam": "SEE ALL TEAM",
+    "role1": "Education Consultant",
+    "role2": "Work Permit Consultant",
+    "role3": "Manager and Founding Partner"
+  },
+  "blog": {
+    "badge": "Latest Blogs",
+    "title": "Your Guide to Education and Life",
+    "seeAll": "See All",
+    "readMore": "Read More"
+  }
+}

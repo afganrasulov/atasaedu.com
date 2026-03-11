@@ -1,0 +1,204 @@
+{
+  "metadata": {
+    "title": "Atasa Education - Conseil en Études à l'Étranger",
+    "description": "Conseil pour les études universitaires en Turquie, permis de travail, permis de séjour et création d'entreprise. Accédez à l'éducation de vos rêves grâce à des processus garantis et sans examen."
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Nos Services",
+    "applicationProcess": "Processus de Candidature",
+    "reviews": "Avis",
+    "universities": "Nos Universités",
+    "blog": "Blog",
+    "contact": "Contact",
+    "getInfo": "Obtenir des Infos"
+  },
+  "header": {
+    "phone": "+90 (850) 308 69 98",
+    "email": "support@atasa.tr",
+    "officeCount": "Bureaux dans 3 Pays"
+  },
+  "hero": {
+    "badge": "Centre d'Excellence en Éducation",
+    "titlePrefix": "En Turquie",
+    "phrases": [
+      "Inscription Universitaire Sans Examen",
+      "Processus d'Admission Garanti",
+      "Permis de Séjour Rapide",
+      "Soutien Juridique Professionnel",
+      "Opportunité d'Études en Turquie"
+    ],
+    "highlight": "Conseil VIP Atasa",
+    "guarantee": "sans examen et garanti",
+    "ctaPrimary": "Commencez Maintenant",
+    "ctaSecondary": "Découvrir",
+    "trustUniversities": "Plus de 100 Universités",
+    "trustLegal": "Garantie Légale",
+    "trustGlobal": "Soutien Global",
+    "googleScore": "Note Google",
+    "testimonialQuote": "\"L'équipe de conseil la plus professionnelle en Turquie. Le processus a été beaucoup plus rapide et facile que prévu.\"",
+    "satisfiedStudents": "Des Milliers d'Étudiants Satisfaits",
+    "descriptionPrefix": "Le choix de milliers d'étudiants. Accédez à l'éducation universitaire de vos rêves",
+    "descriptionSuffix": "avec",
+    "descriptionEnd": "des processus efficaces."
+  },
+  "footer": {
+    "tagline": "Étudier à l'étranger ouvre les portes du monde à vos rêves.",
+    "taglineHighlight": "Expertise moderne, institutionnelle et axée sur les résultats en conseil.",
+    "googleReviews": "Plus de 1200 Avis Google",
+    "corporate": "CORPORATIF",
+    "support": "SUPPORT",
+    "contactTitle": "CONTACT",
+    "headquarters": "Siège Social",
+    "supportLine": "Ligne d'Assistance 24/7",
+    "privacyPolicy": "POLITIQUE DE CONFIDENTIALITÉ",
+    "legalNotice": "MENTIONS LÉGALES",
+    "cookieSettings": "PARAMÈTRES DES COOKIES",
+    "excellenceInEducation": "Excellence en Éducation",
+    "aboutLink": "À Propos",
+    "servicesLink": "Nos Services",
+    "universitiesLink": "Universités",
+    "processLink": "Processus de Candidature",
+    "reviewsLink": "Avis",
+    "contactLink": "Contact",
+    "kvkkLink": "Information KVKK",
+    "cookiePolicyLink": "Politique de Cookies"
+  },
+  "common": {
+    "learnMore": "En Savoir Plus",
+    "applyNow": "Postuler Maintenant",
+    "readMore": "Lire la Suite",
+    "contactUs": "Contactez-Nous",
+    "close": "Fermer",
+    "loading": "Chargement...",
+    "error": "Une erreur est survenue",
+    "send": "Envoyer",
+    "name": "Nom",
+    "email": "Email",
+    "phone": "Téléphone",
+    "message": "Message",
+    "submit": "Envoyer",
+    "success": "Réussi"
+  },
+  "languageSwitcher": {
+    "tr": "Turc",
+    "en": "Anglais",
+    "ar": "العربية",
+    "fa": "فارسی",
+    "fr": "Français"
+  },
+  "about": {
+    "badge": "La Porte Vers Votre Avenir",
+    "title": "Atteignez l'Éducation de Vos Rêves avec {brand}",
+    "description": "Nous ouvrons les portes de l'éducation dans les meilleures universités de Turquie et du monde aux étudiants venant principalement du Moyen-Orient et d'Asie Centrale. Nous vous accompagnons avec une admission sans examen et une garantie de placement à 100%.",
+    "benefit1": "Conseil en éducation conforme aux standards internationaux",
+    "benefit2": "Plus de 500 universités partenaires dans le monde",
+    "benefit3": "Planification personnalisée de carrière et d'études",
+    "benefit4": "Soutien complet pour les visas et les démarches",
+    "happyStudents": "Étudiant Satisfait",
+    "freeConsultation": "Obtenez une Consultation Gratuite",
+    "appliedCount": "ont postulé"
+  },
+  "services": {
+    "badge": "Nos Avantages",
+    "title": "Parcours Éducatif {highlight} en Turquie",
+    "highlight": "Parfait",
+    "registeredStudents": "Étudiants Inscrits",
+    "acceptanceGuarantee": "Garantie d'Admission",
+    "freeConsultation": "OBTENEZ UNE CONSULTATION GRATUITE",
+    "culturalRichness": "Richesse Culturelle",
+    "culturalRichnessDesc": "Opportunité d'étudier dans la mosaïque culturelle unique de la Turquie.",
+    "qualityEducation": "Éducation de Qualité",
+    "qualityEducationDesc": "Formation de niveau international dans des universités prestigieuses.",
+    "economicOpportunities": "Opportunités Économiques",
+    "economicOpportunitiesDesc": "Frais de scolarité abordables et coût de la vie faible.",
+    "easyAccess": "Accès Facile",
+    "easyAccessDesc": "Emplacement central au carrefour de l'Europe et de l'Asie."
+  },
+  "stats": {
+    "students": "Étudiants",
+    "successRate": "Taux de Réussite",
+    "consultingHours": "Heures de Conseil"
+  },
+  "testimonials": {
+    "badge": "AVIS DES ÉTUDIANTS",
+    "title": "Que Disent les Étudiants sur Notre Université ?",
+    "verifiedReviews": "Avis Vérifié Google",
+    "readExperiences": "Lisez les expériences réelles de milliers de nos clients.",
+    "seeAllReviews": "Voir Tous les Avis",
+    "review1": "Atasa Education a facilité ma transition vers la vie universitaire en Turquie. La communauté étudiante ici est très accueillante et solidaire. Je suis très satisfait du système éducatif.",
+    "review1Name": "B***** Ü*******",
+    "review1Dept": "Génie des Matériaux et Nanotechnologie",
+    "review2": "Mon expérience universitaire en Turquie a changé ma vie. Grâce aux connaissances et expériences acquises ici, j'ai fait un grand pas dans ma carrière. L'équipe d'Atasa Education m'a soutenu à chaque étape.",
+    "review2Name": "M***** K*******",
+    "review2Dept": "Génie Informatique"
+  },
+  "socialProof": {
+    "badge": "RÉSEAUX SOCIAUX",
+    "title": "Communauté qui Nous Suit",
+    "description": "Des centaines de milliers de personnes nous font confiance dans leur parcours éducatif. Nous sommes aussi à vos côtés sur les réseaux sociaux.",
+    "subscriber": "Abonné",
+    "follower": "Abonné",
+    "reviews1200": "Plus de 1200 Avis",
+    "officialPartner": "Partenaire Officiel Google",
+    "digitalCommunity": "communauté digitale de personnes",
+    "seeReviews": "Voir les Avis",
+    "subscribe": "S'abonner"
+  },
+  "cta": {
+    "getInfoOnline": "Obtenez des Infos en Ligne",
+    "getSupport": "Obtenez le Soutien de Nos Conseillers Professionnels !",
+    "getInfo": "OBTENIR DES INFOS"
+  },
+  "bursary": {
+    "badge": "Prêt ?",
+    "title": "Faites un pas vers l'éducation de vos rêves avec les {highlight} attractives qui ouvrent les portes de l'éducation en Turquie !",
+    "highlight": "bourses"
+  },
+  "programSearch": {
+    "badge": "Postuler",
+    "title": "Trouvez le programme que vous souhaitez !",
+    "degree": "Diplôme",
+    "language": "Langue",
+    "placeholder": "Rechercher un programme...",
+    "search": "RECHERCHER"
+  },
+  "dualAction": {
+    "workPermit": "Permis de Travail Étudiant",
+    "residencePermit": "Permis de Séjour Étudiant",
+    "getInfo": "OBTENIR DES INFOS"
+  },
+  "featured": {
+    "popular": "Populaire",
+    "departments": "DÉPARTEMENTS",
+    "title": "Commencez à",
+    "titleHighlight": "Découvrir",
+    "titleEnd": "Votre Avenir",
+    "description": "Nous avons sélectionné pour vous les programmes académiques les plus prisés des universités prestigieuses reconnues mondialement.",
+    "seeAll": "VOIR TOUS LES DÉPARTEMENTS",
+    "university": "Université",
+    "details": "Détails"
+  },
+  "partners": {
+    "badge": "Nos Partenaires",
+    "title": "Nous Avons un Partenaire",
+    "loading": "Chargement..."
+  },
+  "team": {
+    "badge": "NOS CONSEILLERS",
+    "title": "Rencontrez Nos Conseillers en Éducation Experts",
+    "description": "Nos conseillers en éducation offrent un soutien personnalisé aux étudiants étrangers dans le choix des universités en Turquie et la préparation des documents de candidature. Nous les accompagnons pour trouver l'université la plus adaptée à leurs objectifs académiques et pour que leur processus de candidature se déroule sans encombre.",
+    "contactUs": "NOUS CONTACTER",
+    "seeAllTeam": "VOIR TOUTE L'ÉQUIPE",
+    "role1": "Conseiller en Éducation",
+    "role2": "Conseiller en Permis de Travail",
+    "role3": "Directeur et Associé Fondateur"
+  },
+  "blog": {
+    "badge": "Blogs Récents",
+    "title": "Votre Guide pour l'Éducation et la Vie",
+    "seeAll": "Voir Tout",
+    "readMore": "Lire la Suite"
+  }
+}

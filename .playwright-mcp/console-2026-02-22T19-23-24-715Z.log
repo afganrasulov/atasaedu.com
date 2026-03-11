@@ -1,0 +1,42 @@
+[    2107ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    2714ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[    3150ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[    3152ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[  179270ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/:0
+[  179270ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/:0
+[  179270ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_3"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_3"].
+ @ http://localhost:6001/:0
+[  179270ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_3"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_3"]])
+ @ http://localhost:6001/:0
+[ 1113224ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_6"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_6"].
+ @ http://localhost:6001/:0
+[ 1113224ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_6"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_6"]])
+ @ http://localhost:6001/:0
+[ 1113234ms] [WARNING] The depth stencil attachment [TextureView of Texture "depthBuffer"] size (width: 3810, height: 1814) does not match the size of the other attachments' base plane (width: 1905, height: 907).
+ - While validating depthStencilAttachment.
+ - While encoding [CommandEncoder "renderContext_6"].BeginRenderPass([RenderPassDescriptor]).
+ - While finishing [CommandEncoder "renderContext_6"].
+ @ http://localhost:6001/:0
+[ 1113234ms] [WARNING] [Invalid CommandBuffer from CommandEncoder "renderContext_6"] is invalid.
+ - While calling [Queue].Submit([[Invalid CommandBuffer from CommandEncoder "renderContext_6"]])
+ @ http://localhost:6001/:0
+[ 1115646ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[ 1116131ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://khlvkvusavalbkjrwbsy.supabase.co/rest/v1/rpc/get_popular_departments:0
+[ 1122613ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/social-sciences.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297
+[ 1123333ms] [WARNING] Image with src "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories/engineering.png" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes @ http://localhost:6001/_next/static/chunks/8233f_next_dist_62534dce._.js:2297

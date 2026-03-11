@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { supabase, getLogoUrl } from "@/lib/supabase";
+import { useTranslations } from "next-intl";
 
 interface UniversityLogo {
     id: number;
@@ -11,6 +12,7 @@ interface UniversityLogo {
 }
 
 export function PartnersSection() {
+    const t = useTranslations("partners");
     const [logos, setLogos] = useState<UniversityLogo[]>([]);
     const [count, setCount] = useState(0);
 
@@ -36,13 +38,12 @@ export function PartnersSection() {
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-10">
                         <div className="inline-flex items-center gap-2 mb-2">
-                            <span className="text-red-500 font-bold uppercase tracking-widest text-sm">Ortaklarımız</span>
+                            <span className="text-red-500 font-bold uppercase tracking-widest text-sm">{t("badge")}</span>
                         </div>
                         <h2 className="text-3xl md:text-4xl font-black text-slate-800">
-                            <span className="text-blue-600">Yükleniyor...</span>
+                            <span className="text-blue-600">{t("loading")}</span>
                         </h2>
                     </div>
-                    {/* Skeleton loader */}
                     <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
                         {Array.from({ length: 8 }).map((_, i) => (
                             <div key={i} className="w-28 h-14 bg-gray-100 rounded-xl animate-pulse" />
@@ -53,25 +54,21 @@ export function PartnersSection() {
         );
     }
 
-    // Duplicate logos for seamless infinite scroll
     const marqueeLogos = [...logos, ...logos];
 
     return (
         <section className="py-16 bg-white overflow-hidden">
             <div className="container mx-auto px-4">
-
                 <div className="text-center mb-10">
                     <div className="inline-flex items-center gap-2 mb-2">
-                        <span className="text-red-500 font-bold uppercase tracking-widest text-sm">Ortaklarımız</span>
+                        <span className="text-red-500 font-bold uppercase tracking-widest text-sm">{t("badge")}</span>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-black text-slate-800">
-                        <span className="text-blue-600">{count}+</span> Ortağımız Var
+                        <span className="text-blue-600">{count}+</span> {t("title")}
                     </h2>
                 </div>
 
-                {/* Infinite Marquee */}
                 <div className="relative">
-                    {/* Fade edges */}
                     <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
                     <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
@@ -94,17 +91,12 @@ export function PartnersSection() {
                         </div>
                     </div>
                 </div>
-
             </div>
 
             <style jsx>{`
                 @keyframes marquee-scroll {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-50%); }
                 }
                 .partners-marquee {
                     animation: marquee-scroll 60s linear infinite;

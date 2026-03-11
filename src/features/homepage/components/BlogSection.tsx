@@ -6,8 +6,12 @@ import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { BlogPost } from "@/lib/blog/blogService";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 export function BlogSection() {
+    const t = useTranslations("blog");
+    const locale = useLocale();
     const [posts, setPosts] = useState<BlogPost[]>([]);
     const [loading, setLoading] = useState(true);
 
@@ -18,7 +22,7 @@ export function BlogSection() {
                 const json = await res.json();
                 setPosts(json.posts ?? []);
             } catch {
-                // Sessizce geç — fallback göster
+                // Sessizce geç
             } finally {
                 setLoading(false);
             }
@@ -26,43 +30,36 @@ export function BlogSection() {
         fetchPosts();
     }, []);
 
-    // Fallback veriler (Supabase'de henüz yazı yoksa)
     const fallbackPosts = [
         {
             id: "f1",
-            title:
-                "Yabancı Öğrencilere Türkiye'de Sınavsız Üniversite İmkanı: Geniş Eğitim Yelpazesi",
-            excerpt:
-                "Yabancı uyruklu öğrenciler için Türkiye'de üniversite eğitimi alma seçenekleri oldukça geniştir. Vakıf üniversiteleri, yabancı öğrencilere sınavsız kabul imkanı sunmaktadır.",
-            image_url:
-                "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_1.jpg",
+            title: "Yabancı Öğrencilere Türkiye'de Sınavsız Üniversite İmkanı",
+            excerpt: "Yabancı uyruklu öğrenciler için Türkiye'de üniversite eğitimi alma seçenekleri oldukça geniştir.",
+            image_url: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_1.jpg",
             published_at: "2024-11-12T00:00:00Z",
             slug: "yabanci-ogrencilere-sinavsiz-universite",
         },
         {
             id: "f2",
             title: "Türkiye'de Eğitim Almanın 5 Harika Sebebi",
-            excerpt:
-                "Akademik kaliteden zengin kültüre kadar, Türkiye uluslararası öğrenciler için eşsiz bir destinasyon haline geliyor.",
-            image_url:
-                "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_2.jpg",
+            excerpt: "Akademik kaliteden zengin kültüre kadar, Türkiye uluslararası öğrenciler için eşsiz bir destinasyon.",
+            image_url: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_2.jpg",
             published_at: "2024-10-05T00:00:00Z",
             slug: "turkiyede-egitim-almanin-5-sebebi",
         },
         {
             id: "f3",
             title: "Öğrenci İkamet İzni Nasıl Alınır?",
-            excerpt:
-                "Türkiye'de üniversite eğitimi görecek uluslararası öğrencilerin ikamet izni almak için izlemesi gereken adımlar.",
-            image_url:
-                "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_3.jpg",
+            excerpt: "Türkiye'de üniversite eğitimi görecek uluslararası öğrencilerin ikamet izni alma rehberi.",
+            image_url: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_3.jpg",
             published_at: "2024-09-28T00:00:00Z",
             slug: "ogrenci-ikamet-izni-nasil-alinir",
         },
     ];
 
-    const displayPosts =
-        posts.length > 0 ? posts : loading ? [] : fallbackPosts;
+    const displayPosts = posts.length > 0 ? posts : loading ? [] : fallbackPosts;
+
+    const dateLocale = locale === "tr" ? "tr-TR" : locale === "ar" ? "ar-SA" : locale === "fa" ? "fa-IR" : locale === "fr" ? "fr-FR" : "en-US";
 
     return (
         <section className="py-24 bg-white">
@@ -71,17 +68,17 @@ export function BlogSection() {
                     <div>
                         <div className="flex items-center space-x-2 text-primary font-semibold mb-4">
                             <span className="w-8 h-[2px] bg-primary" />
-                            <span>Güncel Bloglar</span>
+                            <span>{t("badge")}</span>
                         </div>
                         <h2 className="text-3xl md:text-5xl font-black text-[#152239] max-w-2xl leading-tight">
-                            Eğitim ve Yaşam Rehberiniz
+                            {t("title")}
                         </h2>
                     </div>
                     <Link
                         href="/blog"
                         className="inline-flex items-center justify-center space-x-2 bg-[#152239] text-white px-6 py-3 rounded-lg hover:bg-primary transition-colors font-medium"
                     >
-                        <span>Tümünü Gör</span>
+                        <span>{t("seeAll")}</span>
                         <ArrowRight className="w-4 h-4" />
                     </Link>
                 </div>
@@ -89,10 +86,7 @@ export function BlogSection() {
                 {loading ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[1, 2, 3].map((i) => (
-                            <div
-                                key={i}
-                                className="bg-white rounded-[2.5rem] overflow-hidden animate-pulse border border-gray-100"
-                            >
+                            <div key={i} className="bg-white rounded-[2.5rem] overflow-hidden animate-pulse border border-gray-100">
                                 <div className="h-64 bg-gray-200" />
                                 <div className="p-8 space-y-4">
                                     <div className="h-4 bg-gray-200 rounded w-1/3" />
@@ -136,7 +130,7 @@ export function BlogSection() {
                                         <span>
                                             {post.published_at
                                                 ? new Date(post.published_at).toLocaleDateString(
-                                                    "tr-TR",
+                                                    dateLocale,
                                                     {
                                                         day: "numeric",
                                                         month: "long",
@@ -159,7 +153,7 @@ export function BlogSection() {
                                     </p>
                                     <div className="mt-auto">
                                         <span className="text-[#152239] font-semibold text-sm border-b-2 border-gray-200 pb-1 group-hover:border-blue-600 transition-colors inline-block">
-                                            Devamını Oku
+                                            {t("readMore")}
                                         </span>
                                     </div>
                                 </div>

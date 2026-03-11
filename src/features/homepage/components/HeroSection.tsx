@@ -5,24 +5,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Star, Sparkles, GraduationCap, ShieldCheck, Globe } from "lucide-react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useTranslations } from "next-intl";
 
 const TubesBackground = dynamic(
     () => import("./TubesBackground").then((m) => ({ default: m.TubesBackground })),
     { ssr: false }
 );
 
-const HERO_PHRASES = [
-    "Sınavsız Üniversite Kaydı",
-    "Garantili Kabul Süreci",
-    "Hızlı İkamet İzni",
-    "Yasal Danışmanlık Desteği",
-    "Türkiye'de Eğitim Fırsatı"
-];
-
 // Shared Title Component to ensure perfect synchronization
-const HeroTitle = ({ colorClass, isSpotlight = false, phraseIndex }: { colorClass: string, isSpotlight?: boolean, phraseIndex: number }) => (
+const HeroTitle = ({ colorClass, isSpotlight = false, phraseIndex, phrases, titlePrefix }: { colorClass: string, isSpotlight?: boolean, phraseIndex: number, phrases: string[], titlePrefix: string }) => (
     <h1 className={`text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-8 leading-[1.1] ${!isSpotlight ? 'select-none' : ''} ${colorClass} flex flex-col items-center`}>
-        <span className="block">Türkiye&apos;de</span>
+        <span className="block">{titlePrefix}</span>
         <span className="relative inline-block h-[1.3em] w-full">
             <AnimatePresence mode="wait">
                 <motion.span
@@ -33,7 +26,7 @@ const HeroTitle = ({ colorClass, isSpotlight = false, phraseIndex }: { colorClas
                     transition={{ duration: 0.5, ease: "circOut" }}
                     className="absolute inset-0 flex items-center justify-center whitespace-nowrap text-[#0056D2]"
                 >
-                    {HERO_PHRASES[phraseIndex]}
+                    {phrases[phraseIndex]}
                 </motion.span>
             </AnimatePresence>
         </span>
@@ -45,16 +38,20 @@ export function HeroSection() {
     const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
     const [sectionMousePos, setSectionMousePos] = useState({ x: 0, y: 0 });
     const [isSectionHovered, setIsSectionHovered] = useState(false);
+    const t = useTranslations("hero");
+
+    const phrases = t.raw("phrases") as string[];
+    const titlePrefix = t("titlePrefix");
 
     const textRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setPhraseIndex((prev) => (prev + 1) % HERO_PHRASES.length);
+            setPhraseIndex((prev) => (prev + 1) % phrases.length);
         }, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [phrases.length]);
 
     const handleMouseMove = (e: React.MouseEvent) => {
         if (textRef.current) {
@@ -89,34 +86,23 @@ export function HeroSection() {
             className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-white via-white to-slate-50 overflow-hidden py-20 lg:py-32"
             style={{ touchAction: "none" }}
         >
-            {/* WebGL Tubes Background */}
-            {/* Opacity artırıldı ve beyaz arka plana karışması sağlandı */}
             <div className="absolute inset-0 z-0 overflow-hidden pointer-events-auto" style={{ opacity: 0.8, mixBlendMode: 'screen' }}>
                 <TubesBackground />
             </div>
 
-            {/* Premium Light Animated Background */}
             <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
                 <div className="absolute -top-24 -left-24 w-[600px] h-[600px] bg-blue-50/30 rounded-full blur-[120px] animate-pulse" />
                 <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-sky-50/20 rounded-full blur-[150px] animate-pulse delay-1000" />
-
-                {/* Dynamic Spotlight Effect - Dark gradientlar kaldırıldı */}
                 <div
                     className="absolute inset-0 transition-opacity duration-500 ease-out z-10"
                     style={{
                         opacity: isSectionHovered ? 1 : 0,
-                        background: `
-                            radial-gradient(600px circle at ${sectionMousePos.x}px ${sectionMousePos.y}px, rgba(59, 130, 246, 0.05), transparent 40%)
-                        `,
+                        background: `radial-gradient(600px circle at ${sectionMousePos.x}px ${sectionMousePos.y}px, rgba(59, 130, 246, 0.05), transparent 40%)`,
                     }}
                 />
-
-                {/* Dot Pattern - Daha belirgin ve temiz hale getirildi */}
                 <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-20 z-20 pointer-events-none" />
             </div>
 
-            {/* Content */}
-            {/* Tıklama dışındaki her şey pointer-events-none olmalı ki alttaki canvas fareyi görebilsin */}
             <div className="container mx-auto px-4 relative z-10 text-slate-900 pointer-events-none">
                 <div className="pointer-events-auto">
                     <div className="flex flex-col items-center text-center">
@@ -127,7 +113,7 @@ export function HeroSection() {
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-50/50 backdrop-blur-md border border-blue-100/50 text-[#0047BB] text-sm font-black mb-10 shadow-sm"
                         >
                             <Sparkles size={16} className="text-[#0047BB]" />
-                            <span className="tracking-[0.1em] uppercase">Eğitimde Mükemmeliyet Merkezi</span>
+                            <span className="tracking-[0.1em] uppercase">{t("badge")}</span>
                         </motion.div>
 
                         <div
@@ -136,9 +122,8 @@ export function HeroSection() {
                             onMouseLeave={handleMouseLeave}
                             className="relative max-w-5xl cursor-default pointer-events-none mb-4"
                         >
-                            <HeroTitle colorClass="text-[#152239]" phraseIndex={phraseIndex} />
+                            <HeroTitle colorClass="text-[#152239]" phraseIndex={phraseIndex} phrases={phrases} titlePrefix={titlePrefix} />
 
-                            {/* Interactive Spotlight Effect for Light Theme */}
                             <div
                                 className="absolute inset-0 pointer-events-none z-20 hidden md:block"
                                 style={{
@@ -146,7 +131,7 @@ export function HeroSection() {
                                     WebkitMaskImage: `radial-gradient(circle 150px at ${cursorPos.x}px ${cursorPos.y}px, black 20%, transparent 100%)`,
                                 }}
                             >
-                                <HeroTitle colorClass="text-[#0047BB]" isSpotlight phraseIndex={phraseIndex} />
+                                <HeroTitle colorClass="text-[#0047BB]" isSpotlight phraseIndex={phraseIndex} phrases={phrases} titlePrefix={titlePrefix} />
                             </div>
                         </div>
 
@@ -156,9 +141,9 @@ export function HeroSection() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg md:text-2xl text-slate-600 max-w-3xl mb-14 font-medium leading-relaxed"
                         >
-                            Binlerce öğrencinin tercihi. Hayalinizdeki üniversite eğitimine
-                            <span className="text-[#0047BB] font-black italic"> Atasa VIP danışmanlığı </span>
-                            ile <span className="text-[#0047BB] font-black underline decoration-[#0047BB]/40 decoration-[3px] underline-offset-4">sınavsız ve garantili</span> süreçlerle ulaşın.
+                            {t("descriptionPrefix")}
+                            <span className="text-[#0047BB] font-black italic"> {t("highlight")} </span>
+                            {t("descriptionSuffix")} <span className="text-[#0047BB] font-black underline decoration-[#0047BB]/40 decoration-[3px] underline-offset-4">{t("guarantee")}</span> {t("descriptionEnd")}
                         </motion.p>
 
                         <motion.div
@@ -173,7 +158,7 @@ export function HeroSection() {
                             >
                                 <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0047BB_0%,#ffffff_50%,#0047BB_100%)]" />
                                 <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-2xl bg-[#0047BB] px-14 text-xl font-black text-white backdrop-blur-3xl gap-4 transition-colors group-hover:bg-[#0041ab]">
-                                    Hemen Başla <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform duration-300" />
+                                    {t("ctaPrimary")} <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform duration-300" />
                                 </span>
                             </Link>
 
@@ -181,7 +166,7 @@ export function HeroSection() {
                                 href="/hizmetlerimiz"
                                 className="inline-flex h-20 items-center justify-center rounded-2xl bg-white/50 backdrop-blur-md border-[2px] border-slate-200 px-14 text-xl font-black text-slate-700 transition-all hover:bg-white hover:border-[#0047BB]/30 hover:text-[#0047BB] shadow-sm hover:shadow-xl"
                             >
-                                Keşfet
+                                {t("ctaSecondary")}
                             </Link>
                         </motion.div>
 
@@ -194,22 +179,22 @@ export function HeroSection() {
                         >
                             <div className="flex items-center gap-3 bg-white/50 px-6 py-3 rounded-2xl border border-slate-100 shadow-sm">
                                 <GraduationCap className="text-blue-600 w-6 h-6" />
-                                <span className="text-sm font-black text-slate-600 tracking-widest uppercase">100+ Üniversite</span>
+                                <span className="text-sm font-black text-slate-600 tracking-widest uppercase">{t("trustUniversities")}</span>
                             </div>
                             <div className="flex items-center gap-3 bg-white/50 px-6 py-3 rounded-2xl border border-slate-100 shadow-sm">
                                 <ShieldCheck className="text-blue-600 w-6 h-6" />
-                                <span className="text-sm font-black text-slate-600 tracking-widest uppercase">Yasal Güvence</span>
+                                <span className="text-sm font-black text-slate-600 tracking-widest uppercase">{t("trustLegal")}</span>
                             </div>
                             <div className="flex items-center gap-3 bg-white/50 px-6 py-3 rounded-2xl border border-slate-100 shadow-sm">
                                 <Globe className="text-blue-600 w-6 h-6" />
-                                <span className="text-sm font-black text-slate-600 tracking-widest uppercase">Global Destek</span>
+                                <span className="text-sm font-black text-slate-600 tracking-widest uppercase">{t("trustGlobal")}</span>
                             </div>
                         </motion.div>
                     </div>
                 </div>
             </div>
 
-            {/* Floating Premium Trust Card - Light Theme */}
+            {/* Floating Premium Trust Card */}
             <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -225,11 +210,11 @@ export function HeroSection() {
                             </div>
                             <div>
                                 <div className="text-2xl font-black text-slate-900 leading-none">4.9/5</div>
-                                <div className="text-[11px] font-black text-blue-600 uppercase tracking-tighter mt-1">Google Puanı</div>
+                                <div className="text-[11px] font-black text-blue-600 uppercase tracking-tighter mt-1">{t("googleScore")}</div>
                             </div>
                         </div>
                         <p className="text-sm text-slate-600 font-medium leading-relaxed mb-6 italic">
-                            "Türkiye'deki en profesyonel danışmanlık ekibi. Süreç beklediğimden çok daha hızlı ve kolay ilerledi."
+                            {t("testimonialQuote")}
                         </p>
                         <div className="flex flex-col gap-3">
                             <div className="flex -space-x-2">
@@ -242,7 +227,7 @@ export function HeroSection() {
                                     +1K
                                 </div>
                             </div>
-                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Binlerce Memnun Öğrenci</span>
+                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t("satisfiedStudents")}</span>
                         </div>
                     </div>
                 </div>

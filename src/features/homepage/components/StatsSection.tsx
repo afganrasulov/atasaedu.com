@@ -3,17 +3,19 @@
 import { motion } from "framer-motion";
 import { Container } from "@/shared/components/ui/Container";
 import { Users, CheckCircle, Clock } from "lucide-react";
-
-const stats = [
-    { value: "5k+", label: "Öğrenci", icon: Users },
-    { value: "99.5%", label: "Başarı Oranı", icon: CheckCircle },
-    { value: "100.2k+", label: "Danışmanlık Saati", icon: Clock }
-];
+import { useTranslations } from "next-intl";
 
 export function StatsSection() {
+    const t = useTranslations("stats");
+
+    const stats = [
+        { value: "5k+", label: t("students"), icon: Users },
+        { value: "99.5%", label: t("successRate"), icon: CheckCircle },
+        { value: "100.2k+", label: t("consultingHours"), icon: Clock }
+    ];
+
     return (
         <section className="py-20 bg-blue-600 relative overflow-hidden">
-            {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
             <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-500 opacity-5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />

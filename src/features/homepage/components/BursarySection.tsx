@@ -2,11 +2,13 @@
 
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function BursarySection() {
+    const t = useTranslations("bursary");
+
     return (
         <section className="relative w-full bg-slate-900 py-20 lg:py-28 overflow-hidden">
-            {/* Background Image / Overlay */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-campus.jpg"
@@ -21,11 +23,13 @@ export function BursarySection() {
                 <div className="max-w-3xl">
                     <div className="inline-flex items-center gap-2 mb-6">
                         <span className="w-12 h-[2px] bg-red-500" />
-                        <span className="text-red-400 font-bold uppercase tracking-widest text-sm">Hazır mısınız?</span>
+                        <span className="text-red-400 font-bold uppercase tracking-widest text-sm">{t("badge")}</span>
                     </div>
 
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                        Türkiye'de eğitimin kapılarını aralayan cazip <span className="text-red-500">burs</span> olanaklarıyla hayalinizdeki üniversite eğitimine adım atın!
+                        {t.rich("title", {
+                            highlight: () => <span className="text-red-500">{t("highlight")}</span>,
+                        })}
                     </h2>
                 </div>
             </div>

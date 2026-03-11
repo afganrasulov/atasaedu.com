@@ -10,70 +10,14 @@ import {
     ExternalLink,
 } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-/* ── TikTok Icon ─────────────────────────────────── */
 const TikTokIcon = ({ className = "" }: { className?: string }) => (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
         <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
     </svg>
 );
 
-/* ── Platforms Data ──────────────────────────────── */
-const platforms = [
-    {
-        name: "YouTube",
-        handle: "@atasadanismanlik",
-        value: "100K+",
-        label: "Abone",
-        icon: Youtube,
-        color: "from-red-500 to-red-600",
-        iconBg: "bg-red-500/10",
-        iconColor: "text-red-500",
-        hoverBorder: "hover:border-red-200",
-        url: "https://youtube.com/@atasadanismanlik",
-    },
-    {
-        name: "Instagram",
-        handle: "@atasadanismanlik",
-        value: "50K+",
-        label: "Takipçi",
-        icon: Instagram,
-        color: "from-pink-500 to-purple-600",
-        iconBg: "bg-gradient-to-br from-pink-500/10 to-purple-500/10",
-        iconColor: "text-pink-500",
-        hoverBorder: "hover:border-pink-200",
-        url: "https://instagram.com/atasadanismanlik",
-    },
-    {
-        name: "TikTok",
-        handle: "@atasadanismanlik",
-        value: "25K+",
-        label: "Takipçi",
-        icon: null,
-        customIcon: TikTokIcon,
-        color: "from-gray-800 to-black",
-        iconBg: "bg-gray-900/10",
-        iconColor: "text-gray-900",
-        hoverBorder: "hover:border-gray-300",
-        url: "https://tiktok.com/@atasadanismanlik",
-    },
-    {
-        name: "Google",
-        handle: "Atasa Danışmanlık",
-        value: "4.9",
-        label: "1200+ Yorum",
-        icon: null,
-        color: "from-blue-500 to-blue-600",
-        iconBg: "bg-blue-500/10",
-        iconColor: "text-blue-600",
-        hoverBorder: "hover:border-blue-200",
-        url: "/google-yorumlari",
-        isInternal: true,
-        showStars: true,
-    },
-];
-
-/* ── Google Logo SVG ─────────────────────────────── */
 function GoogleLogo({ className = "w-6 h-6" }: { className?: string }) {
     return (
         <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
@@ -85,15 +29,68 @@ function GoogleLogo({ className = "w-6 h-6" }: { className?: string }) {
     );
 }
 
-/* ── Main Component ──────────────────────────────── */
 export function SocialProofSection() {
+    const t = useTranslations("socialProof");
+
+    const platforms = [
+        {
+            name: "YouTube",
+            handle: "@atasa_tr",
+            value: "100K+",
+            label: t("subscriber"),
+            icon: Youtube,
+            color: "from-red-500 to-red-600",
+            iconBg: "bg-red-500/10",
+            iconColor: "text-red-500",
+            hoverBorder: "hover:border-red-200",
+            url: "https://www.youtube.com/@atasa_tr",
+        },
+        {
+            name: "Instagram",
+            handle: "@atasa_tr",
+            value: "60K+",
+            label: t("follower"),
+            icon: Instagram,
+            color: "from-pink-500 to-purple-600",
+            iconBg: "bg-gradient-to-br from-pink-500/10 to-purple-500/10",
+            iconColor: "text-pink-500",
+            hoverBorder: "hover:border-pink-200",
+            url: "https://www.instagram.com/atasa_tr",
+        },
+        {
+            name: "TikTok",
+            handle: "@atasa_tr",
+            value: "151K+",
+            label: t("follower"),
+            icon: null,
+            customIcon: TikTokIcon,
+            color: "from-gray-800 to-black",
+            iconBg: "bg-gray-900/10",
+            iconColor: "text-gray-900",
+            hoverBorder: "hover:border-gray-300",
+            url: "https://www.tiktok.com/@atasa_tr",
+        },
+        {
+            name: "Google",
+            handle: "Atasa Danışmanlık",
+            value: "4.9",
+            label: t("reviews1200"),
+            icon: null,
+            color: "from-blue-500 to-blue-600",
+            iconBg: "bg-blue-500/10",
+            iconColor: "text-blue-600",
+            hoverBorder: "hover:border-blue-200",
+            url: "/google-yorumlari",
+            isInternal: true,
+            showStars: true,
+        },
+    ];
+
     return (
         <section className="py-24 bg-white relative overflow-hidden">
-            {/* Subtle Background */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/50 via-transparent to-transparent pointer-events-none" />
 
             <Container className="relative z-10">
-                {/* Header */}
                 <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -103,7 +100,7 @@ export function SocialProofSection() {
                     >
                         <span className="w-12 h-[2px] bg-blue-600" />
                         <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
-                            SOSYAL MEDYA
+                            {t("badge")}
                         </span>
                         <span className="w-12 h-[2px] bg-blue-600" />
                     </motion.div>
@@ -114,7 +111,7 @@ export function SocialProofSection() {
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-black text-[#152239] tracking-tight mb-4"
                     >
-                        Bizi Takip Eden Topluluk
+                        {t("title")}
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -123,16 +120,14 @@ export function SocialProofSection() {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-gray-500 max-w-2xl mx-auto font-medium"
                     >
-                        Yüz binlerce kişi eğitim yolculuğunda bize güveniyor.
-                        Sosyal medyada da yanınızdayız.
+                        {t("description")}
                     </motion.p>
                 </div>
 
-                {/* Platform Cards Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                     {platforms.map((platform, index) => {
                         const Icon = platform.icon;
-                        const CustomIcon = platform.customIcon;
+                        const CustomIcon = (platform as Record<string, unknown>).customIcon as (({ className }: { className?: string }) => React.JSX.Element) | undefined;
                         const isGoogle = platform.name === "Google";
 
                         const cardContent = (
@@ -150,12 +145,8 @@ export function SocialProofSection() {
                                     relative overflow-hidden h-full
                                 `}
                             >
-                                {/* Gradient background on hover */}
-                                <div
-                                    className={`absolute inset-0 bg-gradient-to-br ${platform.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`}
-                                />
+                                <div className={`absolute inset-0 bg-gradient-to-br ${platform.color} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
 
-                                {/* Icon */}
                                 <div className={`w-14 h-14 rounded-2xl ${platform.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
                                     {isGoogle ? (
                                         <GoogleLogo />
@@ -166,73 +157,51 @@ export function SocialProofSection() {
                                     ) : null}
                                 </div>
 
-                                {/* Platform Name */}
                                 <div className="flex items-center gap-2 mb-1">
                                     <span className="text-xs font-black text-gray-400 uppercase tracking-[0.15em]">
                                         {platform.name}
                                     </span>
-                                    {isGoogle && (
-                                        <BadgeCheck size={14} className="text-blue-500" />
-                                    )}
+                                    {isGoogle && <BadgeCheck size={14} className="text-blue-500" />}
                                 </div>
 
-                                {/* Value */}
                                 <div className="flex items-baseline gap-2 mb-1">
                                     <span className="text-4xl md:text-5xl font-black text-[#152239] tracking-tighter leading-none">
                                         {platform.value}
                                     </span>
                                 </div>
 
-                                {/* Label / Stars */}
-                                {platform.showStars ? (
+                                {(platform as Record<string, unknown>).showStars ? (
                                     <div className="flex flex-col gap-1.5 mt-2">
                                         <div className="flex text-yellow-400 gap-0.5">
                                             {[...Array(5)].map((_, i) => (
                                                 <Star key={i} size={16} fill="currentColor" />
                                             ))}
                                         </div>
-                                        <span className="text-sm font-bold text-gray-500">
-                                            {platform.label}
-                                        </span>
+                                        <span className="text-sm font-bold text-gray-500">{platform.label}</span>
                                     </div>
                                 ) : (
-                                    <span className="text-sm font-bold text-gray-500 block mt-1">
-                                        {platform.label}
-                                    </span>
+                                    <span className="text-sm font-bold text-gray-500 block mt-1">{platform.label}</span>
                                 )}
 
-                                {/* Handle */}
                                 <div className="mt-4 pt-4 border-t border-gray-50 flex items-center justify-between">
-                                    <span className="text-xs font-bold text-gray-400 truncate">
-                                        {platform.handle}
-                                    </span>
-                                    <ExternalLink
-                                        size={14}
-                                        className="text-gray-300 group-hover:text-gray-500 transition-colors shrink-0"
-                                    />
+                                    <span className="text-xs font-bold text-gray-400 truncate">{platform.handle}</span>
+                                    <ExternalLink size={14} className="text-gray-300 group-hover:text-gray-500 transition-colors shrink-0" />
                                 </div>
                             </motion.div>
                         );
 
-                        return platform.isInternal ? (
+                        return (platform as Record<string, unknown>).isInternal ? (
                             <Link key={platform.name} href={platform.url} className="block h-full">
                                 {cardContent}
                             </Link>
                         ) : (
-                            <a
-                                key={platform.name}
-                                href={platform.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block h-full"
-                            >
+                            <a key={platform.name} href={platform.url} target="_blank" rel="noopener noreferrer" className="block h-full">
                                 {cardContent}
                             </a>
                         );
                     })}
                 </div>
 
-                {/* Bottom Summary Bar */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -245,11 +214,9 @@ export function SocialProofSection() {
                             <BadgeCheck size={32} className="text-blue-400" />
                         </div>
                         <div>
-                            <h3 className="text-xl md:text-2xl font-black mb-1">
-                                Resmi Google Partner
-                            </h3>
+                            <h3 className="text-xl md:text-2xl font-black mb-1">{t("officialPartner")}</h3>
                             <p className="text-gray-400 text-sm font-medium">
-                                Toplam <span className="text-white font-bold">175.000+</span> kişilik dijital topluluk
+                                <span className="text-white font-bold">311.000+</span> {t("digitalCommunity")}
                             </p>
                         </div>
                     </div>
@@ -258,15 +225,15 @@ export function SocialProofSection() {
                             href="/google-yorumlari"
                             className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-blue-600 hover:border-blue-600 px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-wider transition-all whitespace-nowrap"
                         >
-                            Yorumları Gör
+                            {t("seeReviews")}
                         </Link>
                         <a
-                            href="https://youtube.com/@atasadanismanlik"
+                            href="https://www.youtube.com/@atasa_tr"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-red-500 hover:bg-red-600 px-6 py-3 rounded-xl font-bold text-sm uppercase tracking-wider transition-all flex items-center gap-2 whitespace-nowrap"
                         >
-                            <Youtube size={18} /> Abone Ol
+                            <Youtube size={18} /> {t("subscribe")}
                         </a>
                     </div>
                 </motion.div>

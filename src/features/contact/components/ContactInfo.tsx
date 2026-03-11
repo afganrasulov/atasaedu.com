@@ -29,7 +29,7 @@ export function ContactInfo() {
             icon: MapPin,
             title: "Adres",
             details: [
-                { text: "Mecidiyeköy, Raşit Rıza Sokağı Hayati İş Hanı NO:13 K:5 D:503, Şişli/İstanbul", href: "https://maps.app.goo.gl/cQXVomJozJ6p8neS8" },
+                { text: "Mecidiyeköy mah. Raşit Rıza sk. Ahmet Esin İş Merkezi NO:4 K:2 D:7, Şişli/İstanbul", href: "https://maps.app.goo.gl/cQXVomJozJ6p8neS8" },
                 { text: "Əhməd Rəcəbli küçəsi 1/10 Tivi Plaza Qat:1 Nərimanov/Bakı", href: "https://maps.app.goo.gl/cQXVomJozJ6p8neS8" }
             ]
         },
@@ -45,7 +45,8 @@ export function ContactInfo() {
             icon: Clock,
             title: "Çalışma Saatleri",
             details: [
-                { text: "Pzt - Cmt: 09:00 - 17:00", href: null }
+                { text: "Pzt - Cum: 09:00 - 18:00", href: null },
+                { text: "Cmt: 10:00 - 13:00", href: null }
             ]
         }
     ];
