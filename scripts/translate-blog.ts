@@ -134,7 +134,6 @@ async function main() {
 
                 const response = await openai.chat.completions.create({
                     model: MODEL,
-                    temperature: 0.3,
                     messages: [
                         { role: "system", content: SYSTEM_PROMPT },
                         {

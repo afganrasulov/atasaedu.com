@@ -141,7 +141,6 @@ async function translateBatch(
 
   const response = await openai.chat.completions.create({
     model: MODEL,
-    temperature: 0.3,
     response_format: { type: "json_object" },
     messages: [
       { role: "system", content: SYSTEM_PROMPT },

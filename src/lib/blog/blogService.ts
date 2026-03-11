@@ -439,17 +439,24 @@ export async function autoApproveTopics(limit = 3): Promise<number> {
 
 /** Bugün kaç makale üretildiğini sayar */
 export async function getTodayGenerationCount(): Promise<number> {
-    const db = getBlogClient();
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    try {
+        const db = getBlogClient();
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
 
-    const { count, error } = await db
-        .from("posts")
-        .select("*", { count: "exact", head: true })
-        .gte("created_at", today.toISOString());
+        const { count, error } = await db
+            .from("posts")
+            .select("id", { count: "exact", head: true })
+            .gte("created_at", today.toISOString());
 
-    if (error) throw new Error(`Today count failed: ${error.message}`);
-    return count ?? 0;
+        if (error) {
+            console.error("getTodayGenerationCount error:", JSON.stringify(error));
+            return 0; // Hata durumunda pipeline'ı durdurma, 0 kabul et
+        }
+        return count ?? 0;
+    } catch {
+        return 0;
+    }
 }
 
 // ─── Automation Logging ──────────────────────────────────────

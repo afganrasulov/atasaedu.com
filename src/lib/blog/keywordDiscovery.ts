@@ -65,7 +65,6 @@ export async function autoPopulateKeywords(
     // AI'dan yeni keyword'ler iste
     const response = await openai.chat.completions.create({
         model: "gpt-5-mini",
-        temperature: 0.7,
         messages: [
             { role: "system", content: "Sen bir SEO uzmanısın. Sadece JSON döndür." },
             { role: "user", content: KEYWORD_PROMPT },
