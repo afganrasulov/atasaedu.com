@@ -764,5 +764,19 @@
   "basvuruSureciPage": {
     "pageTitle": "Application Process | Atasa Education",
     "pageDescription": "A guide to the application and registration process at universities in Turkey for foreign students. Become a university student in 8 steps."
+  },
+  "blogFAQ": {
+    "faqTitle": "Frequently Asked Questions"
+  },
+  "tableOfContents": {
+    "ariaLabel": "Table of contents",
+    "heading": "📑 Table of Contents"
+  },
+  "shareButtons": {
+    "heading": "Share",
+    "twitter": "Twitter",
+    "linkedIn": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "copyLinkTitle": "Copy link"
   }
 }

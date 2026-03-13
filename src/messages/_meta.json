@@ -607,7 +607,15 @@
     "googleYorumlariPage.pageTitle": "b608da14",
     "googleYorumlariPage.pageDescription": "d053032c",
     "basvuruSureciPage.pageTitle": "3936b21d",
-    "basvuruSureciPage.pageDescription": "10c01148"
+    "basvuruSureciPage.pageDescription": "10c01148",
+    "blogFAQ.faqTitle": "0c970478",
+    "tableOfContents.ariaLabel": "d01abeeb",
+    "tableOfContents.heading": "d9718c39",
+    "shareButtons.heading": "b43055af",
+    "shareButtons.twitter": "ed264358",
+    "shareButtons.linkedIn": "a84ed995",
+    "shareButtons.whatsapp": "297be209",
+    "shareButtons.copyLinkTitle": "ed76ed9f"
   },
-  "lastRun": "2026-03-11T15:37:51.153Z"
+  "lastRun": "2026-03-13T01:09:51.480Z"
 }

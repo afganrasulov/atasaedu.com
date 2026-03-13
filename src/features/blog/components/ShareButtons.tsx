@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Twitter, Linkedin, Link2, Check, MessageCircle } from "lucide-react";
 
 interface ShareButtonsProps {
@@ -9,6 +10,7 @@ interface ShareButtonsProps {
 }
 
 export function ShareButtons({ title, slug }: ShareButtonsProps) {
+    const t = useTranslations("shareButtons");
     const [copied, setCopied] = useState(false);
     const url = `https://atasaedu.com/en/blog/${slug}`;
     const encodedTitle = encodeURIComponent(title);
@@ -26,17 +28,17 @@ export function ShareButtons({ title, slug }: ShareButtonsProps) {
 
     const links = [
         {
-            label: "Twitter",
+            label: t("twitter"),
             icon: <Twitter size={16} />,
             href: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
         },
         {
-            label: "LinkedIn",
+            label: t("linkedIn"),
             icon: <Linkedin size={16} />,
             href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
         },
         {
-            label: "WhatsApp",
+            label: t("whatsapp"),
             icon: <MessageCircle size={16} />,
             href: `https://wa.me/?text=${encodedTitle}%20${encodedUrl}`,
         },
@@ -53,7 +55,7 @@ export function ShareButtons({ title, slug }: ShareButtonsProps) {
                     marginBottom: "0.75rem",
                 }}
             >
-                Paylaş
+                {t("heading")}
             </h4>
             <div style={{ display: "flex", gap: "0.5rem" }}>
                 {links.map((link) => (
@@ -71,7 +73,7 @@ export function ShareButtons({ title, slug }: ShareButtonsProps) {
                 <button
                     onClick={handleCopy}
                     className="blog-share-btn"
-                    title="Linki kopyala"
+                    title={t("copyLinkTitle")}
                 >
                     {copied ? <Check size={16} color="#D97706" /> : <Link2 size={16} />}
                 </button>

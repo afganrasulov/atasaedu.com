@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface TocItem {
     id: string;
@@ -13,6 +14,7 @@ interface TableOfContentsProps {
 }
 
 export function TableOfContents({ content }: TableOfContentsProps) {
+    const t = useTranslations("tableOfContents");
     const [items, setItems] = useState<TocItem[]>([]);
     const [activeId, setActiveId] = useState<string>("");
 
@@ -78,7 +80,7 @@ export function TableOfContents({ content }: TableOfContentsProps) {
     return (
         <nav
             className="blog-toc"
-            aria-label="İçindekiler"
+            aria-label={t("ariaLabel")}
             style={{
                 background: "linear-gradient(145deg, #FFFAF0, #FFF7ED)",
                 borderRadius: "1rem",
@@ -113,7 +115,7 @@ export function TableOfContents({ content }: TableOfContentsProps) {
                 letterSpacing: "0.02em",
                 textAlign: "left",
             }}>
-                📑 İçindekiler
+                {t("heading")}
             </h4>
             <div style={{ display: "flex", flexDirection: "column", gap: "2px", maxHeight: "50vh", overflowY: "auto" }}>
                 {items.map((item) => (

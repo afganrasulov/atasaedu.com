@@ -764,5 +764,19 @@
   "basvuruSureciPage": {
     "pageTitle": "Processus de Candidature | Atasa Education",
     "pageDescription": "Guide du processus de candidature et d'inscription aux universités turques pour les étudiants étrangers. Devenez étudiant en 8 étapes."
+  },
+  "blogFAQ": {
+    "faqTitle": "Questions fréquentes"
+  },
+  "tableOfContents": {
+    "ariaLabel": "Table des matières",
+    "heading": "📑 Table des matières"
+  },
+  "shareButtons": {
+    "heading": "Partager",
+    "twitter": "Twitter",
+    "linkedIn": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "copyLinkTitle": "Copier le lien"
   }
 }

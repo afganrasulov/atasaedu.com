@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
 
 interface FaqItem {
@@ -55,6 +56,7 @@ function parseFaqFromContent(content: string): FaqItem[] {
 }
 
 export function BlogFAQ({ content }: BlogFAQProps) {
+    const t = useTranslations("blogFAQ");
     const faqs = parseFaqFromContent(content);
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -99,7 +101,7 @@ export function BlogFAQ({ content }: BlogFAQProps) {
                         position: "relative",
                     }}
                 >
-                    Sıkça Sorulan Sorular
+                    {t("faqTitle")}
                     <span
                         style={{
                             position: "absolute",
