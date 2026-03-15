@@ -8,6 +8,41 @@ import {
 import { generateOgImage } from "./ogImageGenerator";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const MAX_RETRIES = 2;
+
+/** Truncated JSON'ı onarmaya çalışır — eksik kapanış bracket/brace ekler */
+function repairTruncatedJson(text: string): string {
+    try {
+        JSON.parse(text);
+        return text; // Zaten geçerli
+    } catch {
+        // Eksik kapanış karakterlerini say ve ekle
+        let openBraces = 0;
+        let openBrackets = 0;
+        let inString = false;
+        let escape = false;
+
+        for (const ch of text) {
+            if (escape) { escape = false; continue; }
+            if (ch === '\\') { escape = true; continue; }
+            if (ch === '"') { inString = !inString; continue; }
+            if (inString) continue;
+            if (ch === '{') openBraces++;
+            if (ch === '}') openBraces--;
+            if (ch === '[') openBrackets++;
+            if (ch === ']') openBrackets--;
+        }
+
+        // String içinde kesildiyse kapat
+        if (inString) text += '"';
+
+        // Eksik kapanışları ekle
+        for (let i = 0; i < openBrackets; i++) text += ']';
+        for (let i = 0; i < openBraces; i++) text += '}';
+
+        return text;
+    }
+}
 
 interface GeneratedArticle {
     title: string;
@@ -41,12 +76,16 @@ export async function generateArticle(
             ? `\n\nİlham Kaynağı Makale (başlık: "${originalContent.title}"):\n${originalContent.content.slice(0, 3000)}`
             : "";
 
-        // 2. OpenAI ile araştırma + makale üretimi
-        const response = await openai.responses.create({
-            model: "gpt-4o",
-            tools: [{ type: "web_search_preview" }],
-            instructions: SEO_SYSTEM_PROMPT,
-            input: `
+        // 2. OpenAI ile araştırma + makale üretimi (retry destekli)
+        let article: GeneratedArticle | null = null;
+
+        for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+            try {
+                const response = await openai.responses.create({
+                    model: "gpt-5-mini",
+                    tools: [{ type: "web_search_preview" }],
+                    instructions: SEO_SYSTEM_PROMPT,
+                    input: `
 Konu: "${topic.original_title}"
 ${sourceContext}
 
@@ -70,33 +109,49 @@ Yanıtı SADECE geçerli JSON olarak ver, başka hiçbir metin ekleme:
   "seoScore": 85
 }
 `,
-        });
+                });
 
-        // Parse response
-        const textOutput = response.output.find(
-            (o) => o.type === "message"
-        );
-        if (!textOutput || textOutput.type !== "message") {
-            throw new Error("OpenAI response has no text output");
+                // Parse response
+                const textOutput = response.output.find(
+                    (o) => o.type === "message"
+                );
+                if (!textOutput || textOutput.type !== "message") {
+                    throw new Error("OpenAI response has no text output");
+                }
+
+                const textContent = textOutput.content.find(
+                    (c) => c.type === "output_text"
+                );
+                if (!textContent || textContent.type !== "output_text") {
+                    throw new Error("OpenAI response has no text content");
+                }
+
+                let rawText = textContent.text.trim();
+
+                // JSON markdown bloğu varsa temizle
+                if (rawText.startsWith("```")) {
+                    rawText = rawText
+                        .replace(/^```(?:json)?\n?/, "")
+                        .replace(/\n?```$/, "");
+                }
+
+                // Truncated JSON repair: eksik kapanış bracket/brace ekle
+                rawText = repairTruncatedJson(rawText);
+
+                article = JSON.parse(rawText) as GeneratedArticle;
+                break; // Başarılı — döngüden çık
+            } catch (parseErr) {
+                if (attempt < MAX_RETRIES) {
+                    console.log(`⚠️ JSON parse hatası, retry ${attempt + 1}/${MAX_RETRIES}...`);
+                    continue;
+                }
+                throw parseErr;
+            }
         }
 
-        const textContent = textOutput.content.find(
-            (c) => c.type === "output_text"
-        );
-        if (!textContent || textContent.type !== "output_text") {
-            throw new Error("OpenAI response has no text content");
+        if (!article) {
+            throw new Error("Article generation failed after all retries");
         }
-
-        let rawText = textContent.text.trim();
-
-        // JSON markdown bloğu varsa temizle
-        if (rawText.startsWith("```")) {
-            rawText = rawText
-                .replace(/^```(?:json)?\n?/, "")
-                .replace(/\n?```$/, "");
-        }
-
-        const article: GeneratedArticle = JSON.parse(rawText);
 
         // 3. Schema.org markup oluştur
         const schemaMarkup = buildSchemaMarkup(article);

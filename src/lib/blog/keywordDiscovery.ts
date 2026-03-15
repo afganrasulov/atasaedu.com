@@ -152,7 +152,7 @@ export async function discoverTopicsFromKeywords(): Promise<{
             console.log(`🔍 Topic keşfi: "${keyword.keyword}"`);
 
             const response = await openai.responses.create({
-                model: "gpt-4o",
+                model: "gpt-5-mini",
                 tools: [{ type: "web_search_preview" }],
                 instructions: TOPIC_DISCOVERY_PROMPT,
                 input: `Anahtar kelime: "${keyword.keyword}"\n\nBu kelime hakkında web'de güncel araştırma yap ve blog konusu öner.`,
