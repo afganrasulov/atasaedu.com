@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-const SUPABASE_CDN = "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu";
+const SUPABASE_CDN = "https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu";
 
 export function TeamSection() {
     const t = useTranslations("team");

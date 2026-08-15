@@ -96,7 +96,7 @@ export function Header() {
                         <Link href="/" className="flex items-center">
                             <div className="relative overflow-hidden group ml-2">
                                 <Image
-                                    src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo.png"
+                                    src="https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/logo.png"
                                     alt="Atasa Education"
                                     width={190}
                                     height={50}

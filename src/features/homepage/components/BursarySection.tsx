@@ -11,7 +11,7 @@ export function BursarySection() {
         <section className="relative w-full bg-slate-900 py-20 lg:py-28 overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/university-campus.jpg"
+                    src="https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/home/university-campus.jpg"
                     alt="Campus Background"
                     fill
                     className="object-cover opacity-20 mix-blend-overlay"

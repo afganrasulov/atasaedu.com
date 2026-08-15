@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Modern ve yenilikçi yurtdışı eğitim danışmanlık hizmetleri.",
   manifest: "/manifest.json",
   icons: {
-    icon: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/favicon.png",
+    icon: "https://api.atasa.mobi/storage/v1/object/public/public-assets/favicon.png",
   }
 };
 

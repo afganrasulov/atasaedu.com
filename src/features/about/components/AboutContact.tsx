@@ -61,7 +61,7 @@ export function AboutContact() {
                         {/* Video Thumbnail Area */}
                         <div className="relative aspect-[4/3] md:aspect-video rounded-[2.5rem] overflow-hidden shadow-2xl group border-8 border-white">
                             <Image
-                                src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/hero_bg.png"
+                                src="https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/hero_bg.png"
                                 alt={t("videoAlt")}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"

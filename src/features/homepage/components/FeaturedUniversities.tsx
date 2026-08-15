@@ -11,7 +11,7 @@ import { useTranslations } from "next-intl";
 
 /** Fakülte/kategori bazlı görsel mapping */
 const STORAGE_BASE =
-    "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/home/categories";
+    "https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/home/categories";
 
 const CATEGORY_IMAGES: Record<string, string> = {
     "Sağlık Bilimleri": `${STORAGE_BASE}/health-sciences.png`,

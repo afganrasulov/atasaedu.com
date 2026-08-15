@@ -35,7 +35,7 @@ export function BlogSection() {
             id: "f1",
             title: "Yabancı Öğrencilere Türkiye'de Sınavsız Üniversite İmkanı",
             excerpt: "Yabancı uyruklu öğrenciler için Türkiye'de üniversite eğitimi alma seçenekleri oldukça geniştir.",
-            image_url: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_1.jpg",
+            image_url: "https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/blog_1.jpg",
             published_at: "2024-11-12T00:00:00Z",
             slug: "yabanci-ogrencilere-sinavsiz-universite",
         },
@@ -43,7 +43,7 @@ export function BlogSection() {
             id: "f2",
             title: "Türkiye'de Eğitim Almanın 5 Harika Sebebi",
             excerpt: "Akademik kaliteden zengin kültüre kadar, Türkiye uluslararası öğrenciler için eşsiz bir destinasyon.",
-            image_url: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_2.jpg",
+            image_url: "https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/blog_2.jpg",
             published_at: "2024-10-05T00:00:00Z",
             slug: "turkiyede-egitim-almanin-5-sebebi",
         },
@@ -51,7 +51,7 @@ export function BlogSection() {
             id: "f3",
             title: "Öğrenci İkamet İzni Nasıl Alınır?",
             excerpt: "Türkiye'de üniversite eğitimi görecek uluslararası öğrencilerin ikamet izni alma rehberi.",
-            image_url: "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/blog_3.jpg",
+            image_url: "https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/blog_3.jpg",
             published_at: "2024-09-28T00:00:00Z",
             slug: "ogrenci-ikamet-izni-nasil-alinir",
         },
@@ -114,7 +114,7 @@ export function BlogSection() {
                                             />
                                         ) : (
                                             <Image
-                                                src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo-white.png"
+                                                src="https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/logo-white.png"
                                                 alt="Atasa"
                                                 width={100}
                                                 height={40}

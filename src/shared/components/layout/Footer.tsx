@@ -24,7 +24,7 @@ export function Footer() {
                     <div className="lg:col-span-5 space-y-12">
                         <div className="space-y-8">
                             <Image
-                                src="https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/logo-white.png"
+                                src="https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/logo-white.png"
                                 alt="Atasa Education"
                                 width={240}
                                 height={72}

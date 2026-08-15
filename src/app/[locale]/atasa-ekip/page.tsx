@@ -4,7 +4,7 @@ import { Award } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
-const SUPABASE_CDN = "https://khlvkvusavalbkjrwbsy.supabase.co/storage/v1/object/public/public-assets/atasaedu/team";
+const SUPABASE_CDN = "https://api.atasa.mobi/storage/v1/object/public/public-assets/atasaedu/team";
 
 const TEAM_MEMBERS = [
     {
